@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+public class Enumerations
+{
+    public enum EquipmentQuality
+    {
+        Common,
+        Rare,
+        Legendary
+    }
+}
