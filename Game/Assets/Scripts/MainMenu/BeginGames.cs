@@ -22,8 +22,8 @@ public class BeginGames : MonoBehaviour {
 
     public void ConnectToServer()
     {
-        WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
-        //WebSocket ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
+        //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
+        WebSocket ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
         ws.OnOpen += ws_OnOpen;
         ws.OnError += ws_OnError;
         ws.OnClose += Ws_OnClose;
