@@ -365,7 +365,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Pero
-  cardManager: {fileID: 1565924506}
   turnsManager: {fileID: 1565924505}
 --- !u!1 &467618298
 GameObject:
@@ -1484,7 +1483,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1565924508}
-  - 114: {fileID: 1565924506}
   - 114: {fileID: 1565924509}
   - 114: {fileID: 1565924507}
   - 114: {fileID: 1565924505}
@@ -1505,17 +1503,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 68d83109ef594294a8781abec86f8f84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1565924506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1565924504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c3ad3240743fa4e99b1e69c4b23dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1565924507
@@ -2021,7 +2008,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Karlo
-  cardManager: {fileID: 1565924506}
   turnsManager: {fileID: 1565924505}
 --- !u!1 &1955753433
 GameObject:

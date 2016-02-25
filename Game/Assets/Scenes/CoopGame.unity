@@ -543,7 +543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Andreja
-  cardManager: {fileID: 723132295}
   turnsManager: {fileID: 723132293}
 --- !u!1 &364654789
 GameObject:
@@ -784,7 +783,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 723132296}
-  - 114: {fileID: 723132295}
   - 114: {fileID: 723132294}
   - 114: {fileID: 723132293}
   - 114: {fileID: 723132297}
@@ -816,17 +814,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c78958ec257721b48bc33d2673745561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &723132295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 723132292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c3ad3240743fa4e99b1e69c4b23dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &723132296
@@ -1457,7 +1444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: Mirko
-  cardManager: {fileID: 723132295}
   turnsManager: {fileID: 723132293}
 --- !u!1 &1114967552
 GameObject:

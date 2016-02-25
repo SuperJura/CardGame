@@ -81,8 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\EnableOnlineGame.cs" />
     <Compile Include="Assets\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Scripts\Dispatcher.cs" />
     <Compile Include="Assets\Scripts\Game\Card\Card.cs" />
     <Compile Include="Assets\Scripts\Game\Card\CardInteraction.cs" />
     <Compile Include="Assets\Scripts\Game\DAL\CodeCardDatabase.cs" />
@@ -100,6 +100,8 @@
     <Compile Include="Assets\Scripts\Game\TurnsManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\GamesManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\OnlineGameManager.cs" />
+    <Compile Include="Assets\ServerOutput.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
