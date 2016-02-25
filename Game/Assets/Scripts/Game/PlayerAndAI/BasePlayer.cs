@@ -34,8 +34,9 @@ public class BasePlayer : MonoBehaviour {
 
     public virtual void Start()
     {
+        ICardDatabase database = Repository.GetCardDatabaseInstance();
         health = 5;
-        deck = CardDatabaseManager.GetRandomDeck();
+        deck = database.GetRandomDeck();
 
         FillHand();
     }
@@ -58,7 +59,7 @@ public class BasePlayer : MonoBehaviour {
 
     protected RectTransform GetRectTransformCard()
     {
-        GameObject go = (GameObject)Resources.Load("Card");
+        GameObject go = (GameObject)Resources.Load("GameResources/Card");
 
         RectTransform cardRectTransform = GameObject.Instantiate((RectTransform)go.transform);
         Card card = GetCardFromDeck();

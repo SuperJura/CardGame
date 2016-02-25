@@ -11,12 +11,8 @@ public class SystemSettings : MonoBehaviour {
         }
         if (Screen.width < 1500)
         {
-            return 100;
+            return 140;
         }
-        if (Screen.width < 2000)
-        {
-            return 135;
-        }
-        return 200;
+        return 150;
     }   //postepeno povecavaj sirinu ovisno o sirini ekrana
 }

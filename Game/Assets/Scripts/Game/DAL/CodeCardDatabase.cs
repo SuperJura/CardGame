@@ -35,7 +35,7 @@ public class CodeCardDatabase : ICardDatabase {
         return AllCards[Random.Range(0, AllCards.Count)];
     }
 
-    public System.Collections.Generic.List<Card> GetRandomDeck()
+    public List<Card> GetRandomDeck()
     {
         List<Card> outputDeck = new List<Card>(20);
 

@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using WebSocketSharp;
 
-public class BeginGames : MonoBehaviour {
+public class GamesManager : MonoBehaviour {
+
+    public delegate void OnServerConnectionOpenedHandler();
+    public event OnServerConnectionOpenedHandler OnServerConnectionOpened;
 
     public void LoadCoopGame()
     {
@@ -49,7 +51,7 @@ public class BeginGames : MonoBehaviour {
 
     private void ws_OnOpen(object sender, System.EventArgs e)
     {
-        Debug.Log("Opened!!!");
+        Debug.Log("Connection established");
+        OnServerConnectionOpened();
     }
-
 }

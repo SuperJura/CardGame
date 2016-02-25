@@ -36,8 +36,8 @@ public class GUIManager : MonoBehaviour {
     {
         string msgToWrite = playerCharName[player] + ": " + message + "\n\r";
 
-        GameObject newGO = (GameObject)Resources.Load("Notification");
-        RectTransform notification = (RectTransform)GameObject.Instantiate(newGO.transform);
+        GameObject newGO = (GameObject)Resources.Load("GameResources/Notification");
+        RectTransform notification = (RectTransform)Instantiate(newGO.transform);
         notification.SetParent(messages);
 
         Text messageText = notification.GetComponentInChildren<Text>();
