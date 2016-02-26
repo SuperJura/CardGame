@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebSocketSharp.Server;
 
@@ -24,7 +17,7 @@ namespace GameServer
             wsServer = new WebSocketServer(8080);
             wsServer.AddWebSocketService<GameBehavior>("/GameBehavior");
             wsServer.Start();
-            WriteToEventMsg("Server started on port 8080");
+            WriteToEventMsg("Server slusa na portu 8080");
         }
 
         public void WriteToEventMsg(string msg)
