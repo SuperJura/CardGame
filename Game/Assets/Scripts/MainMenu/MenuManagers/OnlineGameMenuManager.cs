@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class ServerOutput : MonoBehaviour {
+public class OnlineGameMenuManager : MonoBehaviour {
 
     private OnlineGameManager onlineGameManager;
     private Button btnStartOnlineGame;
@@ -53,18 +53,24 @@ public class ServerOutput : MonoBehaviour {
         switch (errorCode)
         {
             case 1:
-                StartCoroutine(DisplayNameTakenError());
+                StartCoroutine(DisplayError("Name is taken"));
+                break;
+            case 2:
+                StartCoroutine(DisplayError("Name cannot be empty"));
+                break;
+            case 3:
+                StartCoroutine(DisplayError("Error while connecting"));
                 break;
         }
     }
 
-    private IEnumerator DisplayNameTakenError()
+    private IEnumerator DisplayError(string error)
     {
-        errorText.text = "Name is taken";
+        errorText.text = error;
         errorText.enabled = true;
         btnConnectToServer.interactable = true;
         btnStartOnlineGame.interactable = false;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         errorText.enabled = false;
     }
 }

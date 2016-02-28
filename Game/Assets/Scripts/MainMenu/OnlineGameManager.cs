@@ -20,6 +20,11 @@ class OnlineGameManager : MonoBehaviour
 
     public void ConnectToServer()
     {
+        if (txtNick.text == "")
+        {
+            CallOnServerError("2");
+            return;
+        }
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
         ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
         //ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
@@ -52,6 +57,10 @@ class OnlineGameManager : MonoBehaviour
 
     private void Ws_OnClose(object sender, CloseEventArgs e)
     {
+        if (e.Code == 1006)
+        {
+            Dispatcher.Current.BeginInvoke(() => { CallOnServerError("3"); });
+        }
         Debug.Log("Close: " + e.Reason);
     }
 

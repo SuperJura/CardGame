@@ -11,6 +11,21 @@ public class MenuManager : MonoBehaviour {
         StartCoroutine(InitializeMenus());
     }
 
+    public void LoadMenu(GameObject menu)
+    {
+        if (currentMenu != null)
+        {
+            CloseCurrentMenu();
+        }
+        currentMenu = menu;
+        OpenCurrentMenu();
+    }
+
+    public void ExitApplication()
+    {
+        Application.Quit();
+    }
+
     private IEnumerator InitializeMenus()
     {
         foreach (Transform menuChild in transform)
@@ -21,16 +36,6 @@ public class MenuManager : MonoBehaviour {
 
         yield return new WaitForSeconds(0.1f);  //pricekaj da se sve animacije zavrse
         OpenCurrentMenu();  //otvori prvi menu
-    }
-
-    public void LoadMenu(GameObject menu)
-    {
-        if (currentMenu != null)
-        {
-            CloseCurrentMenu();
-        }
-        currentMenu = menu;
-        OpenCurrentMenu();
     }
 
     private void OpenCurrentMenu()

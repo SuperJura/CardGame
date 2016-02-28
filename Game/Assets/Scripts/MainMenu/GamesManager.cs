@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using WebSocketSharp;
 
 public class GamesManager : MonoBehaviour {
 

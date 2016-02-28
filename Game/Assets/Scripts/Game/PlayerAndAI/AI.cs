@@ -33,6 +33,7 @@ public class AI : BasePlayer {
         }
     }
 
+    //razlika izmedu ovog FillHand() i od BasePlayera je u tome da se tu sakriva karta
     public override void FillHand()
     {
         while (myHand.childCount < 5)
@@ -47,7 +48,7 @@ public class AI : BasePlayer {
 
             card.SetParent(myHand);
             card.localScale = new Vector3(1, 1, 1); //neznam zasto sam mjenja pa moram ja vratiti na default
-            card.GetComponent<LayoutElement>().preferredWidth = SystemSettings.GetCardWidth();
+            card.GetComponent<LayoutElement>().preferredWidth = 150;
         }
     }
 

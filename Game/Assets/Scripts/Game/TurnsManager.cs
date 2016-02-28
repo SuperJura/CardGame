@@ -26,9 +26,10 @@ public class TurnsManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        APlayerSide = GameObject.Find("Canvas/A_PlayerSide").GetComponent<RectTransform>();
-        BPlayerSide = GameObject.Find("Canvas/B_PlayerSide").GetComponent<RectTransform>();
-		graveyard = GameObject.Find ("Canvas/InfoPanel/Graveyard").GetComponent<RectTransform> ();
+        Transform gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
+        APlayerSide = gameboardPanel.Find("A_PlayerSide").GetComponent<RectTransform>();
+        BPlayerSide = gameboardPanel.Find("B_PlayerSide").GetComponent<RectTransform>();
+		graveyard = gameboardPanel.Find ("InfoPanel/Graveyard").GetComponent<RectTransform> ();
         aPlayer = APlayerSide.GetComponent<BasePlayer>();
         bPlayer = BPlayerSide.GetComponent<BasePlayer>();
         InitializeGUI();

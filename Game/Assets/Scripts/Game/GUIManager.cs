@@ -8,19 +8,20 @@ public class GUIManager : MonoBehaviour {
     private RectTransform notificationPanel;
     private RectTransform messages;
     private Dictionary<char, string> playerCharName;    //char = a/b; string = ime a/b
+    private Transform gameboardPanel;
 
-	// Use this for initialization
     void Awake()
     {
+        gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         transform.GetComponent<TurnsManager>().OnEndTurn += GUIManager_OnEndTurn;
         transform.GetComponent<TurnsManager>().OnPlayerLoseHealth += GUIManager_OnPlayerLoseHealth;
         transform.GetComponent<TurnsManager>().OnNotification += GUIManager_OnNotification;
-        infoPanel = GameObject.Find("Canvas/InfoPanel").GetComponent<RectTransform>();
-        notificationPanel = GameObject.Find("Canvas/NotificationPanel").GetComponent<RectTransform>();
+        infoPanel = gameboardPanel.Find("InfoPanel").GetComponent<RectTransform>();
+        notificationPanel = gameboardPanel.Find("NotificationPanel").GetComponent<RectTransform>();
         messages = notificationPanel.Find("MessagePanel/Messages").GetComponent<RectTransform>();
 
-        string aName = GameObject.Find("Canvas/A_PlayerSide").GetComponent<BasePlayer>().playerName;
-        string bName = GameObject.Find("Canvas/B_PlayerSide").GetComponent<BasePlayer>().playerName;
+        string aName = gameboardPanel.Find("A_PlayerSide").GetComponent<BasePlayer>().playerName;
+        string bName = gameboardPanel.Find("B_PlayerSide").GetComponent<BasePlayer>().playerName;
 
         notificationPanel.Find("A_PlayerName/NameText").GetComponentInChildren<Text>().text = aName;
         notificationPanel.Find("B_PlayerName/NameText").GetComponentInChildren<Text>().text = bName;
@@ -29,8 +30,7 @@ public class GUIManager : MonoBehaviour {
 
         playerCharName.Add('a', aName);
         playerCharName.Add('b', bName);
-
-	}
+    }
 
     void GUIManager_OnNotification(char player, string message)
     {

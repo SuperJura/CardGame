@@ -53,7 +53,7 @@ public class BasePlayer : MonoBehaviour {
 
             card.SetParent(myHand);
             card.localScale = new Vector3(1, 1, 1); //neznam zasto sam mjenja pa moram ja vratiti na default
-            card.GetComponent<LayoutElement>().preferredWidth = SystemSettings.GetCardWidth();
+            card.GetComponent<LayoutElement>().preferredWidth = 150;
         }
     }
 
