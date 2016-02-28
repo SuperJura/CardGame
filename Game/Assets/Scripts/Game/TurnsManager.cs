@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System;
 
 public class TurnsManager : MonoBehaviour
 {
@@ -143,25 +144,18 @@ public class TurnsManager : MonoBehaviour
     {
         RectTransform defenderPlayField = GetPlayFieldOfOtherPlayer();
 
+        List<RectTransform> cardsToDestroy = new List<RectTransform>();
         foreach (RectTransform card in defenderPlayField)
         {
+            Debug.Log(card.name);
             int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text);
             if (health <= 0)
             {
-                string destroyCardName = card.Find("CardName").GetComponentInChildren<Text>().text;
-                string message = "My " + destroyCardName + " is destroyed!";
-                CallOnNotification(GetOppositePlayer(), message);
-
-                if (graveyard.childCount > 0)
-                {
-                    GameObject.Destroy(graveyard.GetChild(0).gameObject);
-                }
-
-				card.SetParent(graveyard);
-				card.rotation = new Quaternion (0, 0, 0, 0);
+                cardsToDestroy.Add(card);
             }
         }
 
+        DestroyDeadCards(cardsToDestroy);
         EndPlayerTurn();
     }   //4. faza
 
@@ -336,6 +330,26 @@ public class TurnsManager : MonoBehaviour
 
         CallOnNotification(msg);
         CallOnPlayerLoseHealth();
+    }
+
+    private void DestroyDeadCards(List<RectTransform> cardsToDestroy)
+    {
+        while (cardsToDestroy.Count != 0)
+        {
+            RectTransform card = cardsToDestroy[0];
+            string destroyCardName = card.Find("CardName").GetComponentInChildren<Text>().text;
+            string message = "My " + destroyCardName + " is destroyed!";
+            CallOnNotification(GetOppositePlayer(), message);
+
+            if (graveyard.childCount > 0)
+            {
+                Destroy(graveyard.GetChild(0).gameObject);
+            }
+
+            card.SetParent(graveyard);
+            card.rotation = new Quaternion(0, 0, 0, 0);
+            cardsToDestroy.Remove(card);
+        }
     }
 
     private char GetOppositePlayer()
