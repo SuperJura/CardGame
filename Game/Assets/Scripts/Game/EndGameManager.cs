@@ -1,10 +1,39 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class EndGameManager : MonoBehaviour {
 
-    public void EndGameAI(BasePlayer winner)
+    public RectTransform originalMessages;
+
+    private MenuManager menuManager;
+
+    void Start()
+    {
+        menuManager = GameObject.Find("Canvas").GetComponent<MenuManager>();
+    }
+
+    public void EndGame(BasePlayer winner, BasePlayer loser)
     {
         Debug.Log(winner.playerName + " won the game");
-        GetComponent<GamesManager>().LoadMainMenu();
+        DisplayDetails(winner.playerName, loser.playerName);
+        SetMatchHistory();
+        menuManager.LoadMenu(this.gameObject);
+    }
+
+    private void SetMatchHistory()
+    {
+        Transform matchHistory = transform.Find("MainPanel/Panel/MatchHistory/Messages");
+        while (originalMessages.childCount != 0)
+        {
+            originalMessages.GetChild(originalMessages.childCount-1).SetParent(matchHistory);   //poruke idu obrnutim redosljedom
+        }
+    }
+
+    private void DisplayDetails(string winner, string loser)
+    {
+        transform.Find("MainPanel/Title").GetComponent<Text>().text = winner + " won the game!";
+        transform.Find("MainPanel/Panel/Winner").GetComponentInChildren<Text>().text = winner;
+        transform.Find("MainPanel/Panel/Loser").GetComponentInChildren<Text>().text = loser;
     }
 }

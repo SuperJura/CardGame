@@ -23,11 +23,13 @@ public class TurnsManager : MonoBehaviour
     private BasePlayer aPlayer;
     private BasePlayer bPlayer;
     private int nublerOfTurns;
+    private EndGameManager endGameManager;
 
     // Use this for initialization
     void Start()
     {
         Transform gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
+        endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
         APlayerSide = gameboardPanel.Find("A_PlayerSide").GetComponent<RectTransform>();
         BPlayerSide = gameboardPanel.Find("B_PlayerSide").GetComponent<RectTransform>();
 		graveyard = gameboardPanel.Find ("InfoPanel/Graveyard").GetComponent<RectTransform> ();
@@ -156,8 +158,21 @@ public class TurnsManager : MonoBehaviour
         }
 
         DestroyDeadCards(cardsToDestroy);
-        EndPlayerTurn();
+        CheckIfPlayerWon();
     }   //4. faza
+
+    private void CheckIfPlayerWon()
+    {
+        if (aPlayer.Health <= 0)
+        {
+            endGameManager.EndGame(bPlayer, aPlayer);
+        }
+        if (bPlayer.Health <= 0)
+        {
+            endGameManager.EndGame(aPlayer, bPlayer);
+        }
+        EndPlayerTurn();
+    }
 
     //POZIVANJE DELEGATA
     private void CallOnEndTurn()

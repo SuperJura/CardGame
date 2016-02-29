@@ -10,14 +10,7 @@ public class BasePlayer : MonoBehaviour {
     public int Health
     {
         get { return health; }
-        set
-        {
-            health = value;
-            if (health <= 0)
-            {
-                GameObject.Find("GameManager").GetComponent<EndGameManager>().EndGameAI(this);
-            }
-        }
+        set { health = value; }
     }
     
     public TurnsManager turnsManager;
@@ -35,7 +28,7 @@ public class BasePlayer : MonoBehaviour {
     public virtual void Start()
     {
         ICardDatabase database = Repository.GetCardDatabaseInstance();
-        health = 5;
+        health = 1;
         deck = database.GetRandomDeck();
 
         FillHand();
