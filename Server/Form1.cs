@@ -15,9 +15,10 @@ namespace GameServer
         private void btnStartServer_Click(object sender, EventArgs e)
         {
             wsServer = new WebSocketServer(8080);
-            wsServer.AddWebSocketService<GameBehavior>("/GameBehavior");
+            wsServer.AddWebSocketService<LobbyBehavior>("/LobbyBehavior");
             wsServer.Start();
             WriteToEventMsg("Server slusa na portu 8080");
+            btnStartServer.Enabled = false;
         }
 
         public void WriteToEventMsg(string msg)

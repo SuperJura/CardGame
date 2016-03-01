@@ -149,7 +149,6 @@ public class TurnsManager : MonoBehaviour
         List<RectTransform> cardsToDestroy = new List<RectTransform>();
         foreach (RectTransform card in defenderPlayField)
         {
-            Debug.Log(card.name);
             int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text);
             if (health <= 0)
             {

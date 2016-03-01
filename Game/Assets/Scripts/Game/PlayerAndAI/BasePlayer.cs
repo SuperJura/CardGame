@@ -54,7 +54,7 @@ public class BasePlayer : MonoBehaviour {
     {
         GameObject go = (GameObject)Resources.Load("GameResources/Card");
 
-        RectTransform cardRectTransform = GameObject.Instantiate((RectTransform)go.transform);
+        RectTransform cardRectTransform = Instantiate((RectTransform)go.transform);
         Card card = GetCardFromDeck();
 
         cardRectTransform.Find("CardName").GetComponentInChildren<Text>().text = card.Name;
@@ -72,7 +72,7 @@ public class BasePlayer : MonoBehaviour {
                 cardRectTransform.GetComponent<Image>().color = Color.white;
                 break;
             case Enumerations.EquipmentQuality.Rare:
-                cardRectTransform.GetComponent<Image>().color = new Color(78 / 255f, 78 / 255f, 204 / 255f);  //blue
+                cardRectTransform.GetComponent<Image>().color = new Color(0 / 255f, 107 / 255f, 255 / 255f);  //blue
                 break;
             case Enumerations.EquipmentQuality.Legendary:
                 cardRectTransform.GetComponent<Image>().color = new Color(212 / 255f, 199 / 255f, 48 / 255f); //yellow

@@ -10,6 +10,7 @@ public class OnlineGameMenuManager : MonoBehaviour {
     private Button btnConnectToServer;
     private Transform transformPlayerList;
     private Text errorText;
+    private GameObject waitingBar;
 
     void Start () {
         onlineGameManager = GameObject.Find("GameManager").GetComponent<OnlineGameManager>();
@@ -22,12 +23,21 @@ public class OnlineGameMenuManager : MonoBehaviour {
         btnConnectToServer = transform.Find("ConnectToServer").GetComponent<Button>();
         transformPlayerList = transform.Find("CurrentPlayers/ListOfPlayers");
         errorText = transform.Find("ErrorText").GetComponent<Text>();
+        waitingBar = transform.Find("WaitingBar").gameObject;
+    }
+
+    void OnDestroy()
+    {
+        onlineGameManager.OnReceivePlayerList -= OnlineGameManager_OnReceivePlayerList;
+        onlineGameManager.OnPlayerJoined -= OnlineGameManager_OnPlayerJoined;
+        onlineGameManager.OnServerError -= OnlineGameManager_OnServerError;
     }
 
     private void OnlineGameManager_OnReceivePlayerList(string[] playerList)
     {
         foreach (Transform child in transformPlayerList)
         {
+            Debug.Log(child.name);
             Destroy(child.gameObject);
         }
 
@@ -59,6 +69,9 @@ public class OnlineGameMenuManager : MonoBehaviour {
                 StartCoroutine(DisplayError("Name cannot be empty"));
                 break;
             case 3:
+                StartCoroutine(DisplayError("Name cannot contain ;"));
+                break;
+            case 4:
                 StartCoroutine(DisplayError("Error while connecting"));
                 break;
         }
@@ -72,5 +85,12 @@ public class OnlineGameMenuManager : MonoBehaviour {
         btnStartOnlineGame.interactable = false;
         yield return new WaitForSeconds(5);
         errorText.enabled = false;
+    }
+
+    public void StartWaiting()
+    {
+        waitingBar.SetActive(true);
+        btnStartOnlineGame.enabled = false;
+        btnStartOnlineGame.GetComponentInChildren<Text>().text = "Waiting for opponent";
     }
 }

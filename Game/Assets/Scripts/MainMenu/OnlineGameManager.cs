@@ -17,6 +17,7 @@ class OnlineGameManager : MonoBehaviour
     public event OnServerErrorHandler OnServerError;
 
     private WebSocket ws;
+    private string nickname;
 
     public void ConnectToServer()
     {
@@ -25,15 +26,33 @@ class OnlineGameManager : MonoBehaviour
             CallOnServerError("2");
             return;
         }
-        //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
-        ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
-        //ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
+        if (txtNick.text.Contains(";"))
+        {
+            CallOnServerError("3");
+            return;
+        }
+        //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/LobbyBehavior"); //laptop
+        ws = new WebSocket("ws://192.168.1.247:8080/LobbyBehavior"); //ovo racunalo, ip adresa
+        //ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
         ws.OnOpen += ws_OnOpen;
         ws.OnError += ws_OnError;
         ws.OnClose += Ws_OnClose;
         ws.OnMessage += Ws_OnMessage;
 
         ws.Connect();
+    }
+
+    public void SendWantToPlay()
+    {
+        ws.Send("wantToPlay|");
+    }
+
+    public void CloseWebSocket()
+    {
+        if (ws != null && ws.IsAlive)
+        {
+            ws.Close();
+        }
     }
 
     private void Ws_OnMessage(object sender, MessageEventArgs e)
@@ -44,7 +63,8 @@ class OnlineGameManager : MonoBehaviour
         switch (message[0])
         {
             case "joined":
-                Dispatcher.Current.BeginInvoke(() => { CallOnPlayerJoined(message[1]); });
+                nickname = message[1];
+                Dispatcher.Current.BeginInvoke(() => { CallOnPlayerJoined(nickname); });
                 break;
             case "list":
                 Dispatcher.Current.BeginInvoke(() => { CallOnReceivePlayerList(message[1]); });
@@ -57,9 +77,9 @@ class OnlineGameManager : MonoBehaviour
 
     private void Ws_OnClose(object sender, CloseEventArgs e)
     {
-        if (e.Code == 1006)
+        if (e.Code == 1006) //ako je code 1006 znaci da se server uopce ne javlja
         {
-            Dispatcher.Current.BeginInvoke(() => { CallOnServerError("3"); });
+            Dispatcher.Current.BeginInvoke(() => { CallOnServerError("4"); });
         }
         Debug.Log("Close: " + e.Reason);
     }
@@ -71,16 +91,12 @@ class OnlineGameManager : MonoBehaviour
 
     private void ws_OnOpen(object sender, EventArgs e)
     {
-        Debug.Log("Connection established");
         ws.Send("join|" + txtNick.text);
     }
 
     void OnApplicationQuit()
     {
-        if (ws != null && ws.IsAlive)
-        {
-            ws.Close();
-        }
+        CloseWebSocket();
     }
 
     private void CallOnReceivePlayerList(string playerList)
