@@ -32,13 +32,17 @@
             this.btnStartServer = new System.Windows.Forms.Button();
             this.lbPlayers = new System.Windows.Forms.ListBox();
             this.lbEvents = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtUkupnoIgraca = new System.Windows.Forms.TextBox();
+            this.txtUkupnoIgracaCekaju = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(388, 184);
+            this.label1.Location = new System.Drawing.Point(407, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 13);
             this.label1.TabIndex = 0;
@@ -47,7 +51,7 @@
             // btnStartServer
             // 
             this.btnStartServer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStartServer.Location = new System.Drawing.Point(415, 228);
+            this.btnStartServer.Location = new System.Drawing.Point(434, 228);
             this.btnStartServer.Name = "btnStartServer";
             this.btnStartServer.Size = new System.Drawing.Size(75, 23);
             this.btnStartServer.TabIndex = 1;
@@ -69,17 +73,55 @@
             // 
             this.lbEvents.Dock = System.Windows.Forms.DockStyle.Right;
             this.lbEvents.FormattingEnabled = true;
-            this.lbEvents.Location = new System.Drawing.Point(528, 0);
+            this.lbEvents.Location = new System.Drawing.Point(566, 0);
             this.lbEvents.MultiColumn = true;
             this.lbEvents.Name = "lbEvents";
             this.lbEvents.Size = new System.Drawing.Size(382, 625);
             this.lbEvents.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(389, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Ukupno online igraca";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(392, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "ukupno igraca koji cekaju match";
+            // 
+            // txtUkupnoIgraca
+            // 
+            this.txtUkupnoIgraca.Location = new System.Drawing.Point(395, 29);
+            this.txtUkupnoIgraca.Name = "txtUkupnoIgraca";
+            this.txtUkupnoIgraca.ReadOnly = true;
+            this.txtUkupnoIgraca.Size = new System.Drawing.Size(100, 20);
+            this.txtUkupnoIgraca.TabIndex = 6;
+            // 
+            // txtUkupnoIgracaCekaju
+            // 
+            this.txtUkupnoIgracaCekaju.Location = new System.Drawing.Point(395, 99);
+            this.txtUkupnoIgracaCekaju.Name = "txtUkupnoIgracaCekaju";
+            this.txtUkupnoIgracaCekaju.ReadOnly = true;
+            this.txtUkupnoIgracaCekaju.Size = new System.Drawing.Size(100, 20);
+            this.txtUkupnoIgracaCekaju.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 625);
+            this.ClientSize = new System.Drawing.Size(948, 625);
+            this.Controls.Add(this.txtUkupnoIgracaCekaju);
+            this.Controls.Add(this.txtUkupnoIgraca);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lbEvents);
             this.Controls.Add(this.lbPlayers);
             this.Controls.Add(this.btnStartServer);
@@ -97,6 +139,10 @@
         private System.Windows.Forms.Button btnStartServer;
         private System.Windows.Forms.ListBox lbPlayers;
         private System.Windows.Forms.ListBox lbEvents;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtUkupnoIgraca;
+        private System.Windows.Forms.TextBox txtUkupnoIgracaCekaju;
     }
 }
 

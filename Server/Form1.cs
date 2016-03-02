@@ -47,5 +47,25 @@ namespace GameServer
                 lbPlayers.Items.Add(ID);
             }
         }
+
+        public void WriteToAllPlayerCounter(int count)
+        {
+            Invoke((Action)(() => WriteToTxtUkupnoIgraca(count)));
+        }
+
+        public void WriteToTxtUkupnoIgraca(int count)
+        {
+            txtUkupnoIgraca.Text = count.ToString();
+        }
+
+        public void WriteToAllPlayerWaitingCounter(int counter)
+        {
+            Invoke((Action)(() => WriteToTxtUkupnoIgracaCekaju(counter)));
+        }
+
+        public void WriteToTxtUkupnoIgracaCekaju(int counter)
+        {
+            txtUkupnoIgracaCekaju.Text = counter.ToString();
+        }
     }
 }

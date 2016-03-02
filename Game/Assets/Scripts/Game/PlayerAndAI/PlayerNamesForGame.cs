@@ -6,4 +6,5 @@
     public static string NicknameForCoopGameB;
 
     public static string NicknameForOnlineGame;
+    public static string OpponentForOnlineGame;
 }

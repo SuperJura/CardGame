@@ -17,4 +17,9 @@ public class GamesManager : MonoBehaviour {
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void LoadOnlineGame()
+    {
+        SceneManager.LoadScene("OnlineGame");
+    }
 }

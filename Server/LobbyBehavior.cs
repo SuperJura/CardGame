@@ -13,33 +13,40 @@ namespace GameServer
 {
     class LobbyBehavior : WebSocketBehavior
     {
-        static Dictionary<string, string> players;
-        static ObservableList<string> waitingPlayers;
+        public static Dictionary<string, string> players;  // ID, nickname
+        Matchmaking matchmaking;
+        static Random r;
         string nickname;
-
 
         static LobbyBehavior()
         {
+            r = new Random();
             players = new Dictionary<string, string>();
-            waitingPlayers = new ObservableList<string>();
-            waitingPlayers.OnAdd += WaitingPlayers_OnAdd;
         }
 
-        private static void WaitingPlayers_OnAdd(string item)
+        public LobbyBehavior()
         {
-            Program.myForm.WriteToEventMsg(item + " ceka svoj match");
+            matchmaking = Matchmaking.GetInstance();
         }
 
         protected override void OnOpen()
         {
-            Program.myForm.WriteToEventMsg(ID + " je otvorio konekciju");
+            Logger.LogOnOpen(ID);
+            matchmaking.OnMatch += Sessions.OnMatchListener;    //posto postoji samo jedan sessionManager, samo jedan objekt ce biti predplacen na OnMatch
+                                                                //sessionManager se inicializira pri prvom requestu, tako da nemoze biti u konstruktoru
         }
 
         protected override void OnClose(CloseEventArgs e)
         {
+            if (matchmaking.Contains(players[ID]))    //ako je cekao match, makni ga
+            {
+                matchmaking.Remove(players[ID]);
+            }
+
             players.Remove(ID);
-            Program.myForm.WriteToPlayerMsg(ID + " > " + nickname);
-            Program.myForm.WriteToEventMsg(nickname + " se odspojio sa servera");
+            Logger.LogAllPlayerCounter(players.Count);
+            Logger.LogOnlinePlayer(nickname);
+            Logger.LogEventMsg(nickname + " se odspojio sa servera");
             SendListOfPlayersToAll();
         }
 
@@ -57,11 +64,6 @@ namespace GameServer
             }
         }
 
-        private void WantToPlayStatement()
-        {
-            waitingPlayers.Add(nickname);
-        }
-
         private void JoinStatement(string[] message)
         {
             if (AddNewPlayer(message[1]))
@@ -71,8 +73,25 @@ namespace GameServer
             else
             {
                 Sessions.SendTo("error|1", ID);
-                Program.myForm.WriteToEventMsg(message[1] + " se nemoze spojiti jer je nick zauzet");
+                Logger.LogEventMsg(message[1] + " se nemoze spojiti jer je nick zauzet");
             }
+        }
+
+        private void WantToPlayStatement()
+        {
+            Logger.LogEventMsg(nickname + " ceka za match");
+            matchmaking.Add(nickname);
+        }
+
+        private bool AddNewPlayer(string nick)
+        {
+            if (players.Values.Contains(nick))
+            {
+                return false;   //ako vec postoji igrac s tim nickom, vrati false
+            }
+            players.Add(ID, nick);
+            nickname = nick;    //postavi nick u klasnu varijablu
+            return true;
         }
 
         private void AddedNewPlayer()
@@ -80,8 +99,9 @@ namespace GameServer
             Sessions.SendTo("joined|" + nickname, ID);  //posalji klijentu poruku da se uspjesno spojio
             SendListOfPlayersToAll();   //posalji svima da se netko spojio
 
-            Program.myForm.WriteToPlayerMsg(ID + " > " + nickname); //logiraj
-            Program.myForm.WriteToEventMsg(nickname + " se spojio na server");
+            Logger.LogOnlinePlayer(nickname); //logiraj
+            Logger.LogEventMsg(nickname + " se spojio na server");
+            Logger.LogAllPlayerCounter(players.Count);
         }
 
         private void SendListOfPlayersToAll()
@@ -98,15 +118,5 @@ namespace GameServer
             }
         }
 
-        private bool AddNewPlayer(string nick)
-        {
-            if (players.Values.Contains(nick))
-            {
-                return false;   //ako vec postoji igrac s tim nickom, vrati false
-            }
-            players.Add(ID, nick);
-            nickname = nick;    //postavi nick u klasnu varijablu
-            return true;
-        }
     }
 }

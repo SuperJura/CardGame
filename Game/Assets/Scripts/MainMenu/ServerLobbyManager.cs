@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using WebSocketSharp;
 
-class OnlineGameManager : MonoBehaviour
+class ServerLobbyManager : MonoBehaviour
 {
     public Text txtNick;
 
@@ -12,6 +12,9 @@ class OnlineGameManager : MonoBehaviour
 
     public delegate void OnPlayerJoinedHandler(string nick);
     public event OnPlayerJoinedHandler OnPlayerJoined;
+
+    public delegate void OnStartOnlineGameHandler(string opponent);
+    public event OnStartOnlineGameHandler OnStartOnlineGame;
 
     public delegate void OnServerErrorHandler(int errorCode);
     public event OnServerErrorHandler OnServerError;
@@ -69,6 +72,9 @@ class OnlineGameManager : MonoBehaviour
             case "list":
                 Dispatcher.Current.BeginInvoke(() => { CallOnReceivePlayerList(message[1]); });
                 break;
+            case "playing":
+                Dispatcher.Current.BeginInvoke(() => { CallOnStartOnlineGame(message[1]); });
+                break;
             case "error":
                 Dispatcher.Current.BeginInvoke(() => { CallOnServerError(message[1]); });
                 break;
@@ -121,6 +127,14 @@ class OnlineGameManager : MonoBehaviour
         if (OnServerError != null)
         {
             OnServerError(int.Parse(errorCode));
+        }
+    }
+
+    public void CallOnStartOnlineGame(string opponent)
+    {
+        if (OnStartOnlineGame != null)
+        {
+            OnStartOnlineGame(opponent);
         }
     }
 

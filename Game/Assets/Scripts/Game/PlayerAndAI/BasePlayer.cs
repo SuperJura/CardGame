@@ -28,7 +28,7 @@ public class BasePlayer : MonoBehaviour {
     public virtual void Start()
     {
         ICardDatabase database = Repository.GetCardDatabaseInstance();
-        health = 1;
+        health = 15;
         deck = database.GetRandomDeck();
 
         FillHand();

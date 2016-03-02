@@ -5,18 +5,20 @@ using System;
 
 public class OnlineGameMenuManager : MonoBehaviour {
 
-    private OnlineGameManager onlineGameManager;
+    private ServerLobbyManager onlineGameManager;
     private Button btnStartOnlineGame;
     private Button btnConnectToServer;
     private Transform transformPlayerList;
     private Text errorText;
     private GameObject waitingBar;
+    private InputField txtNick;
 
     void Start () {
-        onlineGameManager = GameObject.Find("GameManager").GetComponent<OnlineGameManager>();
+        onlineGameManager = GameObject.Find("GameManager").GetComponent<ServerLobbyManager>();
 
         onlineGameManager.OnReceivePlayerList += OnlineGameManager_OnReceivePlayerList;
         onlineGameManager.OnPlayerJoined += OnlineGameManager_OnPlayerJoined;
+        onlineGameManager.OnStartOnlineGame += OnlineGameManager_OnStartOnlineGame;
         onlineGameManager.OnServerError += OnlineGameManager_OnServerError;
 
         btnStartOnlineGame = transform.Find("StartOnlineGame").GetComponent<Button>();
@@ -24,6 +26,16 @@ public class OnlineGameMenuManager : MonoBehaviour {
         transformPlayerList = transform.Find("CurrentPlayers/ListOfPlayers");
         errorText = transform.Find("ErrorText").GetComponent<Text>();
         waitingBar = transform.Find("WaitingBar").gameObject;
+        txtNick = transform.Find("Nickname").GetComponent<InputField>();
+    }
+
+    private void OnlineGameManager_OnStartOnlineGame(string opponent)
+    {
+        PlayerNamesForGame.NicknameForOnlineGame = txtNick.transform.Find("Text").GetComponent<Text>().text;
+        PlayerNamesForGame.OpponentForOnlineGame = opponent;
+
+        GamesManager gamesManager = GameObject.Find("GameManager").GetComponent<GamesManager>();
+        gamesManager.LoadOnlineGame();
     }
 
     void OnDestroy()
@@ -37,7 +49,6 @@ public class OnlineGameMenuManager : MonoBehaviour {
     {
         foreach (Transform child in transformPlayerList)
         {
-            Debug.Log(child.name);
             Destroy(child.gameObject);
         }
 
@@ -56,6 +67,7 @@ public class OnlineGameMenuManager : MonoBehaviour {
     {
         btnStartOnlineGame.interactable = true;
         btnConnectToServer.interactable = false;
+        txtNick.enabled = false;
     }
 
     private void OnlineGameManager_OnServerError(int errorCode)
@@ -83,6 +95,7 @@ public class OnlineGameMenuManager : MonoBehaviour {
         errorText.enabled = true;
         btnConnectToServer.interactable = true;
         btnStartOnlineGame.interactable = false;
+        txtNick.enabled = true;
         yield return new WaitForSeconds(5);
         errorText.enabled = false;
     }
