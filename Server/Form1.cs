@@ -16,6 +16,7 @@ namespace GameServer
         {
             wsServer = new WebSocketServer(8080);
             wsServer.AddWebSocketService<LobbyBehavior>("/LobbyBehavior");
+            wsServer.AddWebSocketService<GameBehavior>("/GameBehavior");
             wsServer.Start();
             WriteToEventMsg("Server slusa na portu 8080");
             btnStartServer.Enabled = false;
@@ -53,7 +54,7 @@ namespace GameServer
             Invoke((Action)(() => WriteToTxtUkupnoIgraca(count)));
         }
 
-        public void WriteToTxtUkupnoIgraca(int count)
+        private void WriteToTxtUkupnoIgraca(int count)
         {
             txtUkupnoIgraca.Text = count.ToString();
         }
@@ -63,9 +64,19 @@ namespace GameServer
             Invoke((Action)(() => WriteToTxtUkupnoIgracaCekaju(counter)));
         }
 
-        public void WriteToTxtUkupnoIgracaCekaju(int counter)
+        private void WriteToTxtUkupnoIgracaCekaju(int counter)
         {
             txtUkupnoIgracaCekaju.Text = counter.ToString();
+        }
+
+        public void WriteToAllPlayersPlayingCounter(int counter)
+        {
+            Invoke((Action)(() => WriteToTxtUkupnoIgracaIgraju(counter)));
+        }
+
+        private void WriteToTxtUkupnoIgracaIgraju(int coutner)
+        {
+            txtUkupnoIgracaIgraju.Text = coutner.ToString();
         }
     }
 }

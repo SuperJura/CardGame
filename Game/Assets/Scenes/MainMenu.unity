@@ -3798,7 +3798,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1080392756}
+      - m_Target: {fileID: 860323259}
         m_MethodName: ExitApplication
         m_Mode: 1
         m_Arguments:
@@ -3877,7 +3877,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.87900007, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -5.000122}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198812435
@@ -4359,8 +4359,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 46840401}
   m_HandleRect: {fileID: 46840400}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.9885796
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

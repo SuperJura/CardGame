@@ -44,7 +44,7 @@ namespace GameServer
             }
 
             players.Remove(ID);
-            Logger.LogAllPlayerCounter(players.Count);
+            Logger.LogAllPlayersInLobby(players.Count);
             Logger.LogOnlinePlayer(nickname);
             Logger.LogEventMsg(nickname + " se odspojio sa servera");
             SendListOfPlayersToAll();
@@ -101,7 +101,7 @@ namespace GameServer
 
             Logger.LogOnlinePlayer(nickname); //logiraj
             Logger.LogEventMsg(nickname + " se spojio na server");
-            Logger.LogAllPlayerCounter(players.Count);
+            Logger.LogAllPlayersInLobby(players.Count);
         }
 
         private void SendListOfPlayersToAll()

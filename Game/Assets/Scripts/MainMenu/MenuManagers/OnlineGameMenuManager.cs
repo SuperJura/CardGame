@@ -5,7 +5,7 @@ using System;
 
 public class OnlineGameMenuManager : MonoBehaviour {
 
-    private ServerLobbyManager onlineGameManager;
+    private ServerLobbyBehavior onlineGameManager;
     private Button btnStartOnlineGame;
     private Button btnConnectToServer;
     private Transform transformPlayerList;
@@ -14,7 +14,7 @@ public class OnlineGameMenuManager : MonoBehaviour {
     private InputField txtNick;
 
     void Start () {
-        onlineGameManager = GameObject.Find("GameManager").GetComponent<ServerLobbyManager>();
+        onlineGameManager = GameObject.Find("GameManager").GetComponent<ServerLobbyBehavior>();
 
         onlineGameManager.OnReceivePlayerList += OnlineGameManager_OnReceivePlayerList;
         onlineGameManager.OnPlayerJoined += OnlineGameManager_OnPlayerJoined;

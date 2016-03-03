@@ -22,4 +22,10 @@ public class GamesManager : MonoBehaviour {
     {
         SceneManager.LoadScene("OnlineGame");
     }
+
+    public void ExitApplication()
+    {
+        Application.Quit();
+    }
+
 }

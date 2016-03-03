@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.3f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -97,16 +95,18 @@
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\BasePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\BotPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\CoopPlayer.cs" />
-    <Compile Include="Assets\Scripts\Game\PlayerAndAI\NetPlayer.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerAndAI\OnlineOpponent.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerAndAI\OnlinePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\PlayerNamesForGame.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerLoseHealthEventArgs.cs" />
+    <Compile Include="Assets\Scripts\Game\ServerGameBehavior.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\GamesManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\BotGameMenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\CoopGameMenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\OnlineGameMenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\ServerLobbyManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ServerLobbyBehavior.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

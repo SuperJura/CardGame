@@ -36,13 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtUkupnoIgraca = new System.Windows.Forms.TextBox();
             this.txtUkupnoIgracaCekaju = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUkupnoIgracaIgraju = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(407, 184);
+            this.label1.Location = new System.Drawing.Point(402, 261);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +53,7 @@
             // btnStartServer
             // 
             this.btnStartServer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnStartServer.Location = new System.Drawing.Point(434, 228);
+            this.btnStartServer.Location = new System.Drawing.Point(429, 305);
             this.btnStartServer.Name = "btnStartServer";
             this.btnStartServer.Size = new System.Drawing.Size(75, 23);
             this.btnStartServer.TabIndex = 1;
@@ -84,9 +86,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(389, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
+            this.label2.Size = new System.Drawing.Size(125, 13);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Ukupno online igraca";
+            this.label2.Text = "Ukupno igraca u lobby-ju";
             // 
             // label3
             // 
@@ -113,11 +115,30 @@
             this.txtUkupnoIgracaCekaju.Size = new System.Drawing.Size(100, 20);
             this.txtUkupnoIgracaCekaju.TabIndex = 7;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(392, 149);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "ukupno igraca koji igraju match";
+            // 
+            // txtUkupnoIgracaIgraju
+            // 
+            this.txtUkupnoIgracaIgraju.Location = new System.Drawing.Point(395, 165);
+            this.txtUkupnoIgracaIgraju.Name = "txtUkupnoIgracaIgraju";
+            this.txtUkupnoIgracaIgraju.ReadOnly = true;
+            this.txtUkupnoIgracaIgraju.Size = new System.Drawing.Size(100, 20);
+            this.txtUkupnoIgracaIgraju.TabIndex = 9;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 625);
+            this.Controls.Add(this.txtUkupnoIgracaIgraju);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtUkupnoIgracaCekaju);
             this.Controls.Add(this.txtUkupnoIgraca);
             this.Controls.Add(this.label3);
@@ -143,6 +164,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUkupnoIgraca;
         private System.Windows.Forms.TextBox txtUkupnoIgracaCekaju;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtUkupnoIgracaIgraju;
     }
 }
 

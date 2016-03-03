@@ -13,7 +13,7 @@ namespace GameServer
             Program.myForm.WriteToEventMsg(ID + " je otvorio konekciju");
         }
 
-        public static void LogAllPlayerCounter(int count)
+        public static void LogAllPlayersInLobby(int count)
         {
             Program.myForm.WriteToAllPlayerCounter(count);
         }
@@ -31,6 +31,11 @@ namespace GameServer
         public static void LogWaitingPlayers(int count)
         {
             Program.myForm.WriteToAllPlayerWaitingCounter(count);
+        }
+
+        public static void LogPlayingPlayers(int count)
+        {
+            Program.myForm.WriteToAllPlayersPlayingCounter(count);
         }
     }
 }

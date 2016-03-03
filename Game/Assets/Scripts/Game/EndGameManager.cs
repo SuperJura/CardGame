@@ -18,7 +18,22 @@ public class EndGameManager : MonoBehaviour {
         Debug.Log(winner.playerName + " won the game");
         DisplayDetails(winner.playerName, loser.playerName);
         SetMatchHistory();
-        menuManager.LoadMenu(this.gameObject);
+        menuManager.LoadMenu(gameObject);
+    }
+
+    public void EndGame(char winner, char loser)
+    {
+        BasePlayer aPlayer = transform.parent.Find("Gameboard/MainPanel/A_PlayerSide").GetComponent<BasePlayer>();
+        BasePlayer bPlayer = transform.parent.Find("Gameboard/MainPanel/B_PlayerSide").GetComponent<BasePlayer>();
+
+        if (char.ToLower(winner) == 'a')
+        {
+            EndGame(aPlayer, bPlayer);
+        }
+        else
+        {
+            EndGame(bPlayer, aPlayer);
+        }
     }
 
     private void SetMatchHistory()

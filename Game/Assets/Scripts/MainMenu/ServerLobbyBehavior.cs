@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using WebSocketSharp;
 
-class ServerLobbyManager : MonoBehaviour
+class ServerLobbyBehavior : MonoBehaviour
 {
     public Text txtNick;
 
@@ -19,7 +19,7 @@ class ServerLobbyManager : MonoBehaviour
     public delegate void OnServerErrorHandler(int errorCode);
     public event OnServerErrorHandler OnServerError;
 
-    private WebSocket ws;
+    private static WebSocket ws;
     private string nickname;
 
     public void ConnectToServer()
@@ -50,7 +50,7 @@ class ServerLobbyManager : MonoBehaviour
         ws.Send("wantToPlay|");
     }
 
-    public void CloseWebSocket()
+    public static void CloseWebSocket()
     {
         if (ws != null && ws.IsAlive)
         {

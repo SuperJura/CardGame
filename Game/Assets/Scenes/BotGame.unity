@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 601285416}
+      - m_Target: {fileID: 460402690}
         m_MethodName: ExitApplication
         m_Mode: 1
         m_Arguments:

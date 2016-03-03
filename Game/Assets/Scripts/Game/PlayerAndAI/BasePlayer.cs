@@ -21,7 +21,7 @@ public class BasePlayer : MonoBehaviour {
     public virtual void Awake()
     {
         deck = new List<Card>(20);
-
+        Transform ph = transform.Find("PlayerHand");
         myHand = transform.Find("PlayerHand").GetComponent<RectTransform>();
     }
 

@@ -21,11 +21,6 @@ public class MenuManager : MonoBehaviour {
         OpenCurrentMenu();
     }
 
-    public void ExitApplication()
-    {
-        Application.Quit();
-    }
-
     private IEnumerator InitializeMenus()
     {
         foreach (Transform menuChild in transform)
