@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using WebSocketSharp;
 using WebSocketSharp.Server;
@@ -13,7 +14,7 @@ namespace GameServer
 
         public static Dictionary<string, string> playersInGames;    //nickname, nickname
         public static Dictionary<string, string> players;   //ID, nickname
-        private static object syncLock;
+        private static object syncLockStartGame;
         private string nickname;
         private string opponentNickname;
 
@@ -21,7 +22,7 @@ namespace GameServer
         {
             playersInGames = new Dictionary<string, string>();
             players = new Dictionary<string, string>();
-            syncLock = new object();
+            syncLockStartGame = new object();
         }
 
         protected override void OnMessage(MessageEventArgs e)
@@ -32,12 +33,54 @@ namespace GameServer
                 case "startGame":
                     StartGameStatement(message[1]);
                     break;
+                case "cardDrawed":
+                    CardDrawedStatement(message[1]);
+                    break;
+                case "cardPlayed":
+                    CardPlayedStatement(message[1]);
+                    break;
+            }
+        }
+
+        private void CardPlayedStatement(string staticID)
+        {
+            Sessions.SendTo("opponentPlayed|" + staticID, GetOpponentID());
+        }
+
+        private void CardDrawedStatement(string staticID)
+        {
+            Sessions.SendTo("opponentDrawed|" + staticID, GetOpponentID());
+        }
+
+        private void StartGameStatement(string nicknamesInMessage)
+        {
+            string[] nicknames = nicknamesInMessage.Split(';');
+            nickname = nicknames[0];
+            opponentNickname = nicknames[1];
+
+            players.Add(ID, nickname);
+            if (GetOpponentID() != "")
+            {
+                Thread.Sleep(100);
+            }
+            //samo jedan igrac moze "zapoceti" igru, tj. upisati sebe i protivnika u listu igraca
+            lock (syncLockStartGame)
+            {
+                //prvi thread(player) ce uci u if, drugi nece
+                if (!playersInGames.ContainsValue(nickname))
+                {
+                    playersInGames.Add(nickname, opponentNickname);
+                    Logger.LogEventMsg(nickname + " " + opponentNickname + " su poceli igrati!");
+                    Logger.LogPlayingPlayers(playersInGames.Count * 2);
+                    Logger.LogEventMsg("OpponentID: " + GetOpponentID());
+                    Sessions.SendTo("playerOnTurn|" + nickname, GetOpponentID());
+                }
             }
         }
 
         protected override void OnClose(CloseEventArgs e)
         {
-            string otherPlayerID = players.Where(x => x.Value == opponentNickname).FirstOrDefault().Key;
+            string otherPlayerID = GetOpponentID();
             if (playersInGames.Keys.Contains(nickname))
             {
                 players.Remove(ID);
@@ -53,24 +96,9 @@ namespace GameServer
             Sessions.SendTo("unexpectedEnd|", otherPlayerID);
         }
 
-        private void StartGameStatement(string nicknamesInMessage)
+        private string GetOpponentID()
         {
-            lock (syncLock)
-            {
-                string[] nicknames = nicknamesInMessage.Split(';');
-                nickname = nicknames[0];
-                opponentNickname = nicknames[1];
-
-                players.Add(ID, nickname);
-
-                if (!playersInGames.ContainsValue(nickname))
-                {
-                    playersInGames.Add(nickname, opponentNickname);
-                    Logger.LogEventMsg(nickname + " " + opponentNickname + " su poceli igrati!");
-                    Logger.LogPlayingPlayers(playersInGames.Count * 2);
-                }
-
-            }
+            return players.Where(x => x.Value == opponentNickname).FirstOrDefault().Key;
         }
     }
 

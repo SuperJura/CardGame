@@ -7,6 +7,7 @@ public interface ICardDatabase{
 
     Card GetCard(string staticID);
     Card GetRandomCard();
+    Card GetCopy(Card original);
     List<Card> GetRandomDeck();
 
 }

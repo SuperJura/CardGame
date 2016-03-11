@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class AI : BasePlayer {
+public class Bot : BasePlayer {
 
     bool playing;
 
@@ -16,6 +16,8 @@ public class AI : BasePlayer {
     public override void Start()
     {
         base.Start();
+
+        FillHand();
 
         turnsManager.OnEndTurn += TurnsManager_OnEndTurn;
     }
@@ -52,7 +54,7 @@ public class AI : BasePlayer {
         }
     }
 
-    private static void HideCardDetails(RectTransform card)
+    private void HideCardDetails(RectTransform card)
     {
         foreach (Transform child in card.transform) //makni detalje karte s prikaza
         {
@@ -62,7 +64,7 @@ public class AI : BasePlayer {
         card.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 1;
     }
 
-    private static void ShowCardDetails(RectTransform card)
+    private void ShowCardDetails(RectTransform card)
     {
 
         foreach (RectTransform child in card)

@@ -11,12 +11,6 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
 
     private RectTransform myRectTransform;  //rect transform same karte
 
-    // Use this for initialization
-    void Start()
-    {
-        myRectTransform = GetComponent<RectTransform>();
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         PlayCard();
@@ -24,6 +18,7 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
 
     public void PlayCard()
     {
+        myRectTransform = GetComponent<RectTransform>();
         if (CDField.childCount < 5)
         {
             transform.SetParent(CDField);

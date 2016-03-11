@@ -6,6 +6,8 @@ public class CoopPlayer : BasePlayer {
     public override void Start ()
     {
         base.Start();
+
+        FillHand();
     }
 
     public override void Awake ()

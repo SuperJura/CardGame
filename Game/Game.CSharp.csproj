@@ -91,8 +91,8 @@
     <Compile Include="Assets\Scripts\Game\EndTurnEventArgs.cs" />
     <Compile Include="Assets\Scripts\Game\Enumerations.cs" />
     <Compile Include="Assets\Scripts\Game\GUIManager.cs" />
-    <Compile Include="Assets\Scripts\Game\PlayerAndAI\AI.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\BasePlayer.cs" />
+    <Compile Include="Assets\Scripts\Game\PlayerAndAI\Bot.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\BotPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\CoopPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\OnlineOpponent.cs" />
@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Game\PlayerLoseHealthEventArgs.cs" />
     <Compile Include="Assets\Scripts\Game\ServerGameBehavior.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManager.cs" />
+    <Compile Include="Assets\Scripts\Game\TurnsManagerOnlineGame.cs" />
     <Compile Include="Assets\Scripts\MainMenu\GamesManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\BotGameMenuManager.cs" />

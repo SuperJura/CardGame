@@ -16,12 +16,13 @@ public class TurnsManager : MonoBehaviour
     public delegate void OnNotificationHandler(char player, string message);
     public event OnNotificationHandler OnNotification;
 
-    private char whoMoves;  //a = igrac A; b = igrac B
+    protected char whoMoves;  //a = igrac A; b = igrac B
+    protected BasePlayer aPlayer;
+    protected BasePlayer bPlayer;
+
     private RectTransform APlayerSide;
     private RectTransform BPlayerSide;
 	private RectTransform graveyard;
-    private BasePlayer aPlayer;
-    private BasePlayer bPlayer;
     private int nublerOfTurns;
     private EndGameManager endGameManager;
 
@@ -32,7 +33,7 @@ public class TurnsManager : MonoBehaviour
         endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
         APlayerSide = gameboardPanel.Find("A_PlayerSide").GetComponent<RectTransform>();
         BPlayerSide = gameboardPanel.Find("B_PlayerSide").GetComponent<RectTransform>();
-		graveyard = gameboardPanel.Find ("InfoPanel/Graveyard").GetComponent<RectTransform> ();
+        graveyard = gameboardPanel.Find ("InfoPanel/Graveyard").GetComponent<RectTransform> ();
         aPlayer = APlayerSide.GetComponent<BasePlayer>();
         bPlayer = BPlayerSide.GetComponent<BasePlayer>();
         InitializeGUI();
@@ -79,7 +80,7 @@ public class TurnsManager : MonoBehaviour
         }
 
         CheckForReadyCards();
-    }   //2. faza, tipa je IEnumerator zato sto se pauzira na par sekundi
+    }
 
     private void CheckForReadyCards()
     {
@@ -97,16 +98,16 @@ public class TurnsManager : MonoBehaviour
         }
         while (listOfReadyCards.Count != 0)
         {
-			if (GetPlayFieldOfCurrentPlayer().childCount >= 5) {
-				Debug.Log ("HELLO");
-				break;
-			}
+            if (GetPlayFieldOfCurrentPlayer().childCount >= 5) {
+                Debug.Log ("HELLO");
+                break;
+            }
 
-			listOfReadyCards[0].SetParent(PlayField);
-			listOfReadyCards.RemoveAt(0);
+            listOfReadyCards[0].SetParent(PlayField);
+            listOfReadyCards.RemoveAt(0);
         }
 
-		StartCoroutine(StartAttackPhase());
+        StartCoroutine(StartAttackPhase());
     }   //-medufaza- poslje 2. faze se prebacuju karte s 0 cd na PlayField
 
     private IEnumerator StartAttackPhase()
@@ -219,7 +220,7 @@ public class TurnsManager : MonoBehaviour
         FillHand();
     }
 
-    private void FillHand()
+    public virtual void FillHand()
     {
         switch (whoMoves)
         {
@@ -265,7 +266,7 @@ public class TurnsManager : MonoBehaviour
         card.transform.localScale = new Vector3(1, 1, 1);
     }   //Postavlja Scale karte na 1, 1, 1
 
-	private void UnfocusAliveCard(RectTransform card)
+    private void UnfocusAliveCard(RectTransform card)
 	{
 		int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
 
@@ -280,7 +281,7 @@ public class TurnsManager : MonoBehaviour
         card.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
     }   //Postavlja Scale karte na 1.1, 1.1, 1.1
 
-	private void LowFocusCard(RectTransform card)
+    private void LowFocusCard(RectTransform card)
 	{
 		card.localScale = new Vector3 (0.9f, 0.9f, 0.9f);
 	}	//Postavlja Scale karte na 0.9, 0.9, 0.9
@@ -379,6 +380,28 @@ public class TurnsManager : MonoBehaviour
         }
 
         return ' ';
+    }
+
+    //JAVNE METODE
+    public void PlayerOnTurn(string nickname)
+    {
+        char playerOnTurn = '-';
+        if (aPlayer.playerName == nickname)
+        {
+            playerOnTurn = 'a';
+        }
+        else
+        {
+            playerOnTurn = 'b';
+        }
+
+        if (whoMoves != playerOnTurn)
+        {
+            DisablePicking();
+            whoMoves = playerOnTurn;
+            nublerOfTurns = 0;
+            CallOnEndTurn();
+        }
     }
 
     //RECTTRANSFORM POMOCNE METODE

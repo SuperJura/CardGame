@@ -12,12 +12,13 @@ public class BasePlayer : MonoBehaviour {
         get { return health; }
         set { health = value; }
     }
-    
+
     public TurnsManager turnsManager;
 
     protected List<Card> deck;
     protected RectTransform myHand;
-    
+    protected ICardDatabase database;
+
     public virtual void Awake()
     {
         deck = new List<Card>(20);
@@ -27,11 +28,9 @@ public class BasePlayer : MonoBehaviour {
 
     public virtual void Start()
     {
-        ICardDatabase database = Repository.GetCardDatabaseInstance();
-        health = 15;
+        database = Repository.GetCardDatabaseInstance();
+        health = 1;
         deck = database.GetRandomDeck();
-
-        FillHand();
     }
 
     public virtual void FillHand()
@@ -57,6 +56,20 @@ public class BasePlayer : MonoBehaviour {
         RectTransform cardRectTransform = Instantiate((RectTransform)go.transform);
         Card card = GetCardFromDeck();
 
+        return FillRectTranformWithDetails(cardRectTransform, card);
+    }
+
+    protected RectTransform GetRectTransformCard(string staticID)
+    {
+        GameObject go = (GameObject)Resources.Load("GameResources/Card");
+
+        RectTransform cardRectTransform = Instantiate((RectTransform)go.transform);
+        Card card = database.GetCard(staticID);
+        return FillRectTranformWithDetails(cardRectTransform, card);
+    }
+
+    private RectTransform FillRectTranformWithDetails(RectTransform cardRectTransform, Card card)
+    {
         cardRectTransform.Find("CardName").GetComponentInChildren<Text>().text = card.Name;
         cardRectTransform.Find("CardStaticID").GetComponentInChildren<Text>().text = card.StaticIDCard;
         cardRectTransform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text = card.DefaultCooldown.ToString();
