@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class ServerGameBehavior : MonoBehaviour {
 
+    public delegate void OnCanStartHandler();
+    public event OnCanStartHandler OnCanStart;
+
     public delegate void OnOpponentDrawedHandler(string staticID);
     public event OnOpponentDrawedHandler OnOpponentDrawed;
 
@@ -65,6 +68,9 @@ public class ServerGameBehavior : MonoBehaviour {
             case "startedGame":
                 Debug.Log("Game Started!");
                 break;
+            case "canStart":
+                Dispatcher.Current.BeginInvoke(() => { CanStartStatement(); });
+                break;
             case "unexpectedEnd":
                 Dispatcher.Current.BeginInvoke(() => { UnexpectedEndStatement(); });
                 break;
@@ -88,6 +94,14 @@ public class ServerGameBehavior : MonoBehaviour {
     private void Ws_OnClose(object sender, CloseEventArgs e)
     {
         Debug.Log("Close: " + e.Reason);
+    }
+
+    private void CanStartStatement()
+    {
+        if (OnCanStart != null)
+        {
+            OnCanStart();
+        }
     }
 
     private void PlayerOnTurnStatement(string nicknamePlaying)

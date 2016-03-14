@@ -78,5 +78,16 @@ namespace GameServer
         {
             txtUkupnoIgracaIgraju.Text = coutner.ToString();
         }
+
+        //DEBUG
+        public void WriteToTest(string msg)
+        {
+            Invoke((Action)(() => WriteToTxtTest(msg)));
+        }
+
+        private void WriteToTxtTest(string msg)
+        {
+            txtTest.Text = msg;
+        }
     }
 }

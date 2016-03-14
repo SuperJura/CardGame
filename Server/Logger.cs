@@ -37,5 +37,10 @@ namespace GameServer
         {
             Program.myForm.WriteToAllPlayersPlayingCounter(count);
         }
+
+        public static void LogTest(string msg)
+        {
+            Program.myForm.WriteToTest(msg);
+        }
     }
 }

@@ -8,8 +8,12 @@ public class OnlinePlayer : BasePlayer {
     public override void Start()
     {
         gameBehavior = GameObject.Find("GameManager").GetComponent<ServerGameBehavior>();
+        gameBehavior.OnCanStart += GameBehavior_OnCanStart;
         base.Start();
+    }
 
+    private void GameBehavior_OnCanStart()
+    {
         FillHand();
     }
 

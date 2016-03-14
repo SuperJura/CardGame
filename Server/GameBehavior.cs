@@ -17,6 +17,7 @@ namespace GameServer
         private static object syncLockStartGame;
         private string nickname;
         private string opponentNickname;
+        private static int playersCount;
 
         static GameBehavior()
         {
@@ -44,11 +45,13 @@ namespace GameServer
 
         private void CardPlayedStatement(string staticID)
         {
+            Logger.LogEventMsg(nickname + " je odigrao" + staticID);
             Sessions.SendTo("opponentPlayed|" + staticID, GetOpponentID());
         }
 
         private void CardDrawedStatement(string staticID)
         {
+            Logger.LogEventMsg(nickname + " je povukao " + staticID + " saljem " + GetOpponentID());
             Sessions.SendTo("opponentDrawed|" + staticID, GetOpponentID());
         }
 
@@ -59,10 +62,11 @@ namespace GameServer
             opponentNickname = nicknames[1];
 
             players.Add(ID, nickname);
-            if (GetOpponentID() != "")
+            while(GetOpponentID() == "")
             {
                 Thread.Sleep(100);
             }
+            Logger.LogEventMsg(nickname + " igra protiv:" + opponentNickname);
             //samo jedan igrac moze "zapoceti" igru, tj. upisati sebe i protivnika u listu igraca
             lock (syncLockStartGame)
             {
@@ -70,12 +74,16 @@ namespace GameServer
                 if (!playersInGames.ContainsValue(nickname))
                 {
                     playersInGames.Add(nickname, opponentNickname);
-                    Logger.LogEventMsg(nickname + " " + opponentNickname + " su poceli igrati!");
-                    Logger.LogPlayingPlayers(playersInGames.Count * 2);
-                    Logger.LogEventMsg("OpponentID: " + GetOpponentID());
-                    Sessions.SendTo("playerOnTurn|" + nickname, GetOpponentID());
                 }
             }
+            playersCount++;
+            if (playersCount %2 == 0)
+            {
+                Sessions.SendTo("canStart|", ID);
+                Sessions.SendTo("canStart|", GetOpponentID());
+                Sessions.SendTo("playerOnTurn|" + nickname, GetOpponentID());
+            }
+            Logger.LogPlayingPlayers(playersCount);
         }
 
         protected override void OnClose(CloseEventArgs e)
