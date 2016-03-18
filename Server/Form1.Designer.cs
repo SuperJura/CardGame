@@ -38,7 +38,6 @@
             this.txtUkupnoIgracaCekaju = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUkupnoIgracaIgraju = new System.Windows.Forms.TextBox();
-            this.txtTest = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -133,20 +132,11 @@
             this.txtUkupnoIgracaIgraju.Size = new System.Drawing.Size(100, 20);
             this.txtUkupnoIgracaIgraju.TabIndex = 9;
             // 
-            // txtTest
-            // 
-            this.txtTest.Location = new System.Drawing.Point(388, 447);
-            this.txtTest.Name = "txtTest";
-            this.txtTest.ReadOnly = true;
-            this.txtTest.Size = new System.Drawing.Size(100, 20);
-            this.txtTest.TabIndex = 10;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 625);
-            this.Controls.Add(this.txtTest);
             this.Controls.Add(this.txtUkupnoIgracaIgraju);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtUkupnoIgracaCekaju);
@@ -176,7 +166,6 @@
         private System.Windows.Forms.TextBox txtUkupnoIgracaCekaju;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUkupnoIgracaIgraju;
-        private System.Windows.Forms.TextBox txtTest;
     }
 }
 

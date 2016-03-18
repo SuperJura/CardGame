@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections;
 
 [Serializable]
-public class Card
+public class Card : ICloneable
 {
     private static int idCounter = 0;
     public int IDCard { get; set; }
@@ -26,5 +25,21 @@ public class Card
         Attack = 5;
         DefaultCooldown = 5;
         CurrentCooldown = DefaultCooldown;
+    }
+
+    public object Clone()
+    {
+        Card copy = new Card();
+        copy.IDCard = copy.IDCard;
+        copy.StaticIDCard = StaticIDCard;
+        copy.Name = Name;
+        copy.ImagePath = ImagePath;
+        copy.Quality = Quality;
+        copy.Health = Health;
+        copy.Attack = Attack;
+        copy.DefaultCooldown = DefaultCooldown;
+        copy.CurrentCooldown = copy.DefaultCooldown;
+
+        return copy;
     }
 }

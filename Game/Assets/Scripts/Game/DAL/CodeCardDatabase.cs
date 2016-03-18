@@ -24,7 +24,7 @@ public class CodeCardDatabase : ICardDatabase {
         {
             if (c.StaticIDCard == staticID)
             {
-                return GetCopy(c);
+                return (Card)c.Clone();
             }
         }
         return null;
@@ -33,22 +33,6 @@ public class CodeCardDatabase : ICardDatabase {
     public Card GetRandomCard()
     {
         return AllCards[Random.Range(0, AllCards.Count)];
-    }
-
-    public Card GetCopy(Card original)
-    {
-        Card copy = new Card();
-        copy.IDCard = copy.IDCard;
-        copy.StaticIDCard = original.StaticIDCard;
-        copy.Name = original.Name;
-        copy.ImagePath = original.ImagePath;
-        copy.Quality = original.Quality;
-        copy.Health = original.Health;
-        copy.Attack = original.Attack;
-        copy.DefaultCooldown = original.DefaultCooldown;
-        copy.CurrentCooldown = copy.DefaultCooldown;
-
-        return copy;
     }
 
     public List<Card> GetRandomDeck()

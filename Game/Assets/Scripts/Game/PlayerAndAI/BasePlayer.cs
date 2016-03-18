@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Linq;
 
 public class BasePlayer : MonoBehaviour {
 
@@ -15,29 +16,33 @@ public class BasePlayer : MonoBehaviour {
 
     public TurnsManager turnsManager;
 
-    protected List<Card> deck;
     protected RectTransform myHand;
     protected ICardDatabase database;
+    protected List<Card> deck;
 
     public virtual void Awake()
     {
-        deck = new List<Card>(20);
         Transform ph = transform.Find("PlayerHand");
         myHand = transform.Find("PlayerHand").GetComponent<RectTransform>();
+        deck = new List<Card>();
+        foreach (Card card in Deck.Cards)
+        {
+            deck.Add((Card)card.Clone());
+        }
+
     }
 
     public virtual void Start()
     {
         database = Repository.GetCardDatabaseInstance();
         health = 1;
-        deck = database.GetRandomDeck();
     }
 
     public virtual void FillHand()
     {
         while (myHand.childCount < 5)
         {
-            if (deck.Count <= 0)
+            if (Deck.Cards.Count <= 0)
             {
                 return;
             }
@@ -97,8 +102,8 @@ public class BasePlayer : MonoBehaviour {
 
     protected Card GetCardFromDeck()
     {
-        Card card = deck[Random.Range(0, deck.Count)];
-        deck.Remove(card);
+        Card card = Deck.Cards[Random.Range(0, Deck.Cards.Count)];
+        Deck.Cards.Remove(card);
 
         return card;
     }
