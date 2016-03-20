@@ -60,7 +60,7 @@ class ServerLobbyBehavior : MonoBehaviour
 
     private void Ws_OnMessage(object sender, MessageEventArgs e)
     {
-        Debug.Log(e.Data);
+        Debug.Log("Lobby Behavior: " + e.Data);
         string[] message = e.Data.Split('|');
 
         switch (message[0])
@@ -137,5 +137,4 @@ class ServerLobbyBehavior : MonoBehaviour
             OnStartOnlineGame(opponent);
         }
     }
-
 }

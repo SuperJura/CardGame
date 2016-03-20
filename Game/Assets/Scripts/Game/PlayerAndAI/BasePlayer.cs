@@ -22,9 +22,9 @@ public class BasePlayer : MonoBehaviour {
 
     public virtual void Awake()
     {
-        Transform ph = transform.Find("PlayerHand");
         myHand = transform.Find("PlayerHand").GetComponent<RectTransform>();
-        deck = new List<Card>();
+
+        deck = new List<Card>();    //kloniraj sve karte iz deka u igracu dek
         foreach (Card card in Deck.Cards)
         {
             deck.Add((Card)card.Clone());
@@ -35,7 +35,7 @@ public class BasePlayer : MonoBehaviour {
     public virtual void Start()
     {
         database = Repository.GetCardDatabaseInstance();
-        health = 1;
+        health = 10;
     }
 
     public virtual void FillHand()

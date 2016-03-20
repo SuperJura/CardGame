@@ -1,5 +1,6 @@
 ﻿public enum DeckEnums
 {
     Random,
-    Custom
+    Custom,
+    Saved
 }

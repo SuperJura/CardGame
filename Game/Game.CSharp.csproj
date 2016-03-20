@@ -81,7 +81,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DeckPanelManager.cs" />
+    <Compile Include="Assets\FillDeckList.cs" />
+    <Compile Include="Assets\SavedDecksMenuManager.cs" />
     <Compile Include="Assets\Scripts\Dispatcher.cs" />
     <Compile Include="Assets\Scripts\Game\Card\Card.cs" />
     <Compile Include="Assets\Scripts\Game\Card\CardInteraction.cs" />
@@ -105,6 +106,9 @@
     <Compile Include="Assets\Scripts\Game\ServerGameBehavior.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManager.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManagerOnlineGame.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ChangeDeckScripts\CustomDeckCardControls.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\ChangeDeckScripts\FillCardList.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\DeckPanelManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\GamesManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\BotGameMenuManager.cs" />
@@ -112,6 +116,13 @@
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\CoopGameMenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MenuManagers\OnlineGameMenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ServerLobbyBehavior.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Configuration\Configuration.xml" />
+    <None Include="Assets\Decks\bb deck_1.xml" />
+    <None Include="Assets\Decks\jhh_0.xml" />
+    <None Include="Assets\Decks\samoCUbe_3.xml" />
+    <None Include="Assets\Decks\samoPande_2.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

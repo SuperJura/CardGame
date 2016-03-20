@@ -5,12 +5,20 @@ public class GamesManager : MonoBehaviour {
 
     public void LoadCoopGame()
     {
+        Deck.CheckCards();
         SceneManager.LoadScene("CoopGame");
     }
 
     public void LoadBotGame()
     {
+        Debug.Log(Deck.CheckCards());
         SceneManager.LoadScene("BotGame");
+    }
+
+    public void LoadOnlineGame()
+    {
+        Deck.CheckCards();
+        SceneManager.LoadScene("OnlineGame");
     }
 
     public void LoadMainMenu()
@@ -18,14 +26,8 @@ public class GamesManager : MonoBehaviour {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void LoadOnlineGame()
-    {
-        SceneManager.LoadScene("OnlineGame");
-    }
-
     public void ExitApplication()
     {
         Application.Quit();
     }
-
 }
