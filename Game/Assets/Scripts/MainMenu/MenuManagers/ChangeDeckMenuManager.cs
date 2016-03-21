@@ -20,7 +20,7 @@ public class ChangeDeckMenuManager : MonoBehaviour {
     public void CustomBtnClick()
     {
         Deck.DeckType = DeckEnums.Custom;
-        Deck.Cards = new List<Card>();
+        Deck.Cards.Clear();
         deckPanelManager.SetDeckType();
     }
 

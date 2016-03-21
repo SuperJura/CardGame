@@ -10,7 +10,7 @@ public class SavedDecksMenuManager : MonoBehaviour {
 
     public DeckPanelManager deckPanelManager;
 
-    public void UseDeckBtnClick()
+    public void LoadDeck()
     {
         ToggleGroup tg = transform.Find("DeckList/Decks").GetComponent<ToggleGroup>();
         tg.ActiveToggles().GetEnumerator().MoveNext();
@@ -18,10 +18,10 @@ public class SavedDecksMenuManager : MonoBehaviour {
         Transform panel = selectedDeck.transform;
 
         string DeckPath = panel.Find("DeckPath").GetComponent<Text>().text;
-        LoadDeck(DeckPath);
+        LoadDeckFromXML(DeckPath);
     }
 
-    private void LoadDeck(string DeckPath)
+    private void LoadDeckFromXML(string DeckPath)
     {
         XDocument doc = XDocument.Load(DeckPath);
 
