@@ -7,16 +7,27 @@ using System.IO;
 public class FillDeckList : MonoBehaviour
 {
 
-    ICardDatabase database;
+    private string applicationPath;
+    private ICardDatabase database;
 
     void Start()
     {
+        applicationPath = Application.dataPath;
+        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            applicationPath = Application.persistentDataPath;
+        }
         database = Repository.GetCardDatabaseInstance();
         FillList();
     }
 
-    private void FillList()
+    public void FillList()
     {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         string[] savedDecks = GetAllSavedDecks();
         foreach (string path in savedDecks)
         {
@@ -24,8 +35,8 @@ public class FillDeckList : MonoBehaviour
             {
                 GameObject go = (GameObject)Resources.Load("MainMenuResources/DeckItem");
                 RectTransform prefab = Instantiate((RectTransform)go.transform);
-
-                string[] deckNameDetails = path.Split('\\');
+                Debug.Log(path);
+                string[] deckNameDetails = path.Split('/');
                 string deckName = deckNameDetails[deckNameDetails.Length - 1];
                 prefab.Find("DeckName").GetComponent<Text>().text = deckName;
                 prefab.Find("DeckPath").GetComponent<Text>().text = path;
@@ -37,11 +48,14 @@ public class FillDeckList : MonoBehaviour
             }
         }
 
-        transform.GetChild(0).GetComponent<Toggle>().isOn = true;
+        if (transform.childCount > 0)
+        {
+            transform.GetChild(0).GetComponent<Toggle>().isOn = true;
+        }
     }
 
     private string[] GetAllSavedDecks()
     {
-        return Directory.GetFiles(Application.dataPath + "/Decks");
+        return Directory.GetFiles(applicationPath + "/Decks/");
     }
 }

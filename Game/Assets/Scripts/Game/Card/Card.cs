@@ -16,6 +16,7 @@ public class Card : ICloneable
     public int Attack { get; set; }
     public int DefaultCooldown { get; set; }
     public int CurrentCooldown { get; set; }
+    public string SpecialAttackID { get; set; }
 
     public Card()
     {

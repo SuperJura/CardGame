@@ -31,8 +31,8 @@ public class FillCardList : MonoBehaviour
 
             prefab.SetParent(transform);
             prefab.localScale = new Vector3(1, 1, 1); //neznam zasto sam mjenja pa moram ja vratiti na default
-
         }
+        transform.parent.parent.Find("DeckName").GetComponent<InputField>().text = Deck.DeckName;
     }
 
     private int GetNumberOfCardInDeck(string staticIDCard)

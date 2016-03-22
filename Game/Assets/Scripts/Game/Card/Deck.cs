@@ -3,13 +3,15 @@
 public static class Deck
 {
     public static List<Card> Cards { get; set; }    //dek ima 20 karata
-
     public static DeckEnums DeckType { get; set; }
+    public static string DeckName { get; set; }
+
 
     static Deck()
     {
         Cards = Repository.GetCardDatabaseInstance().GetRandomDeck();
         DeckType = DeckEnums.Random;
+        DeckName = "random";
     }
 
     public static int CheckCards()

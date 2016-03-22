@@ -2,6 +2,8 @@
 /Game/[Tt]emp/
 /Game/[Oo]bj/
 /Game/[Bb]uild/
+/Game/Assets/Decks/
+/Game/Assets/Configuration/
 /Server/bin/
 /Server/obj/
 

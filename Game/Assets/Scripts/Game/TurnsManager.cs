@@ -12,7 +12,7 @@ public class TurnsManager : MonoBehaviour
 
     public delegate void OnPlayerLoseHealthHandler(PlayerLoseHealthEventArgs args);
     public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
-
+        
     public delegate void OnNotificationHandler(char player, string message);
     public event OnNotificationHandler OnNotification;
 
@@ -115,12 +115,16 @@ public class TurnsManager : MonoBehaviour
         RectTransform attackerPlayField = GetPlayFieldOfCurrentPlayer();
         RectTransform defenderPlayField = GetPlayFieldOfOtherPlayer();
 
-        for (int i = 0; i < attackerPlayField.childCount; i++)
+        for (int i = 0; i < attackerPlayField.childCount; i++)  //svaka karta napada
         {
             RectTransform attackerCard = attackerPlayField.GetChild(i).GetComponent<RectTransform>();
-            FocusCard(attackerCard);
-            
-			RectTransform defenderCard = null;
+            FocusCard(attackerCard);    //prikazi koja karta napada
+
+            Animation anim = attackerCard.GetComponent<Animation>();
+            anim.Play("AttackingAnimation");    //animiraj napad
+
+
+            RectTransform defenderCard = null;
             if (defenderPlayField.childCount>= i+1) //ako postoji neprijatelj, napadni ga
             {
 				defenderCard = defenderPlayField.GetChild(i).GetComponent<RectTransform>();
@@ -132,7 +136,7 @@ public class TurnsManager : MonoBehaviour
                 AttackOpositePlayer(attackerCard);
             }
 
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.7f);
 			if (defenderCard != null)
 			{
 				UnfocusAliveCard (defenderCard);
@@ -312,11 +316,8 @@ public class TurnsManager : MonoBehaviour
     {
         int attack = int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
 
-        Text healthText = defenderCard.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>();
-
-        int health = int.Parse(healthText.text);
-        health -= attack;
-        healthText.text = health.ToString();
+        CardCombat combatDefender = defenderCard.GetComponent<CardCombat>();
+        combatDefender.RecieveDamage(attack);
 
         string attackName = attackerCard.Find("CardName").GetComponentInChildren<Text>().text;
         string defenceName = defenderCard.Find("CardName").GetComponentInChildren<Text>().text;

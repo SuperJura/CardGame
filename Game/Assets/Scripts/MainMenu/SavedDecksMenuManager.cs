@@ -17,11 +17,13 @@ public class SavedDecksMenuManager : MonoBehaviour {
         Toggle selectedDeck = tg.ActiveToggles().FirstOrDefault();
         Transform panel = selectedDeck.transform;
 
-        string DeckPath = panel.Find("DeckPath").GetComponent<Text>().text;
-        LoadDeckFromXML(DeckPath);
+        string deckPath = panel.Find("DeckPath").GetComponent<Text>().text;
+        string deckName = panel.Find("DeckName").GetComponent<Text>().text;
+        deckName = deckName.Split('.')[0];
+        LoadDeckFromXML(deckPath, deckName);
     }
 
-    private void LoadDeckFromXML(string DeckPath)
+    private void LoadDeckFromXML(string DeckPath, string deckName)
     {
         XDocument doc = XDocument.Load(DeckPath);
 
@@ -33,6 +35,7 @@ public class SavedDecksMenuManager : MonoBehaviour {
         }
 
         Deck.DeckType = DeckEnums.Saved;
+        Deck.DeckName = deckName;
         deckPanelManager.SetDeckType();
     }
 }

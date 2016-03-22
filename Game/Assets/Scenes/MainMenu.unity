@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 285006687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc67877096936ef43a540fe040740252, type: 3}
+  m_Script: {fileID: 11500000, guid: ae061ed9da556694182c5069ef0cf696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   deckPanelManager: {fileID: 1375495606}
@@ -1429,6 +1429,79 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 285006687}
+--- !u!1 &300774221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 300774222}
+  - 222: {fileID: 300774224}
+  - 114: {fileID: 300774223}
+  m_Layer: 5
+  m_Name: ErrorText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &300774222
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300774221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 660600426}
+  m_RootOrder: 5
+  m_AnchorMin: {x: 0.4658551, y: 0.13589819}
+  m_AnchorMax: {x: 0.9507524, y: 0.21019618}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &300774223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300774221}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 50
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: <Error text>
+--- !u!222 &300774224
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300774221}
 --- !u!1 &330962010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1754,7 @@ GameObject:
   - 225: {fileID: 413948827}
   - 111: {fileID: 413948826}
   m_Layer: 5
-  m_Name: CustomDeckMenu
+  m_Name: CurrentDeckMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3435,6 +3508,7 @@ RectTransform:
   - {fileID: 128165649}
   - {fileID: 1414831064}
   - {fileID: 785406217}
+  - {fileID: 300774222}
   m_Father: {fileID: 413948825}
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
@@ -3454,6 +3528,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckPanelManager: {fileID: 1375495606}
+  menuManager: {fileID: 1080392756}
+  changeDeckMenu: {fileID: 463002279}
 --- !u!114 &660600428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6229,7 +6305,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.87900007, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1198812435
@@ -7177,7 +7253,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 46840401}
   m_HandleRect: {fileID: 46840400}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7363,7 +7439,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Custom Deck
+  m_Text: Current Deck
 --- !u!222 &1318857776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7751,7 +7827,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 660600427}
-        m_MethodName: SaveDeck
+        m_MethodName: SaveDeckBtnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7761,12 +7837,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1080392756}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+      - m_Target: {fileID: 1701188981}
+        m_MethodName: FillList
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 573466843}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9720,7 +9796,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.9382905, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0009765625}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1855424275
