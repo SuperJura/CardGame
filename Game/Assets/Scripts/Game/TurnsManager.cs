@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
 
+[RequireComponent(typeof(SpecialAttacksManager))]
 public class TurnsManager : MonoBehaviour
 {
 
@@ -25,12 +26,14 @@ public class TurnsManager : MonoBehaviour
 	private RectTransform graveyard;
     private int nublerOfTurns;
     private EndGameManager endGameManager;
+    private SpecialAttacksManager specialAttacks;
 
     // Use this for initialization
     void Start()
     {
         Transform gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
+        specialAttacks = transform.GetComponent<SpecialAttacksManager>();
         APlayerSide = gameboardPanel.Find("A_PlayerSide").GetComponent<RectTransform>();
         BPlayerSide = gameboardPanel.Find("B_PlayerSide").GetComponent<RectTransform>();
         graveyard = gameboardPanel.Find ("InfoPanel/Graveyard").GetComponent<RectTransform> ();
@@ -72,7 +75,7 @@ public class TurnsManager : MonoBehaviour
         foreach (RectTransform card in CDField)
         {
             FocusCard(card);
-            DecreaseCooldownOfACard(card);
+            card.GetComponent<CardCombat>().DecreaseCooldown();
 
             yield return new WaitForSeconds(0.5f);  //pauziranje metode
 
@@ -117,12 +120,12 @@ public class TurnsManager : MonoBehaviour
 
         for (int i = 0; i < attackerPlayField.childCount; i++)  //svaka karta napada
         {
+            float animationTime = 1.7f;
             RectTransform attackerCard = attackerPlayField.GetChild(i).GetComponent<RectTransform>();
             FocusCard(attackerCard);    //prikazi koja karta napada
 
             Animation anim = attackerCard.GetComponent<Animation>();
             anim.Play("AttackingAnimation");    //animiraj napad
-
 
             RectTransform defenderCard = null;
             if (defenderPlayField.childCount>= i+1) //ako postoji neprijatelj, napadni ga
@@ -136,7 +139,13 @@ public class TurnsManager : MonoBehaviour
                 AttackOpositePlayer(attackerCard);
             }
 
-            yield return new WaitForSeconds(1.7f);
+            bool specialAttackDone = specialAttacks.DoSpecialAttack(attackerCard, whoMoves);    //napravi specialni napad
+            if (specialAttackDone)   //ako karta ima specialni napad
+            {
+                animationTime += 1; //povecaj vrijeme fokusiranja karte
+            }
+
+            yield return new WaitForSeconds(animationTime);
 			if (defenderCard != null)
 			{
 				UnfocusAliveCard (defenderCard);
@@ -254,16 +263,6 @@ public class TurnsManager : MonoBehaviour
                 break;
         }
     }   //ako je whoMoves 'a', postaje 'b' i obrnuto
-
-    private void DecreaseCooldownOfACard(RectTransform card)
-    {
-        Text txtCooldown = card.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>();
-        int cooldown = int.Parse(txtCooldown.text);
-		if (cooldown == 0) {
-			return;
-		}
-        txtCooldown.text = (--cooldown).ToString();
-    }
 
     private void UnfocusCard(RectTransform card)
     {

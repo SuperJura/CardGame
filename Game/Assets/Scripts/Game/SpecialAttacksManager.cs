@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpecialAttacksManager : MonoBehaviour {
 
@@ -16,6 +17,24 @@ public class SpecialAttacksManager : MonoBehaviour {
         playerA_PlayField = gameboard.Find("A_PlayerSide/PlayerPlayField");
         playerB_PlayField = gameboard.Find("B_PlayerSide/PlayerPlayField");
     }
+    
+    public bool DoSpecialAttack(RectTransform attackingCard, char player)
+    {
+        string cardStaticID = attackingCard.Find("CardStaticID").GetComponent<Text>().text;
+        Card card = Repository.GetCardDatabaseInstance().GetCard(cardStaticID);
 
+        if (card.SpecialAttackID == "") //ako je id prazan, znaci da karta nema specijalni napad
+        {
+            return false;
+        }
 
+        switch (card.SpecialAttackID)
+        {
+            case "SA_1":
+                Debug.Log("SA_1");
+                return true;
+            default:
+                return false;
+        }
+    }
 }

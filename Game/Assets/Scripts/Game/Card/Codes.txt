@@ -1,0 +1,33 @@
+﻿---CARD IDs---
+R_1 - Blue bird
+R_2 - Red Panda
+R_3 - CUbe
+R_4 - BlackWolf
+
+---SPECIAL ATTACK IDs---
+SA_1 - Spread Sttack
+
+---CLIENT TO SERVER MESSAGES---
+	--SERVER LOBBY--
+		join|myNickname - is sent when player openes communication with server
+		wantToPlay| - Send when player presses "Start Online Game"
+	
+	--SERVER GAME--
+		startGame|myNickname;opponentNickname - sent when starting a online game
+		cardDrawed|staticID - sent when player draws a card
+		cardPlayed|staticID - sent when player plays a card
+
+---SERVER TO CLIENT MESSAGES---
+	--SERVER LOBBY--
+		joined|nickname - is sent when server sucessfully adds a player to ist list of players
+		list|listOfNicknames[] - server sends list to all players when someone logs in/out of server
+		playing|opponent - server sends nickname of opponent when it finds one for player
+		error|errorMsg - any error messages from server
+
+	--SERVER GAME--
+		startedGame| - server sends this when game starts (doesnt do much)
+		canStart| - server sends this when it is done with its preparation for the game and player can start drawing cards
+		playerOnTurn|nickname - server sends this in the beggining of the game. it says who goes first
+		unexpectedEnd| - server sends this when opponent randomly disconnects
+		opponentDrawed|staticID - server sends id of the card that opponent drawed
+		opponentPlayed|staticID - server sends id of the card that opponent played

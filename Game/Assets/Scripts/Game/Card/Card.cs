@@ -26,12 +26,13 @@ public class Card : ICloneable
         Attack = 5;
         DefaultCooldown = 5;
         CurrentCooldown = DefaultCooldown;
+        SpecialAttackID = "";
     }
 
     public object Clone()
     {
         Card copy = new Card();
-        copy.IDCard = copy.IDCard;
+        copy.IDCard = ++idCounter;
         copy.StaticIDCard = StaticIDCard;
         copy.Name = Name;
         copy.ImagePath = ImagePath;
@@ -40,6 +41,7 @@ public class Card : ICloneable
         copy.Attack = Attack;
         copy.DefaultCooldown = DefaultCooldown;
         copy.CurrentCooldown = copy.DefaultCooldown;
+        copy.SpecialAttackID = SpecialAttackID;
 
         return copy;
     }

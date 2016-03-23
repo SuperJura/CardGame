@@ -71,11 +71,11 @@ public class ServerGameBehavior : MonoBehaviour {
             case "canStart":
                 Dispatcher.Current.BeginInvoke(() => { CanStartStatement(); });
                 break;
-            case "unexpectedEnd":
-                Dispatcher.Current.BeginInvoke(() => { UnexpectedEndStatement(); });
-                break;
             case "playerOnTurn":
                 Dispatcher.Current.BeginInvoke(() => { PlayerOnTurnStatement(message[1]); });
+                break;
+            case "unexpectedEnd":
+                Dispatcher.Current.BeginInvoke(() => { UnexpectedEndStatement(); });
                 break;
             case "opponentDrawed":
                 Dispatcher.Current.BeginInvoke(() => { OpponentDrawedStatement(message[1]); });

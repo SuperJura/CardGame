@@ -45,6 +45,7 @@ public class OnlineOpponent : BasePlayer {
     public void DrawCard(string staticID)
     {
         RectTransform card = GetRectTransformCard(staticID);
+        card.GetComponent<CardInteraction>().TurnAroundTheCard();
         card.GetComponent<CardInteraction>().enabled = false;
 
         HideCardDetails(card);

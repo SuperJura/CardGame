@@ -45,6 +45,7 @@ public class Bot : BasePlayer {
                 return;
             }
             RectTransform card = GetRectTransformCard();
+            card.GetComponent<CardInteraction>().enabled = false;
 
             HideCardDetails(card);
 

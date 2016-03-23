@@ -35,7 +35,6 @@ public class FillDeckList : MonoBehaviour
             {
                 GameObject go = (GameObject)Resources.Load("MainMenuResources/DeckItem");
                 RectTransform prefab = Instantiate((RectTransform)go.transform);
-                Debug.Log(path);
                 string[] deckNameDetails = path.Split('/');
                 string deckName = deckNameDetails[deckNameDetails.Length - 1];
                 prefab.Find("DeckName").GetComponent<Text>().text = deckName;

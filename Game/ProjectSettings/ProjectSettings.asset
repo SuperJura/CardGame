@@ -48,7 +48,7 @@ PlayerSettings:
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
   resizableWindow: 0
-  useMacAppStoreValidation: 0
+  useMacAppStoreValidation: 1
   gpuSkinning: 0
   xboxPIXTextureCapture: 0
   xboxEnableAvatar: 0

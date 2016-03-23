@@ -18,7 +18,7 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private void TurnAroundTheCard()
+    public void TurnAroundTheCard()
     {
         Quaternion newRotation = new Quaternion(0, 0, 180, 0);
         transform.localRotation = newRotation;
