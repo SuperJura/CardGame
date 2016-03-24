@@ -64,6 +64,10 @@ public class SpecialAttacksManager : MonoBehaviour {
         {
             cardAfter = -1;
         }
+        if (cardBefore >= opponent.childCount)
+        {
+            cardBefore = -1;
+        }
 
         attackingCard.GetComponent<Animation>().Play("DoSpecialAttackAnimation");
         if (cardBefore != -1)

@@ -33,7 +33,7 @@ public class CodeCardDatabase : ICardDatabase {
 
     public Card GetRandomCard()
     {
-        return AllCards[Random.Range(0, AllCards.Count)];
+        return (Card)AllCards[Random.Range(0, AllCards.Count)].Clone();
     }
 
     public List<Card> GetRandomDeck()

@@ -42,7 +42,7 @@ public class BasePlayer : MonoBehaviour {
     {
         while (myHand.childCount < 5)
         {
-            if (Deck.Cards.Count <= 0)
+            if (deck.Count <= 0)
             {
                 return;
             }
@@ -102,8 +102,8 @@ public class BasePlayer : MonoBehaviour {
 
     protected Card GetCardFromDeck()
     {
-        Card card = Deck.Cards[Random.Range(0, Deck.Cards.Count)];
-        Deck.Cards.Remove(card);
+        Card card = deck[Random.Range(0, deck.Count)];
+        deck.Remove(card);
 
         return card;
     }
