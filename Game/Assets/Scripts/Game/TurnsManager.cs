@@ -119,8 +119,7 @@ public class TurnsManager : MonoBehaviour
         RectTransform defenderPlayField = GetPlayFieldOfOtherPlayer();
 
         for (int i = 0; i < attackerPlayField.childCount; i++)  //svaka karta napada
-        {
-            float animationTime = 1.7f;
+        {   
             RectTransform attackerCard = attackerPlayField.GetChild(i).GetComponent<RectTransform>();
             FocusCard(attackerCard);    //prikazi koja karta napada
 
@@ -130,22 +129,23 @@ public class TurnsManager : MonoBehaviour
             RectTransform defenderCard = null;
             if (defenderPlayField.childCount>= i+1) //ako postoji neprijatelj, napadni ga
             {
-				defenderCard = defenderPlayField.GetChild(i).GetComponent<RectTransform>();
+                defenderCard = defenderPlayField.GetChild(i).GetComponent<RectTransform>();
                 AttackTarget(attackerCard, defenderCard);
-				LowFocusCard (defenderCard);
+                LowFocusCard (defenderCard);
             }
             else    //inace napadni playera
             {
                 AttackOpositePlayer(attackerCard);
             }
 
-            bool specialAttackDone = specialAttacks.DoSpecialAttack(attackerCard, whoMoves);    //napravi specialni napad
-            if (specialAttackDone)   //ako karta ima specialni napad
+            string specialAttack = specialAttacks.GetSpecialAttack(attackerCard);    //napravi specialni napad
+            if (specialAttack != "")   //ako karta ima specialni napad
             {
-                animationTime += 1; //povecaj vrijeme fokusiranja karte
+                yield return new WaitForSeconds(1.7f);
+                specialAttacks.DoSpecialAttack(attackerCard, whoMoves);
             }
 
-            yield return new WaitForSeconds(animationTime);
+            yield return new WaitForSeconds(1);
 			if (defenderCard != null)
 			{
 				UnfocusAliveCard (defenderCard);

@@ -88,10 +88,10 @@ namespace GameServer
 
         protected override void OnClose(CloseEventArgs e)
         {
+            players.Remove(ID);
             string otherPlayerID = GetOpponentID();
             if (playersInGames.Keys.Contains(nickname))
             {
-                players.Remove(ID);
                 playersInGames.Remove(nickname);
             }
             else

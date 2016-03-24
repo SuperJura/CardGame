@@ -31,8 +31,8 @@ public class ServerGameBehavior : MonoBehaviour {
     void Start()
     {
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
-        ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
-        //ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
+        //ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
+        ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
         ws.OnClose += Ws_OnClose;
         ws.OnMessage += Ws_OnMessage;
         ws.OnError += Ws_OnError;
@@ -128,7 +128,7 @@ public class ServerGameBehavior : MonoBehaviour {
     private void UnexpectedEndStatement()
     {
         endGameManager.EndGame('a', 'b');
-        ServerLobbyBehavior.CloseWebSocket();
+        CloseWebSocket();
     }
 
     private string GetMyNickname()
@@ -154,6 +154,7 @@ public class ServerGameBehavior : MonoBehaviour {
         {
             ws.Close();
         }
+        ServerLobbyBehavior.CloseWebSocket();
     }
 
 }

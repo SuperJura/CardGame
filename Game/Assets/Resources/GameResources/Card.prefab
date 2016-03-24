@@ -240,6 +240,8 @@ Animation:
   - {fileID: 7400000, guid: 8cdbdf848d0b93541a70ec2326eb5129, type: 2}
   - {fileID: 7400000, guid: 35ccf31e527df53489e880a4600e29ef, type: 2}
   - {fileID: 7400000, guid: fd4f272a64ea18742a4ecce02b236eb6, type: 2}
+  - {fileID: 7400000, guid: cd85fbadeb8c3384b81cf5a1a6c01124, type: 2}
+  - {fileID: 7400000, guid: 721c3ea9782950d45b419b61bb289693, type: 2}
   m_WrapMode: 1
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -482,7 +484,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0.942
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!114 &11473062
@@ -716,8 +718,8 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162026}
-  m_LocalRotation: {x: 0.005061434, y: 0, z: 0, w: 0.9999872}
-  m_LocalPosition: {x: 0, y: 0, z: -25.24273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -24.843054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22477778}
