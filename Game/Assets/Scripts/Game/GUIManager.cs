@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class GUIManager : MonoBehaviour {
 
@@ -63,17 +64,37 @@ public class GUIManager : MonoBehaviour {
         switch (args.PlayerPosition)
         {
             case 'a':
-                infoPanel.Find("A_PlayerHealth").GetComponentInChildren<Text>().text = args.CurrentHealth.ToString();
+                notificationPanel.Find("A_PlayerHealth/Text").GetComponentInChildren<Text>().text = args.CurrentHealth.ToString();
                 break;
             case 'b':
-                infoPanel.Find("B_PlayerHealth").GetComponentInChildren<Text>().text = args.CurrentHealth.ToString();
+                notificationPanel.Find("B_PlayerHealth/Text").GetComponentInChildren<Text>().text = args.CurrentHealth.ToString();
                 break;
         }
     }
 
     void GUIManager_OnEndTurn(EndTurnEventArgs args)
     {
-       infoPanel.Find("CurrentTurnImage/CurrentTurnText").GetComponentInChildren<Text>().text = args.TurnNumber.ToString();
-       infoPanel.Find("PlayerPlayingText").GetComponentInChildren<Text>().text = ">" + args.NextPlayer;
+        infoPanel.Find("CurrentTurnText").GetComponentInChildren<Text>().text = args.TurnNumber.ToString();
+        RotateCurrentTurnImage(args.NextPlayerChar);
+        infoPanel.Find("PlayerPlayingText").GetComponentInChildren<Text>().text = ">" + args.NextPlayer;
+    }
+
+    private void RotateCurrentTurnImage(char player)
+    {
+        Debug.Log(player);
+        Quaternion current = infoPanel.Find("CurrentTurnImage").localRotation;
+        Debug.Log(current);
+        switch (player)
+        {
+            case 'a':
+                current.eulerAngles = new Vector3(0, 0, 230);
+                infoPanel.Find("CurrentTurnImage").localRotation = current;
+                break;
+            case 'b':
+                current.eulerAngles = new Vector3(0, 0, 300);
+                infoPanel.Find("CurrentTurnImage").localRotation = current;
+                break;
+        }
+        Debug.Log(infoPanel.Find("CurrentTurnImage").localRotation);
     }
 }

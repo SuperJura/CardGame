@@ -194,10 +194,10 @@ public class TurnsManager : MonoBehaviour
         switch (whoMoves)
         {
             case 'a':
-                args = new EndTurnEventArgs(++nublerOfTurns, aPlayer.playerName);
+                args = new EndTurnEventArgs(++nublerOfTurns, aPlayer.playerName, whoMoves);
                 break;
             case 'b':
-                args = new EndTurnEventArgs(++nublerOfTurns, bPlayer.playerName);
+                args = new EndTurnEventArgs(++nublerOfTurns, bPlayer.playerName, whoMoves);
                 break;
             default:
                 break;
@@ -320,7 +320,7 @@ public class TurnsManager : MonoBehaviour
 
         string attackName = attackerCard.Find("CardName").GetComponentInChildren<Text>().text;
         string defenceName = defenderCard.Find("CardName").GetComponentInChildren<Text>().text;
-        string msg = attackName + " attacked your"+ defenceName +" for " + attack;
+        string msg = attackName + " attacked your "+ defenceName +" for " + attack;
 
         CallOnNotification(msg);
     }
@@ -358,7 +358,10 @@ public class TurnsManager : MonoBehaviour
 
             if (graveyard.childCount > 0)
             {
-                Destroy(graveyard.GetChild(0).gameObject);
+                foreach (Transform child in graveyard)
+                {
+                    Destroy(child.gameObject);
+                }
             }
 
             card.SetParent(graveyard);

@@ -42,6 +42,7 @@ public class EndGameManager : MonoBehaviour {
         while (originalMessages.childCount != 0)
         {
             originalMessages.GetChild(originalMessages.childCount-1).SetParent(matchHistory);   //poruke idu obrnutim redosljedom
+            matchHistory.GetChild(matchHistory.childCount - 1).localScale = new Vector3(1, 1, 1);
         }
     }
 

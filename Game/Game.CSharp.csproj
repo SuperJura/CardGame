@@ -121,11 +121,11 @@
     <Compile Include="Assets\Scripts\MainMenu\ServerLobbyBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Codes.txt" />
     <None Include="Assets\Configuration\Configuration.xml" />
     <None Include="Assets\Decks\cc.xml" />
     <None Include="Assets\Decks\custom.xml" />
     <None Include="Assets\Decks\custom555.xml" />
-    <None Include="Assets\Scripts\Game\Card\Codes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
