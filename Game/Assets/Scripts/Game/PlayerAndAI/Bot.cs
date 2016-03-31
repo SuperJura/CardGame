@@ -47,6 +47,7 @@ public class Bot : BasePlayer {
             RectTransform card = GetRectTransformCard();
             card.GetComponent<CardInteraction>().TurnAroundTheCard();
             card.GetComponent<CardInteraction>().enabled = false;
+            card.GetComponent<CardInteraction>().Playable = false;
 
             HideCardDetails(card);
 
@@ -64,6 +65,7 @@ public class Bot : BasePlayer {
         }
 
         card.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 1;
+        card.GetComponent<CardHover>().enabled = false;
     }
 
     private void ShowCardDetails(RectTransform card)
@@ -75,6 +77,7 @@ public class Bot : BasePlayer {
         }
 
         card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;   //nademo "brata" HidePanel i podesimo tako da se on ne vidi
+        card.GetComponent<CardHover>().enabled = true;
     }
 
     public IEnumerator PlayTurn()

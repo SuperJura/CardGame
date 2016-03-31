@@ -40,7 +40,7 @@ public class SpecialAttacksManager : MonoBehaviour {
     public string GetSpecialAttack(RectTransform card)
     {
         string cardStaticID = card.Find("CardStaticID").GetComponent<Text>().text;
-        Card c = Repository.GetCardDatabaseInstance().GetCard(cardStaticID);
+        Card c = Repository.GetCardDatabaseInstance().GetNewCard(cardStaticID);
 
         return c.SpecialAttackID;
     }

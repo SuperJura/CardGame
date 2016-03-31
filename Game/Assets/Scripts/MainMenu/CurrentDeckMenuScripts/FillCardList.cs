@@ -57,6 +57,11 @@ public class FillCardList : MonoBehaviour
         cardRectTransform.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text = card.Attack.ToString();
         cardRectTransform.parent.Find("ControlPanel/Counter").GetComponent<Text>().text = numberInDeck.ToString();
 
+        if (card.SpecialAttackID != "")
+        {
+            cardRectTransform.Find("SpecialAttackSign").GetComponent<Image>().enabled = true;
+        }
+
         //kasnije dodaj sliku
         switch (card.Quality)
         {

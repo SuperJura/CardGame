@@ -13,10 +13,41 @@ public class CodeCardDatabase : ICardDatabase {
 
     private void FillList()
     {
-        AllCards.Add(new Card() { Name = "Blue bird", Health = 2, Attack = 1, StaticIDCard = "R_1", DefaultCooldown = 2, Quality = Enumerations.EquipmentQuality.Rare });
-        AllCards.Add(new Card() { Name = "Red panda", Health = 4, Attack = 2, StaticIDCard = "R_2", DefaultCooldown = 4, Quality = Enumerations.EquipmentQuality.Legendary });
-        AllCards.Add(new Card() { Name = "CUbe", Health = 2, Attack = 2, StaticIDCard = "R_3", DefaultCooldown = 3, Quality = Enumerations.EquipmentQuality.Common });
-        AllCards.Add(new Card() { Name = "Black wolf", Health = 2, Attack = 1, StaticIDCard = "R_4", DefaultCooldown = 3, Quality = Enumerations.EquipmentQuality.Common, SpecialAttackID = "SA_1" });
+        AllCards.Add(new Card() {
+            Name = "Blue bird", Health = 2, Attack = 1,
+            StaticIDCard = "R_1", DefaultCooldown = 2,
+            Quality = Enumerations.EquipmentQuality.Rare,
+            CardFlavour = "Blue birds are known for flying higher than normal birds"
+        });
+        AllCards.Add(new Card() {
+            Name = "Red panda", Health = 4, Attack = 2,
+            StaticIDCard = "R_2", DefaultCooldown = 4,
+            Quality = Enumerations.EquipmentQuality.Legendary,
+            CardFlavour = "Rare red pandas have thick fur so they can withstand harsh weater"
+        });
+        AllCards.Add(new Card() {
+            Name = "CUbe", Health = 2, Attack = 2,
+            StaticIDCard = "R_3", DefaultCooldown = 3,
+            Quality = Enumerations.EquipmentQuality.Common,
+            CardFlavour = "No one knows much about CUbes"
+        });
+        AllCards.Add(new Card() {
+            Name = "Black wolf", Health = 2, Attack = 1,
+            StaticIDCard = "R_4", DefaultCooldown = 3,
+            Quality = Enumerations.EquipmentQuality.Common,
+            SpecialAttackID = "SA_1", CardFlavour="Special attack: 'Spread' - Attacks enemy to the right and a enemy to the left" });
+    }
+
+    public Card GetNewCard(string staticID)
+    {
+        foreach (Card c in AllCards)
+        {
+            if (c.StaticIDCard == staticID)
+            {
+                return (Card)c.Clone();
+            }
+        }
+        return null;
     }
 
     public Card GetCard(string staticID)
@@ -25,7 +56,7 @@ public class CodeCardDatabase : ICardDatabase {
         {
             if (c.StaticIDCard == staticID)
             {
-                return (Card)c.Clone();
+                return c;
             }
         }
         return null;

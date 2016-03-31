@@ -31,7 +31,7 @@ public class SavedDecksMenuManager : MonoBehaviour {
         ICardDatabase database = Repository.GetCardDatabaseInstance();
         foreach (XElement cardElement in doc.XPathSelectElements("Deck/Card"))
         {
-            Deck.Cards.Add(database.GetCard(cardElement.Value));
+            Deck.Cards.Add(database.GetNewCard(cardElement.Value));
         }
 
         Deck.DeckType = DeckEnums.Saved;

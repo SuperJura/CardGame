@@ -47,6 +47,7 @@ public class OnlineOpponent : BasePlayer {
         RectTransform card = GetRectTransformCard(staticID);
         card.GetComponent<CardInteraction>().TurnAroundTheCard();
         card.GetComponent<CardInteraction>().enabled = false;
+        card.GetComponent<CardInteraction>().Playable = false;
 
         HideCardDetails(card);
 
@@ -63,6 +64,7 @@ public class OnlineOpponent : BasePlayer {
         }
 
         card.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 1;
+        card.GetComponent<CardHover>().enabled = false;
     }
 
     private void ShowCardDetails(RectTransform card)
@@ -73,5 +75,6 @@ public class OnlineOpponent : BasePlayer {
         }
 
         card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;   //nademo "brata" HidePanel i podesimo tako da se on ne vidi
+        card.GetComponent<CardHover>().enabled = true;
     }
 }

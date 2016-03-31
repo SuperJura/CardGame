@@ -17,6 +17,7 @@ public class Card : ICloneable
     public int DefaultCooldown { get; set; }
     public int CurrentCooldown { get; set; }
     public string SpecialAttackID { get; set; }
+    public string CardFlavour { get; set; }
 
     public Card()
     {
@@ -42,6 +43,7 @@ public class Card : ICloneable
         copy.DefaultCooldown = DefaultCooldown;
         copy.CurrentCooldown = copy.DefaultCooldown;
         copy.SpecialAttackID = SpecialAttackID;
+        copy.CardFlavour = CardFlavour;
 
         return copy;
     }

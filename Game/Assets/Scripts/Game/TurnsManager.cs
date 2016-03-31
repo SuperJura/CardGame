@@ -102,7 +102,6 @@ public class TurnsManager : MonoBehaviour
         while (listOfReadyCards.Count != 0)
         {
             if (GetPlayFieldOfCurrentPlayer().childCount >= 5) {
-                Debug.Log ("HELLO");
                 break;
             }
 
@@ -295,8 +294,9 @@ public class TurnsManager : MonoBehaviour
 
         foreach (RectTransform card in playerHand)
         {
-            card.GetComponent<CanvasGroup>().blocksRaycasts = false;
-            card.GetComponent<CanvasGroup>().interactable = false;
+            //card.GetComponent<CanvasGroup>().blocksRaycasts = false;
+            //card.GetComponent<CanvasGroup>().interactable = false;
+            card.GetComponent<CardInteraction>().enabled = false;
         }
     }   //onaj tko je na whoMoves nemoze vise birati karte
 
@@ -306,8 +306,9 @@ public class TurnsManager : MonoBehaviour
 
         foreach (RectTransform card in playerHand)
         {
-            card.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            card.GetComponent<CanvasGroup>().interactable = true;
+            //card.GetComponent<CanvasGroup>().blocksRaycasts = true;
+            //card.GetComponent<CanvasGroup>().interactable = true;
+            card.GetComponent<CardInteraction>().enabled = true;
         }
     }   //onaj tko je na whoMoves moze birati karte
 
@@ -365,7 +366,6 @@ public class TurnsManager : MonoBehaviour
             }
 
             card.SetParent(graveyard);
-            card.rotation = new Quaternion(0, 0, 0, 0);
             cardsToDestroy.Remove(card);
         }
     }

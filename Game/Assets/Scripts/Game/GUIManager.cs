@@ -10,6 +10,7 @@ public class GUIManager : MonoBehaviour {
     private RectTransform messages;
     private Dictionary<char, string> playerCharName;    //char = a/b; string = ime a/b
     private Transform gameboardPanel;
+    private Text CardDescription;
 
     void Awake()
     {
@@ -18,6 +19,7 @@ public class GUIManager : MonoBehaviour {
         transform.GetComponent<TurnsManager>().OnPlayerLoseHealth += GUIManager_OnPlayerLoseHealth;
         transform.GetComponent<TurnsManager>().OnNotification += GUIManager_OnNotification;
         infoPanel = gameboardPanel.Find("InfoPanel").GetComponent<RectTransform>();
+        CardDescription = infoPanel.Find("CardDescription/Text").GetComponent<Text>();
         notificationPanel = gameboardPanel.Find("NotificationPanel").GetComponent<RectTransform>();
         messages = notificationPanel.Find("MessagePanel/Messages").GetComponent<RectTransform>();
 
@@ -79,11 +81,18 @@ public class GUIManager : MonoBehaviour {
         infoPanel.Find("PlayerPlayingText").GetComponentInChildren<Text>().text = ">" + args.NextPlayer;
     }
 
+    //poziva se kada igrac prede misem preko karte
+    public void Card_OnHover(RectTransform card)
+    {
+        string staticID = card.Find("CardStaticID").GetComponent<Text>().text;
+        string cardFlavour = Repository.GetCardDatabaseInstance().GetCard(staticID).CardFlavour;
+
+        CardDescription.text = cardFlavour;
+    }
+
     private void RotateCurrentTurnImage(char player)
     {
-        Debug.Log(player);
         Quaternion current = infoPanel.Find("CurrentTurnImage").localRotation;
-        Debug.Log(current);
         switch (player)
         {
             case 'a':
@@ -95,6 +104,5 @@ public class GUIManager : MonoBehaviour {
                 infoPanel.Find("CurrentTurnImage").localRotation = current;
                 break;
         }
-        Debug.Log(infoPanel.Find("CurrentTurnImage").localRotation);
     }
 }

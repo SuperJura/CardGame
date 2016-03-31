@@ -50,7 +50,7 @@ public static class Deck
             }
         }
 
-        Card cardToPut = Repository.GetCardDatabaseInstance().GetCard(staticID);
+        Card cardToPut = Repository.GetCardDatabaseInstance().GetNewCard(staticID);
         if (cardToPut != null)
         {
             Cards.Add(cardToPut);

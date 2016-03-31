@@ -33,6 +33,7 @@ public class OnlinePlayer : BasePlayer {
                 return;
             }
             RectTransform card = GetRectTransformCard();
+            card.GetComponent<CardInteraction>().Playable = true;
 
             card.SetParent(myHand);
             card.localScale = new Vector3(1, 1, 1); //neznam zasto sam mjenja pa moram ja vratiti na default

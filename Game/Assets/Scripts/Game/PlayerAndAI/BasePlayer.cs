@@ -16,6 +16,7 @@ public class BasePlayer : MonoBehaviour {
 
     public TurnsManager turnsManager;
 
+    protected GUIManager guiManager;
     protected RectTransform myHand;
     protected ICardDatabase database;
     protected List<Card> deck;
@@ -24,6 +25,7 @@ public class BasePlayer : MonoBehaviour {
     {
         myHand = transform.Find("PlayerHand").GetComponent<RectTransform>();
 
+        guiManager = turnsManager.GetComponent<GUIManager>();
         deck = new List<Card>();    //kloniraj sve karte iz deka u igracu dek
         foreach (Card card in Deck.Cards)
         {
@@ -40,6 +42,7 @@ public class BasePlayer : MonoBehaviour {
 
     public virtual void FillHand()
     {
+        Debug.Log("FillHand");
         while (myHand.childCount < 5)
         {
             if (deck.Count <= 0)
@@ -47,6 +50,7 @@ public class BasePlayer : MonoBehaviour {
                 return;
             }
             RectTransform card = GetRectTransformCard();
+            card.GetComponent<CardInteraction>().Playable = true;
 
             card.SetParent(myHand);
             card.localScale = new Vector3(1, 1, 1); //neznam zasto sam mjenja pa moram ja vratiti na default
@@ -69,7 +73,7 @@ public class BasePlayer : MonoBehaviour {
         GameObject go = (GameObject)Resources.Load("GameResources/Card");
 
         RectTransform cardRectTransform = Instantiate((RectTransform)go.transform);
-        Card card = database.GetCard(staticID);
+        Card card = database.GetNewCard(staticID);
         return FillRectTranformWithDetails(cardRectTransform, card);
     }
 
@@ -80,8 +84,13 @@ public class BasePlayer : MonoBehaviour {
         cardRectTransform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text = card.DefaultCooldown.ToString();
         cardRectTransform.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text = card.Health.ToString();
         cardRectTransform.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text = card.Attack.ToString();
+        if (card.SpecialAttackID != "")
+        {
+            cardRectTransform.Find("SpecialAttackSign").GetComponentInChildren<Image>().enabled = true;
+        }
         cardRectTransform.GetComponent<CardInteraction>().CDField = transform.Find("PlayerCDField").GetComponent<RectTransform>();
         cardRectTransform.GetComponent<CardInteraction>().OnCardPickTurnEnd += turnsManager.EndPickPhase;
+        cardRectTransform.GetComponent<CardHover>().OnCardPointerEnter += guiManager.Card_OnHover;
 
         //kasnije dodaj sliku
         switch (card.Quality)

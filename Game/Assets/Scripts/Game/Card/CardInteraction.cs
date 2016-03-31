@@ -9,6 +9,7 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
     public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
 
     public RectTransform CDField { get; set; }
+    public bool Playable { get; set; } //bot cards cant be playable
 
     void Start()
     {
@@ -30,7 +31,10 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        PlayCard();
+        if (Playable)
+        {
+            PlayCard();
+        }
     }
 
     public void PlayCard()
