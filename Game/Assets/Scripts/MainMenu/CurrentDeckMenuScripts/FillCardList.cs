@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 using UnityEngine.UI;
 
 public class FillCardList : MonoBehaviour
 {
-    ICardDatabase database;
+    private ICardDatabase database;
 
-    void Start()
+    private void Start()
     {
         database = Repository.GetCardDatabaseInstance();
         FillList();
@@ -22,11 +20,11 @@ public class FillCardList : MonoBehaviour
 
         foreach (Card card in database.AllCards)
         {
-            GameObject go = (GameObject)Resources.Load("MainMenuResources/CardItem");
-            RectTransform prefab = Instantiate((RectTransform)go.transform);
+            GameObject go = (GameObject) Resources.Load("MainMenuResources/CardItem");
+            RectTransform prefab = Instantiate((RectTransform) go.transform);
 
-            RectTransform cardRectTransform = (RectTransform)prefab.Find("Card");
-            int numberInDeck = GetNumberOfCardInDeck(card.StaticIDCard);
+            RectTransform cardRectTransform = (RectTransform) prefab.Find("Card");
+            int numberInDeck = GetNumberOfCardInDeck(card.StaticIdCard);
             FillCardInfo(cardRectTransform, card, numberInDeck);
 
             prefab.SetParent(transform);
@@ -35,12 +33,12 @@ public class FillCardList : MonoBehaviour
         transform.parent.parent.Find("DeckName").GetComponent<InputField>().text = Deck.DeckName;
     }
 
-    private int GetNumberOfCardInDeck(string staticIDCard)
+    private int GetNumberOfCardInDeck(string staticIdCard)
     {
         int counter = 0;
         foreach (Card card in Deck.Cards)
         {
-            if (card.StaticIDCard == staticIDCard)
+            if (card.StaticIdCard == staticIdCard)
             {
                 counter++;
             }
@@ -51,13 +49,16 @@ public class FillCardList : MonoBehaviour
     private void FillCardInfo(RectTransform cardRectTransform, Card card, int numberInDeck)
     {
         cardRectTransform.Find("CardName").GetComponentInChildren<Text>().text = card.Name;
-        cardRectTransform.Find("CardStaticID").GetComponentInChildren<Text>().text = card.StaticIDCard;
-        cardRectTransform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text = card.DefaultCooldown.ToString();
-        cardRectTransform.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text = card.Health.ToString();
-        cardRectTransform.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text = card.Attack.ToString();
+        cardRectTransform.Find("CardStaticID").GetComponentInChildren<Text>().text = card.StaticIdCard;
+        cardRectTransform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text =
+            card.DefaultCooldown.ToString();
+        cardRectTransform.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text =
+            card.Health.ToString();
+        cardRectTransform.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text =
+            card.Attack.ToString();
         cardRectTransform.parent.Find("ControlPanel/Counter").GetComponent<Text>().text = numberInDeck.ToString();
 
-        if (card.SpecialAttackID != "")
+        if (card.SpecialAttackId != "")
         {
             cardRectTransform.Find("SpecialAttackSign").GetComponent<Image>().enabled = true;
         }
@@ -69,10 +70,10 @@ public class FillCardList : MonoBehaviour
                 cardRectTransform.GetComponent<Image>().color = Color.white;
                 break;
             case Enumerations.EquipmentQuality.Rare:
-                cardRectTransform.GetComponent<Image>().color = new Color(0 / 255f, 107 / 255f, 255 / 255f);  //blue
+                cardRectTransform.GetComponent<Image>().color = new Color(0/255f, 107/255f, 255/255f); //blue
                 break;
             case Enumerations.EquipmentQuality.Legendary:
-                cardRectTransform.GetComponent<Image>().color = new Color(212 / 255f, 199 / 255f, 48 / 255f); //yellow
+                cardRectTransform.GetComponent<Image>().color = new Color(212/255f, 199/255f, 48/255f); //yellow
                 break;
         }
     }

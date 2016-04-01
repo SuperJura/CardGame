@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GamesManager : MonoBehaviour {
-
+public class GamesManager : MonoBehaviour
+{
     public void LoadCoopGame()
     {
         Deck.CheckCards();

@@ -2,17 +2,16 @@
 
 public static class Deck
 {
-    public static List<Card> Cards { get; set; }    //dek ima 20 karata
-    public static DeckEnums DeckType { get; set; }
-    public static string DeckName { get; set; }
-
-
     static Deck()
     {
         Cards = Repository.GetCardDatabaseInstance().GetRandomDeck();
         DeckType = DeckEnums.Random;
         DeckName = "random";
     }
+
+    public static List<Card> Cards { get; set; } //dek ima 20 karata
+    public static DeckEnums DeckType { get; set; }
+    public static string DeckName { get; set; }
 
     public static int CheckCards()
     {
@@ -30,7 +29,7 @@ public static class Deck
         Cards.Add(Repository.GetCardDatabaseInstance().GetRandomCard());
     }
 
-    public static bool AddCard(string staticID)
+    public static bool AddCard(string staticId)
     {
         if (Cards.Count >= 20)
         {
@@ -44,13 +43,13 @@ public static class Deck
         int counter = 0;
         foreach (Card card in Cards)
         {
-            if (card.StaticIDCard == staticID)
+            if (card.StaticIdCard == staticId)
             {
                 counter++;
             }
         }
 
-        Card cardToPut = Repository.GetCardDatabaseInstance().GetNewCard(staticID);
+        Card cardToPut = Repository.GetCardDatabaseInstance().GetNewCard(staticId);
         if (cardToPut != null)
         {
             Cards.Add(cardToPut);
@@ -59,11 +58,11 @@ public static class Deck
         return false;
     }
 
-    public static bool RemoveCard(string staticID)
+    public static bool RemoveCard(string staticId)
     {
         foreach (Card card in Cards)
         {
-            if (card.StaticIDCard == staticID)
+            if (card.StaticIdCard == staticId)
             {
                 Cards.Remove(card);
                 return true;

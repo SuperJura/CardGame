@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
-using System;
 
-public class DeckPanelManager : MonoBehaviour {
+public class DeckPanelManager : MonoBehaviour
+{
+    private Text deckTypeText;
 
-    Text deckTypeText;
-
-    void Start () {
+    private void Start()
+    {
         deckTypeText = transform.Find("DeckType").GetComponent<Text>();
         SetDeckType();
 

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class ChangeDeckMenuManager : MonoBehaviour {
-
+public class ChangeDeckMenuManager : MonoBehaviour
+{
     public DeckPanelManager deckPanelManager;
 
     public void RandomBtnClick()

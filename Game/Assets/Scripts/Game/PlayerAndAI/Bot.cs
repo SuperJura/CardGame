@@ -1,10 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
-public class Bot : BasePlayer {
-
-    bool playing;
+public class Bot : BasePlayer
+{
+    private bool playing;
 
     public override void Awake()
     {
@@ -24,7 +24,7 @@ public class Bot : BasePlayer {
 
     private void TurnsManager_OnEndTurn(EndTurnEventArgs args)
     {
-        if (playing == true)
+        if (playing)
         {
             StartCoroutine(PlayTurn());
             playing = false;
@@ -70,20 +70,20 @@ public class Bot : BasePlayer {
 
     private void ShowCardDetails(RectTransform card)
     {
-
         foreach (RectTransform child in card)
         {
             child.GetComponent<CanvasGroup>().alpha = 1;
         }
 
-        card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;   //nademo "brata" HidePanel i podesimo tako da se on ne vidi
+        card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;
+            //nademo "brata" HidePanel i podesimo tako da se on ne vidi
         card.GetComponent<CardHover>().enabled = true;
     }
 
     public IEnumerator PlayTurn()
     {
         RectTransform playingCard = myHand.GetChild(Random.Range(0, myHand.childCount)).GetComponent<RectTransform>();
-        yield return new WaitForSeconds(Random.Range(0.75f,2));
+        yield return new WaitForSeconds(Random.Range(0.75f, 2));
         ShowCardDetails(playingCard);
         playingCard.GetComponent<CardInteraction>().PlayCard();
     }

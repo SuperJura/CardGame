@@ -1,19 +1,20 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
 
-public class OnlineGameMenuManager : MonoBehaviour {
+public class OnlineGameMenuManager : MonoBehaviour
+{
+    private Button btnConnectToServer;
+    private Button btnStartOnlineGame;
+    private Text errorText;
 
     private ServerLobbyBehavior onlineGameManager;
-    private Button btnStartOnlineGame;
-    private Button btnConnectToServer;
     private Transform transformPlayerList;
-    private Text errorText;
-    private GameObject waitingBar;
     private InputField txtNick;
+    private GameObject waitingBar;
 
-    void Start () {
+    private void Start()
+    {
         onlineGameManager = GameObject.Find("GameManager").GetComponent<ServerLobbyBehavior>();
 
         onlineGameManager.OnReceivePlayerList += OnlineGameManager_OnReceivePlayerList;
@@ -38,7 +39,7 @@ public class OnlineGameMenuManager : MonoBehaviour {
         gamesManager.LoadOnlineGame();
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
         onlineGameManager.OnReceivePlayerList -= OnlineGameManager_OnReceivePlayerList;
         onlineGameManager.OnPlayerJoined -= OnlineGameManager_OnPlayerJoined;
@@ -54,8 +55,8 @@ public class OnlineGameMenuManager : MonoBehaviour {
 
         foreach (string nick in playerList)
         {
-            GameObject go = (GameObject)Resources.Load("MainMenuResources/PlayerListItem");
-            RectTransform prefab = (RectTransform)Instantiate(go.transform);
+            GameObject go = (GameObject) Resources.Load("MainMenuResources/PlayerListItem");
+            RectTransform prefab = (RectTransform) Instantiate(go.transform);
             prefab.GetComponent<Text>().text = nick;
 
             prefab.SetParent(transformPlayerList);

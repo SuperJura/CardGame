@@ -1,12 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
+﻿using System.Collections;
+using UnityEngine;
 
-public class MenuManager : MonoBehaviour {
-
+public class MenuManager : MonoBehaviour
+{
     public GameObject currentMenu;
 
-    void Start()
+    private void Start()
     {
         StartCoroutine(InitializeMenus());
     }
@@ -27,10 +26,10 @@ public class MenuManager : MonoBehaviour {
         {
             Animation initializeAnimation = menuChild.GetComponent<Animation>();
             initializeAnimation.Play();
-        }   //postavi sve menue u pocetnu poziciju
+        } //postavi sve menue u pocetnu poziciju
 
-        yield return new WaitForSeconds(0.1f);  //pricekaj da se sve animacije zavrse
-        OpenCurrentMenu();  //otvori prvi menu
+        yield return new WaitForSeconds(0.1f); //pricekaj da se sve animacije zavrse
+        OpenCurrentMenu(); //otvori prvi menu
     }
 
     private void OpenCurrentMenu()

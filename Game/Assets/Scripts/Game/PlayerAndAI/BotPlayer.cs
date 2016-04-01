@@ -1,5 +1,5 @@
-﻿public class BotPlayer : BasePlayer {
-
+﻿public class BotPlayer : BasePlayer
+{
     public override void Start()
     {
         base.Start();

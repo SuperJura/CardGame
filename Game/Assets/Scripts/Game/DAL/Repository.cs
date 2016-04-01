@@ -1,6 +1,4 @@
-﻿using System;
-
-public static class Repository
+﻿public static class Repository
 {
     private static ICardDatabase cardDatabase;
 

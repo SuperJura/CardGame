@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
-public class CardCombat : MonoBehaviour {
+public class CardCombat : MonoBehaviour
+{
+    private Animation anim;
+    private Text cardCooldown;
 
-    Text cardHealth;
-    Text cardAttack;
-    Text cardCooldown;
-    Animation anim;
+    private Text cardHealth;
 
-    // Use this for initialization
-    void Start () {
+    private void Start()
+    {
         cardHealth = transform.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>();
-        cardAttack = transform.Find("CardInfo/CardAttack/CardAttackText").GetComponent<Text>();
         cardCooldown = transform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>();
         anim = GetComponent<Animation>();
     }

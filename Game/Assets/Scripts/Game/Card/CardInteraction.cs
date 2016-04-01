@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.EventSystems;
-using System;
 
 public class CardInteraction : MonoBehaviour, IPointerClickHandler
 {
     public delegate void OnCardPickTurnEndHandler(RectTransform card);
-    public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
 
-    public RectTransform CDField { get; set; }
+    public RectTransform CdField { get; set; }
     public bool Playable { get; set; } //bot cards cant be playable
 
-    void Start()
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (Playable)
+        {
+            PlayCard();
+        }
+    }
+
+    public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
+
+    private void Start()
     {
         if (transform.parent.parent.name.StartsWith("B"))
         {
@@ -29,20 +36,12 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         transform.Find("CardInfo/CardCooldown/CardCooldownText").localRotation = newRotation;
     }
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (Playable)
-        {
-            PlayCard();
-        }
-    }
-
     public void PlayCard()
     {
         RectTransform myRectTransform = GetComponent<RectTransform>();
-        if (CDField.childCount < 5)
+        if (CdField.childCount < 5)
         {
-            transform.SetParent(CDField);
+            transform.SetParent(CdField);
             OnCardPickTurnEnd(myRectTransform);
         }
     }

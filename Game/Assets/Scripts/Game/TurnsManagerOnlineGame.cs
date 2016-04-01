@@ -1,19 +1,11 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public class TurnsManagerOnlineGame : TurnsManager {
-
-
+﻿public class TurnsManagerOnlineGame : TurnsManager
+{
     public override void FillHand()
     {
         //kod online igre, puni samo svoju ruku
-        switch (whoMoves)
+        if (whoMoves == 'a')
         {
-            case 'a':
-                aPlayer.FillHand();
-                break;
-            default:
-                break;
+            aPlayer.FillHand();
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class OnlinePlayer : BasePlayer {
-
-    ServerGameBehavior gameBehavior;
+public class OnlinePlayer : BasePlayer
+{
+    private ServerGameBehavior gameBehavior;
 
     public override void Start()
     {

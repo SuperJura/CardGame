@@ -3,10 +3,22 @@
 [Serializable]
 public class Card : ICloneable
 {
-    private static int idCounter = 0;
-    public int IDCard { get; set; }
+    private static int idCounter;
 
-    public string StaticIDCard { get; set; }
+    public Card()
+    {
+        IdCard = ++idCounter;
+        Name = "Generic Card";
+        Health = 5;
+        Attack = 5;
+        DefaultCooldown = 5;
+        CurrentCooldown = DefaultCooldown;
+        SpecialAttackId = "";
+    }
+
+    public int IdCard { get; set; }
+
+    public string StaticIdCard { get; set; }
     public string Name { get; set; }
     public string ImagePath { get; set; }
 
@@ -16,33 +28,24 @@ public class Card : ICloneable
     public int Attack { get; set; }
     public int DefaultCooldown { get; set; }
     public int CurrentCooldown { get; set; }
-    public string SpecialAttackID { get; set; }
+    public string SpecialAttackId { get; set; }
     public string CardFlavour { get; set; }
-
-    public Card()
-    {
-        IDCard = ++idCounter;
-        Name = "Generic Card";
-        Health = 5;
-        Attack = 5;
-        DefaultCooldown = 5;
-        CurrentCooldown = DefaultCooldown;
-        SpecialAttackID = "";
-    }
 
     public object Clone()
     {
-        Card copy = new Card();
-        copy.IDCard = ++idCounter;
-        copy.StaticIDCard = StaticIDCard;
-        copy.Name = Name;
-        copy.ImagePath = ImagePath;
-        copy.Quality = Quality;
-        copy.Health = Health;
-        copy.Attack = Attack;
-        copy.DefaultCooldown = DefaultCooldown;
+        Card copy = new Card
+        {
+            IdCard = ++idCounter,
+            StaticIdCard = StaticIdCard,
+            Name = Name,
+            ImagePath = ImagePath,
+            Quality = Quality,
+            Health = Health,
+            Attack = Attack,
+            DefaultCooldown = DefaultCooldown
+        };
         copy.CurrentCooldown = copy.DefaultCooldown;
-        copy.SpecialAttackID = SpecialAttackID;
+        copy.SpecialAttackId = SpecialAttackId;
         copy.CardFlavour = CardFlavour;
 
         return copy;

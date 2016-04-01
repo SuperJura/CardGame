@@ -1,16 +1,13 @@
-﻿using System;
-using UnityEngine;
-
-public class CoopPlayer : BasePlayer {
-
-    public override void Start ()
+﻿public class CoopPlayer : BasePlayer
+{
+    public override void Start()
     {
         base.Start();
 
         FillHand();
     }
 
-    public override void Awake ()
+    public override void Awake()
     {
         if (IsPlayerA())
         {

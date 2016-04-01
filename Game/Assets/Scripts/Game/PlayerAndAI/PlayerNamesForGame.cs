@@ -1,5 +1,5 @@
-﻿public static class PlayerNamesForGame {
-
+﻿public static class PlayerNamesForGame
+{
     public static string NicknameForBotGame;
 
     public static string NicknameForCoopGameA;

@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
 
-public class CustomDeckCardControls : MonoBehaviour {
-
+public class CustomDeckCardControls : MonoBehaviour
+{
     public void AddCard()
     {
-        string staticID = transform.Find("Card/CardStaticID").GetComponent<Text>().text;
-        bool success = Deck.AddCard(staticID);
+        string staticId = transform.Find("Card/CardStaticID").GetComponent<Text>().text;
+        bool success = Deck.AddCard(staticId);
 
         if (success)
         {
@@ -17,14 +16,14 @@ public class CustomDeckCardControls : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Neuspjesno dodavanje karte: " + staticID);
+            Debug.Log("Neuspjesno dodavanje karte: " + staticId);
         }
     }
 
     public void RemoveCard()
     {
-        string staticID = transform.Find("Card/CardStaticID").GetComponent<Text>().text;
-        bool success = Deck.RemoveCard(staticID);
+        string staticId = transform.Find("Card/CardStaticID").GetComponent<Text>().text;
+        bool success = Deck.RemoveCard(staticId);
 
         if (success)
         {
@@ -34,7 +33,7 @@ public class CustomDeckCardControls : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Neuspjesno micanje karte: " + staticID);
+            Debug.Log("Neuspjesno micanje karte: " + staticId);
         }
     }
 }

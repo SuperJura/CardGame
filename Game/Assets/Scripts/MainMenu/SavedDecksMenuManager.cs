@@ -1,13 +1,11 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
-using System.Linq;
-using System;
+﻿using System.Linq;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using UnityEngine;
+using UnityEngine.UI;
 
-public class SavedDecksMenuManager : MonoBehaviour {
-
+public class SavedDecksMenuManager : MonoBehaviour
+{
     public DeckPanelManager deckPanelManager;
 
     public void LoadDeck()
@@ -20,12 +18,12 @@ public class SavedDecksMenuManager : MonoBehaviour {
         string deckPath = panel.Find("DeckPath").GetComponent<Text>().text;
         string deckName = panel.Find("DeckName").GetComponent<Text>().text;
         deckName = deckName.Split('.')[0];
-        LoadDeckFromXML(deckPath, deckName);
+        LoadDeckFromXml(deckPath, deckName);
     }
 
-    private void LoadDeckFromXML(string DeckPath, string deckName)
+    private void LoadDeckFromXml(string deckPath, string deckName)
     {
-        XDocument doc = XDocument.Load(DeckPath);
+        XDocument doc = XDocument.Load(deckPath);
 
         Deck.Cards.Clear();
         ICardDatabase database = Repository.GetCardDatabaseInstance();

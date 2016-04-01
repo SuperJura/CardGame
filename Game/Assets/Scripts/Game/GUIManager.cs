@@ -1,18 +1,18 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
 
-public class GUIManager : MonoBehaviour {
+public class GUIManager : MonoBehaviour
+{
+    private Text CardDescription;
+    private Transform gameboardPanel;
 
     private RectTransform infoPanel;
-    private RectTransform notificationPanel;
     private RectTransform messages;
-    private Dictionary<char, string> playerCharName;    //char = a/b; string = ime a/b
-    private Transform gameboardPanel;
-    private Text CardDescription;
+    private RectTransform notificationPanel;
+    private Dictionary<char, string> playerCharName; //char = a/b; string = ime a/b
 
-    void Awake()
+    private void Awake()
     {
         gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         transform.GetComponent<TurnsManager>().OnEndTurn += GUIManager_OnEndTurn;
@@ -29,18 +29,16 @@ public class GUIManager : MonoBehaviour {
         notificationPanel.Find("A_PlayerName/NameText").GetComponentInChildren<Text>().text = aName;
         notificationPanel.Find("B_PlayerName/NameText").GetComponentInChildren<Text>().text = bName;
 
-        playerCharName = new Dictionary<char, string>(2);
+        playerCharName = new Dictionary<char, string>(2) {{'a', aName}, {'b', bName}};
 
-        playerCharName.Add('a', aName);
-        playerCharName.Add('b', bName);
     }
 
-    void GUIManager_OnNotification(char player, string message)
+    private void GUIManager_OnNotification(char player, string message)
     {
         string msgToWrite = playerCharName[player] + ": " + message + "\n\r";
 
-        GameObject newGO = (GameObject)Resources.Load("GameResources/Notification");
-        RectTransform notification = (RectTransform)Instantiate(newGO.transform);
+        GameObject newGO = (GameObject) Resources.Load("GameResources/Notification");
+        RectTransform notification = (RectTransform) Instantiate(newGO.transform);
         notification.SetParent(messages);
 
         Text messageText = notification.GetComponentInChildren<Text>();
@@ -54,27 +52,27 @@ public class GUIManager : MonoBehaviour {
             case 'b':
                 messageText.color = Color.red;
                 break;
-            default:
-                break;
         }
         messageText.alignment = TextAnchor.UpperCenter;
         notification.transform.localScale = new Vector3(1, 1, 1);
     }
 
-    void GUIManager_OnPlayerLoseHealth(PlayerLoseHealthEventArgs args)
+    private void GUIManager_OnPlayerLoseHealth(PlayerLoseHealthEventArgs args)
     {
         switch (args.PlayerPosition)
         {
             case 'a':
-                notificationPanel.Find("A_PlayerHealth/Text").GetComponentInChildren<Text>().text = args.CurrentHealth.ToString();
+                notificationPanel.Find("A_PlayerHealth/Text").GetComponentInChildren<Text>().text =
+                    args.CurrentHealth.ToString();
                 break;
             case 'b':
-                notificationPanel.Find("B_PlayerHealth/Text").GetComponentInChildren<Text>().text = args.CurrentHealth.ToString();
+                notificationPanel.Find("B_PlayerHealth/Text").GetComponentInChildren<Text>().text =
+                    args.CurrentHealth.ToString();
                 break;
         }
     }
 
-    void GUIManager_OnEndTurn(EndTurnEventArgs args)
+    private void GUIManager_OnEndTurn(EndTurnEventArgs args)
     {
         infoPanel.Find("CurrentTurnText").GetComponentInChildren<Text>().text = args.TurnNumber.ToString();
         RotateCurrentTurnImage(args.NextPlayerChar);
@@ -84,8 +82,8 @@ public class GUIManager : MonoBehaviour {
     //poziva se kada igrac prede misem preko karte
     public void Card_OnHover(RectTransform card)
     {
-        string staticID = card.Find("CardStaticID").GetComponent<Text>().text;
-        string cardFlavour = Repository.GetCardDatabaseInstance().GetCard(staticID).CardFlavour;
+        string staticId = card.Find("CardStaticID").GetComponent<Text>().text;
+        string cardFlavour = Repository.GetCardDatabaseInstance().GetCard(staticId).CardFlavour;
 
         CardDescription.text = cardFlavour;
     }

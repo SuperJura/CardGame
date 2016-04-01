@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.UI;
-using System;
 
-public class SpecialAttacksManager : MonoBehaviour {
-
+public class SpecialAttacksManager : MonoBehaviour
+{
     private Transform playerA_CDField;
-    private Transform playerB_CDField;
     private Transform playerA_PlayField;
+    private Transform playerB_CDField;
     private Transform playerB_PlayField;
 
-    void Start()
+    private void Start()
     {
         Transform gameboard = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         playerA_CDField = gameboard.Find("A_PlayerSide/PlayerCDField");
@@ -18,7 +16,7 @@ public class SpecialAttacksManager : MonoBehaviour {
         playerA_PlayField = gameboard.Find("A_PlayerSide/PlayerPlayField");
         playerB_PlayField = gameboard.Find("B_PlayerSide/PlayerPlayField");
     }
-    
+
     public bool DoSpecialAttack(RectTransform attackingCard, char player)
     {
         string specialAttack = GetSpecialAttack(attackingCard);
@@ -39,10 +37,10 @@ public class SpecialAttacksManager : MonoBehaviour {
 
     public string GetSpecialAttack(RectTransform card)
     {
-        string cardStaticID = card.Find("CardStaticID").GetComponent<Text>().text;
-        Card c = Repository.GetCardDatabaseInstance().GetNewCard(cardStaticID);
+        string cardStaticId = card.Find("CardStaticID").GetComponent<Text>().text;
+        Card c = Repository.GetCardDatabaseInstance().GetNewCard(cardStaticId);
 
-        return c.SpecialAttackID;
+        return c.SpecialAttackId;
     }
 
     private void DoSpreadAttack(RectTransform attackingCard, char player)
@@ -51,13 +49,13 @@ public class SpecialAttacksManager : MonoBehaviour {
         Transform opponent = GetOpponentPlayField(player);
         int cardPosition = attackingCard.GetSiblingIndex();
 
-        if (opponent.childCount == 0)   //ako neprijatelj nema djece, nema ni napada
+        if (opponent.childCount == 0) //ako neprijatelj nema djece, nema ni napada
         {
             return;
         }
 
         //napada se jedno djete na ljevo i na desno
-        int cardBefore = cardPosition - 1;  //ako je index -1, onda ne napadni
+        int cardBefore = cardPosition - 1; //ako je index -1, onda ne napadni
         int cardAfter = cardPosition + 1;
 
         if (cardAfter >= opponent.childCount)

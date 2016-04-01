@@ -1,42 +1,41 @@
-﻿using UnityEngine;
-using System.Collections;
-using UnityEngine.UI;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System;
+using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(SpecialAttacksManager))]
+[RequireComponent(typeof (SpecialAttacksManager))]
 public class TurnsManager : MonoBehaviour
 {
-
     public delegate void OnEndTurnHandler(EndTurnEventArgs args);
-    public event OnEndTurnHandler OnEndTurn;
+
+    public delegate void OnNotificationHandler(char player, string message);
 
     public delegate void OnPlayerLoseHealthHandler(PlayerLoseHealthEventArgs args);
-    public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
-        
-    public delegate void OnNotificationHandler(char player, string message);
-    public event OnNotificationHandler OnNotification;
 
-    protected char whoMoves;  //a = igrac A; b = igrac B
     protected BasePlayer aPlayer;
-    protected BasePlayer bPlayer;
 
     private RectTransform APlayerSide;
+    protected BasePlayer bPlayer;
     private RectTransform BPlayerSide;
-	private RectTransform graveyard;
-    private int nublerOfTurns;
     private EndGameManager endGameManager;
+    private RectTransform graveyard;
+    private int nublerOfTurns;
     private SpecialAttacksManager specialAttacks;
 
+    protected char whoMoves; //a = igrac A; b = igrac B
+    public event OnEndTurnHandler OnEndTurn;
+    public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
+    public event OnNotificationHandler OnNotification;
+
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         Transform gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
         specialAttacks = transform.GetComponent<SpecialAttacksManager>();
         APlayerSide = gameboardPanel.Find("A_PlayerSide").GetComponent<RectTransform>();
         BPlayerSide = gameboardPanel.Find("B_PlayerSide").GetComponent<RectTransform>();
-        graveyard = gameboardPanel.Find ("InfoPanel/Graveyard").GetComponent<RectTransform> ();
+        graveyard = gameboardPanel.Find("InfoPanel/Graveyard").GetComponent<RectTransform>();
         aPlayer = APlayerSide.GetComponent<BasePlayer>();
         bPlayer = BPlayerSide.GetComponent<BasePlayer>();
         InitializeGUI();
@@ -63,21 +62,21 @@ public class TurnsManager : MonoBehaviour
 
         string cardName = card.Find("CardName").GetComponentInChildren<Text>().text;
         string msg = "I put " + cardName;
-        CallOnNotification(msg);    //prikaz notificationa
+        CallOnNotification(msg); //prikaz notificationa
 
         StartCoroutine(StartCoolDownPhase());
-    }   //1. faza, biranje karte za igranje
+    } //1. faza, biranje karte za igranje
 
     private IEnumerator StartCoolDownPhase()
     {
-        RectTransform CDField = GetCDFieldOfCurrentPlayer();
+        RectTransform cdField = GetCdFieldOfCurrentPlayer();
 
-        foreach (RectTransform card in CDField)
+        foreach (RectTransform card in cdField)
         {
             FocusCard(card);
             card.GetComponent<CardCombat>().DecreaseCooldown();
 
-            yield return new WaitForSeconds(0.5f);  //pauziranje metode
+            yield return new WaitForSeconds(0.5f); //pauziranje metode
 
             UnfocusCard(card);
         }
@@ -87,12 +86,12 @@ public class TurnsManager : MonoBehaviour
 
     private void CheckForReadyCards()
     {
-        RectTransform CDField = GetCDFieldOfCurrentPlayer();
-        RectTransform PlayField = GetPlayFieldOfCurrentPlayer();
+        RectTransform cdField = GetCdFieldOfCurrentPlayer();
+        RectTransform playField = GetPlayFieldOfCurrentPlayer();
 
         List<RectTransform> listOfReadyCards = new List<RectTransform>();
 
-        foreach (RectTransform card in CDField)
+        foreach (RectTransform card in cdField)
         {
             if (card.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text == "0")
             {
@@ -101,59 +100,60 @@ public class TurnsManager : MonoBehaviour
         }
         while (listOfReadyCards.Count != 0)
         {
-            if (GetPlayFieldOfCurrentPlayer().childCount >= 5) {
+            if (GetPlayFieldOfCurrentPlayer().childCount >= 5)
+            {
                 break;
             }
 
-            listOfReadyCards[0].SetParent(PlayField);
+            listOfReadyCards[0].SetParent(playField);
             listOfReadyCards.RemoveAt(0);
         }
 
         StartCoroutine(StartAttackPhase());
-    }   //-medufaza- poslje 2. faze se prebacuju karte s 0 cd na PlayField
+    } //-medufaza- poslje 2. faze se prebacuju karte s 0 cd na PlayField
 
     private IEnumerator StartAttackPhase()
     {
         RectTransform attackerPlayField = GetPlayFieldOfCurrentPlayer();
         RectTransform defenderPlayField = GetPlayFieldOfOtherPlayer();
 
-        for (int i = 0; i < attackerPlayField.childCount; i++)  //svaka karta napada
-        {   
+        for (int i = 0; i < attackerPlayField.childCount; i++) //svaka karta napada
+        {
             RectTransform attackerCard = attackerPlayField.GetChild(i).GetComponent<RectTransform>();
-            FocusCard(attackerCard);    //prikazi koja karta napada
+            FocusCard(attackerCard); //prikazi koja karta napada
 
             Animation anim = attackerCard.GetComponent<Animation>();
-            anim.Play("AttackingAnimation");    //animiraj napad
+            anim.Play("AttackingAnimation"); //animiraj napad
 
             RectTransform defenderCard = null;
-            if (defenderPlayField.childCount>= i+1) //ako postoji neprijatelj, napadni ga
+            if (defenderPlayField.childCount >= i + 1) //ako postoji neprijatelj, napadni ga
             {
                 defenderCard = defenderPlayField.GetChild(i).GetComponent<RectTransform>();
                 AttackTarget(attackerCard, defenderCard);
-                LowFocusCard (defenderCard);
+                LowFocusCard(defenderCard);
             }
-            else    //inace napadni playera
+            else //inace napadni playera
             {
                 AttackOpositePlayer(attackerCard);
             }
 
-            string specialAttack = specialAttacks.GetSpecialAttack(attackerCard);    //napravi specialni napad
-            if (specialAttack != "")   //ako karta ima specialni napad
+            string specialAttack = specialAttacks.GetSpecialAttack(attackerCard); //napravi specialni napad
+            if (specialAttack != "") //ako karta ima specialni napad
             {
                 yield return new WaitForSeconds(1.7f);
                 specialAttacks.DoSpecialAttack(attackerCard, whoMoves);
             }
 
             yield return new WaitForSeconds(1);
-			if (defenderCard != null)
-			{
-				UnfocusAliveCard (defenderCard);
-			}
+            if (defenderCard != null)
+            {
+                UnfocusAliveCard(defenderCard);
+            }
             UnfocusCard(attackerCard);
         }
 
         CheckForDeadCards();
-    }   //3. faza
+    } //3. faza
 
     private void CheckForDeadCards()
     {
@@ -171,7 +171,7 @@ public class TurnsManager : MonoBehaviour
 
         DestroyDeadCards(cardsToDestroy);
         CheckIfPlayerWon();
-    }   //4. faza
+    } //4. faza
 
     private void CheckIfPlayerWon()
     {
@@ -224,7 +224,6 @@ public class TurnsManager : MonoBehaviour
     //POMOCNE METODE
     private void EndPlayerTurn()
     {
-
         ChangePlayer();
         EnablePicking();
 
@@ -241,8 +240,6 @@ public class TurnsManager : MonoBehaviour
                 break;
             case 'b':
                 bPlayer.FillHand();
-                break;
-            default:
                 break;
         }
     }
@@ -261,32 +258,32 @@ public class TurnsManager : MonoBehaviour
                 whoMoves = ' ';
                 break;
         }
-    }   //ako je whoMoves 'a', postaje 'b' i obrnuto
+    } //ako je whoMoves 'a', postaje 'b' i obrnuto
 
     private void UnfocusCard(RectTransform card)
     {
         card.transform.localScale = new Vector3(1, 1, 1);
-    }   //Postavlja Scale karte na 1, 1, 1
+    } //Postavlja Scale karte na 1, 1, 1
 
     private void UnfocusAliveCard(RectTransform card)
-	{
-		int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
+    {
+        int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
 
-		if (health > 0)
-		{
-			card.localScale = new Vector3 (1, 1, 1);
-		}
-	}	//Postavlja Scale karte na 1, 1, 1 samo ako je karta ziva
+        if (health > 0)
+        {
+            card.localScale = new Vector3(1, 1, 1);
+        }
+    } //Postavlja Scale karte na 1, 1, 1 samo ako je karta ziva
 
     private void FocusCard(RectTransform card)
     {
         card.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-    }   //Postavlja Scale karte na 1.1, 1.1, 1.1
+    } //Postavlja Scale karte na 1.1, 1.1, 1.1
 
     private void LowFocusCard(RectTransform card)
-	{
-		card.localScale = new Vector3 (0.9f, 0.9f, 0.9f);
-	}	//Postavlja Scale karte na 0.9, 0.9, 0.9
+    {
+        card.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+    } //Postavlja Scale karte na 0.9, 0.9, 0.9
 
     private void DisablePicking()
     {
@@ -298,7 +295,7 @@ public class TurnsManager : MonoBehaviour
             //card.GetComponent<CanvasGroup>().interactable = false;
             card.GetComponent<CardInteraction>().enabled = false;
         }
-    }   //onaj tko je na whoMoves nemoze vise birati karte
+    } //onaj tko je na whoMoves nemoze vise birati karte
 
     private void EnablePicking()
     {
@@ -310,25 +307,27 @@ public class TurnsManager : MonoBehaviour
             //card.GetComponent<CanvasGroup>().interactable = true;
             card.GetComponent<CardInteraction>().enabled = true;
         }
-    }   //onaj tko je na whoMoves moze birati karte
+    } //onaj tko je na whoMoves moze birati karte
 
     private void AttackTarget(RectTransform attackerCard, RectTransform defenderCard)
     {
-        int attack = int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
+        int attack =
+            int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
 
         CardCombat combatDefender = defenderCard.GetComponent<CardCombat>();
         combatDefender.RecieveDamage(attack);
 
         string attackName = attackerCard.Find("CardName").GetComponentInChildren<Text>().text;
         string defenceName = defenderCard.Find("CardName").GetComponentInChildren<Text>().text;
-        string msg = attackName + " attacked your "+ defenceName +" for " + attack;
+        string msg = attackName + " attacked your " + defenceName + " for " + attack;
 
         CallOnNotification(msg);
     }
 
     private void AttackOpositePlayer(RectTransform attackerCard)
     {
-        int attack = int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
+        int attack =
+            int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
         switch (whoMoves)
         {
             case 'a':
@@ -336,8 +335,6 @@ public class TurnsManager : MonoBehaviour
                 break;
             case 'b':
                 aPlayer.Health -= attack;
-                break;
-            default:
                 break;
         }
 
@@ -378,8 +375,6 @@ public class TurnsManager : MonoBehaviour
                 return 'b';
             case 'b':
                 return 'a';
-            default:
-                break;
         }
 
         return ' ';
@@ -408,75 +403,75 @@ public class TurnsManager : MonoBehaviour
     }
 
     //RECTTRANSFORM POMOCNE METODE
-    private RectTransform GetCDFieldOfCurrentPlayer()
+    private RectTransform GetCdFieldOfCurrentPlayer()
     {
-        RectTransform CDField;
+        RectTransform cdField;
         switch (whoMoves)
         {
             case 'a':
-                CDField = APlayerSide.Find("PlayerCDField").GetComponent<RectTransform>();
+                cdField = APlayerSide.Find("PlayerCDField").GetComponent<RectTransform>();
                 break;
             case 'b':
-                CDField = BPlayerSide.Find("PlayerCDField").GetComponent<RectTransform>();
+                cdField = BPlayerSide.Find("PlayerCDField").GetComponent<RectTransform>();
                 break;
             default:
-                CDField = null;
+                cdField = null;
                 break;
         }
-        return CDField;
+        return cdField;
     }
 
     private RectTransform GetPlayerHandOfCurrentPlayer()
     {
-        RectTransform PlayerHand;
+        RectTransform playerHand;
         switch (whoMoves)
         {
             case 'a':
-                PlayerHand = APlayerSide.Find("PlayerHand").GetComponent<RectTransform>();
+                playerHand = APlayerSide.Find("PlayerHand").GetComponent<RectTransform>();
                 break;
             case 'b':
-                PlayerHand = BPlayerSide.Find("PlayerHand").GetComponent<RectTransform>();
+                playerHand = BPlayerSide.Find("PlayerHand").GetComponent<RectTransform>();
                 break;
             default:
-                PlayerHand = null;
+                playerHand = null;
                 break;
         }
-        return PlayerHand;
+        return playerHand;
     }
 
     private RectTransform GetPlayFieldOfCurrentPlayer()
     {
-        RectTransform PlayField;
+        RectTransform playField;
         switch (whoMoves)
         {
             case 'a':
-                PlayField = APlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
+                playField = APlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
                 break;
             case 'b':
-                PlayField = BPlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
+                playField = BPlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
                 break;
             default:
-                PlayField = null;
+                playField = null;
                 break;
         }
-        return PlayField;
-    }   //play field TRENUTNOG igraca
+        return playField;
+    } //play field TRENUTNOG igraca
 
     private RectTransform GetPlayFieldOfOtherPlayer()
     {
-        RectTransform PlayField;
+        RectTransform playField;
         switch (whoMoves)
         {
             case 'a':
-                PlayField = BPlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
+                playField = BPlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
                 break;
             case 'b':
-                PlayField = APlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
+                playField = APlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
                 break;
             default:
-                PlayField = null;
+                playField = null;
                 break;
         }
-        return PlayField;
-    }   //play field DRUGOG igraca
+        return playField;
+    } //play field DRUGOG igraca
 }

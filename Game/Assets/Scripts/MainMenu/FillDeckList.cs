@@ -1,16 +1,13 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
-using System.IO;
 
 public class FillDeckList : MonoBehaviour
 {
-
     private string applicationPath;
     private ICardDatabase database;
 
-    void Start()
+    private void Start()
     {
         applicationPath = Application.dataPath;
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
@@ -33,8 +30,8 @@ public class FillDeckList : MonoBehaviour
         {
             if (path.EndsWith(".xml"))
             {
-                GameObject go = (GameObject)Resources.Load("MainMenuResources/DeckItem");
-                RectTransform prefab = Instantiate((RectTransform)go.transform);
+                GameObject go = (GameObject) Resources.Load("MainMenuResources/DeckItem");
+                RectTransform prefab = Instantiate((RectTransform) go.transform);
                 string[] deckNameDetails = path.Split('/');
                 string deckName = deckNameDetails[deckNameDetails.Length - 1];
                 prefab.Find("DeckName").GetComponent<Text>().text = deckName;

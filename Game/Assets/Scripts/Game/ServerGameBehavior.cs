@@ -1,34 +1,32 @@
 ﻿using UnityEngine;
-using System.Collections;
-using WebSocketSharp.Net;
-using WebSocketSharp;
-using System;
 using UnityEngine.UI;
+using WebSocketSharp;
 
-public class ServerGameBehavior : MonoBehaviour {
-
+public class ServerGameBehavior : MonoBehaviour
+{
     public delegate void OnCanStartHandler();
-    public event OnCanStartHandler OnCanStart;
 
-    public delegate void OnOpponentDrawedHandler(string staticID);
-    public event OnOpponentDrawedHandler OnOpponentDrawed;
+    public delegate void OnOpponentDrawedHandler(string staticId);
 
-    public delegate void OnOpponentPlayedHandler(string staticID);
-    public event OnOpponentPlayedHandler OnOpponentPlayed;
+    public delegate void OnOpponentPlayedHandler(string staticId);
 
-    private WebSocket ws;
-    private Transform notificationPanel;
     private EndGameManager endGameManager;
+    private Transform notificationPanel;
     private TurnsManager turnsManager;
 
-    void Awake()
+    private WebSocket ws;
+    public event OnCanStartHandler OnCanStart;
+    public event OnOpponentDrawedHandler OnOpponentDrawed;
+    public event OnOpponentPlayedHandler OnOpponentPlayed;
+
+    private void Awake()
     {
         notificationPanel = GameObject.Find("Canvas/Gameboard/MainPanel/NotificationPanel").transform;
         endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
         turnsManager = transform.GetComponent<TurnsManager>();
     }
 
-    void Start()
+    private void Start()
     {
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
         //ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
@@ -52,9 +50,9 @@ public class ServerGameBehavior : MonoBehaviour {
     }
 
     //metoda se poziva svaki put kada IGRAC povuce kartu
-    public void CardDrawn(string staticID)
+    public void CardDrawn(string staticId)
     {
-        ws.Send("cardDrawed|" + staticID);
+        ws.Send("cardDrawed|" + staticId);
     }
 
     private void Ws_OnMessage(object sender, MessageEventArgs e)
@@ -109,19 +107,19 @@ public class ServerGameBehavior : MonoBehaviour {
         turnsManager.PlayerOnTurn(nicknamePlaying);
     }
 
-    private void OpponentPlayedStatement(string staticID)
+    private void OpponentPlayedStatement(string staticId)
     {
         if (OnOpponentPlayed != null)
         {
-            OnOpponentPlayed(staticID);
+            OnOpponentPlayed(staticId);
         }
     }
 
-    private void OpponentDrawedStatement(string staticID)
+    private void OpponentDrawedStatement(string staticId)
     {
         if (OnOpponentDrawed != null)
         {
-            OnOpponentDrawed(staticID);
+            OnOpponentDrawed(staticId);
         }
     }
 
@@ -156,5 +154,4 @@ public class ServerGameBehavior : MonoBehaviour {
         }
         ServerLobbyBehavior.CloseWebSocket();
     }
-
 }

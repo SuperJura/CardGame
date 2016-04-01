@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
-public class OnlineOpponent : BasePlayer {
-
-    ServerGameBehavior gameBehavior;
+public class OnlineOpponent : BasePlayer
+{
+    private ServerGameBehavior gameBehavior;
 
     public override void Start()
     {
@@ -15,13 +14,13 @@ public class OnlineOpponent : BasePlayer {
         base.Start();
     }
 
-    private void GameBehavior_OnOpponentPlayed(string staticID)
+    private void GameBehavior_OnOpponentPlayed(string staticId)
     {
         foreach (RectTransform card in myHand)
         {
-            string childStaticID = card.Find("CardStaticID").GetComponent<Text>().text;
+            string childStaticId = card.Find("CardStaticID").GetComponent<Text>().text;
 
-            if (childStaticID == staticID)
+            if (childStaticId == staticId)
             {
                 ShowCardDetails(card);
                 card.GetComponent<CardInteraction>().PlayCard();
@@ -37,14 +36,14 @@ public class OnlineOpponent : BasePlayer {
         base.Awake();
     }
 
-    private void GameBehavior_OnOpponentDrawed(string staticID)
+    private void GameBehavior_OnOpponentDrawed(string staticId)
     {
-        DrawCard(staticID);
+        DrawCard(staticId);
     }
 
-    public void DrawCard(string staticID)
+    public void DrawCard(string staticId)
     {
-        RectTransform card = GetRectTransformCard(staticID);
+        RectTransform card = GetRectTransformCard(staticId);
         card.GetComponent<CardInteraction>().TurnAroundTheCard();
         card.GetComponent<CardInteraction>().enabled = false;
         card.GetComponent<CardInteraction>().Playable = false;
@@ -74,7 +73,8 @@ public class OnlineOpponent : BasePlayer {
             child.GetComponent<CanvasGroup>().alpha = 1;
         }
 
-        card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;   //nademo "brata" HidePanel i podesimo tako da se on ne vidi
+        card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;
+            //nademo "brata" HidePanel i podesimo tako da se on ne vidi
         card.GetComponent<CardHover>().enabled = true;
     }
 }

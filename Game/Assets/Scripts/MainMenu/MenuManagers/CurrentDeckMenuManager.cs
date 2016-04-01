@@ -1,24 +1,22 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.IO;
 using System.Xml.Linq;
 using System.Xml.XPath;
+using UnityEngine;
 using UnityEngine.UI;
-using System;
 
-public class CurrentDeckMenuManager : MonoBehaviour {
-
-    public DeckPanelManager deckPanelManager;
-    public MenuManager menuManager;
+public class CurrentDeckMenuManager : MonoBehaviour
+{
+    private string applicationPath;
     public GameObject changeDeckMenu;
 
-    private string applicationPath;
+    public DeckPanelManager deckPanelManager;
 
 
-    Text errorTextSaving;
+    private Text errorTextSaving;
+    public MenuManager menuManager;
 
-    void Start()
+    private void Start()
     {
         errorTextSaving = transform.Find("ErrorText").GetComponent<Text>();
         applicationPath = Application.dataPath;
@@ -44,7 +42,7 @@ public class CurrentDeckMenuManager : MonoBehaviour {
 
         Deck.DeckType = DeckEnums.Saved;
         deckPanelManager.SetDeckType();
-        SaveDeckToXML(deckName);
+        SaveDeckToXml(deckName);
 
         menuManager.LoadMenu(changeDeckMenu);
     }
@@ -67,19 +65,19 @@ public class CurrentDeckMenuManager : MonoBehaviour {
         errorTextSaving.enabled = false;
     }
 
-    private void SaveDeckToXML(string deckName)
+    private void SaveDeckToXml(string deckName)
     {
-        int deckID = GetNextDeckID();
+        int deckId = GetNextDeckId();
 
         XElement deck = new XElement("Deck");
         deck.SetAttributeValue("deckName", deckName);
-        deck.SetAttributeValue("deckID", deckID);
+        deck.SetAttributeValue("deckID", deckId);
 
         foreach (Card card in Deck.Cards)
         {
-            XElement cardID = new XElement("Card", card.StaticIDCard);
-            cardID.SetAttributeValue("name", card.Name);
-            deck.Add(cardID);
+            XElement cardId = new XElement("Card", card.StaticIdCard);
+            cardId.SetAttributeValue("name", card.Name);
+            deck.Add(cardId);
         }
 
         XDocument doc = new XDocument(deck);
@@ -87,23 +85,23 @@ public class CurrentDeckMenuManager : MonoBehaviour {
         File.WriteAllText(path, doc.ToString());
     }
 
-    private int GetNextDeckID()
+    private int GetNextDeckId()
     {
         XDocument doc = XDocument.Load(applicationPath + "/Configuration/Configuration.xml");
-        int id = int.Parse(doc.XPathSelectElement("root/DeckID").Value);    //nadi id
-        doc.XPathSelectElement("root/DeckID").SetValue(id + 1);  //povecaj ga za jedan
+        int id = int.Parse(doc.XPathSelectElement("root/DeckID").Value); //nadi id
+        doc.XPathSelectElement("root/DeckID").SetValue(id + 1); //povecaj ga za jedan
 
-        doc.Save(applicationPath + "/Configuration/Configuration.xml");  //spremi novi id
-        return id;  //vrati id
+        doc.Save(applicationPath + "/Configuration/Configuration.xml"); //spremi novi id
+        return id; //vrati id
     }
 
     private void CreateDeckConfigDat()
     {
         XDocument doc = new XDocument(
             new XElement("root",
-              new XElement("DeckID", 0)
-            )
-      );
+                new XElement("DeckID", 0)
+                )
+            );
 
         Directory.CreateDirectory(applicationPath + "/Configuration");
         string configPath = applicationPath + "/Configuration/Configuration.xml";

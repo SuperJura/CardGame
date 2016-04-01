@@ -3,24 +3,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using WebSocketSharp;
 
-class ServerLobbyBehavior : MonoBehaviour
+internal class ServerLobbyBehavior : MonoBehaviour
 {
-    public Text txtNick;
+    public delegate void OnPlayerJoinedHandler(string nick);
 
     public delegate void OnReceivePlayerListHandler(string[] playerList);
-    public event OnReceivePlayerListHandler OnReceivePlayerList;
-
-    public delegate void OnPlayerJoinedHandler(string nick);
-    public event OnPlayerJoinedHandler OnPlayerJoined;
-
-    public delegate void OnStartOnlineGameHandler(string opponent);
-    public event OnStartOnlineGameHandler OnStartOnlineGame;
 
     public delegate void OnServerErrorHandler(int errorCode);
-    public event OnServerErrorHandler OnServerError;
+
+    public delegate void OnStartOnlineGameHandler(string opponent);
 
     private static WebSocket ws;
     private string nickname;
+    public Text txtNick;
+    public event OnReceivePlayerListHandler OnReceivePlayerList;
+    public event OnPlayerJoinedHandler OnPlayerJoined;
+    public event OnStartOnlineGameHandler OnStartOnlineGame;
+    public event OnServerErrorHandler OnServerError;
 
     public void ConnectToServer()
     {
@@ -100,7 +99,7 @@ class ServerLobbyBehavior : MonoBehaviour
         ws.Send("join|" + txtNick.text);
     }
 
-    void OnApplicationQuit()
+    private void OnApplicationQuit()
     {
         CloseWebSocket();
     }

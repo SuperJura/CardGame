@@ -1,20 +1,17 @@
-﻿using UnityEngine;
-using System;
-using System.Threading;
+﻿using System;
 using System.Collections.Generic;
+using System.Threading;
+using UnityEngine;
 
 public class Dispatcher : MonoBehaviour
 {
     private Dispatcher m_current;
-    public static Dispatcher Current
-    {
-        get;
-        private set;
-    }
 
     private int m_lock;
     private bool m_run;
     private Queue<Action> m_wait;
+
+    public static Dispatcher Current { get; private set; }
 
     public void BeginInvoke(Action action)
     {

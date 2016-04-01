@@ -1,14 +1,13 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class EndGameManager : MonoBehaviour {
+public class EndGameManager : MonoBehaviour
+{
+    private MenuManager menuManager;
 
     public RectTransform originalMessages;
 
-    private MenuManager menuManager;
-
-    void Start()
+    private void Start()
     {
         menuManager = GameObject.Find("Canvas").GetComponent<MenuManager>();
     }
@@ -41,7 +40,8 @@ public class EndGameManager : MonoBehaviour {
         Transform matchHistory = transform.Find("MainPanel/Panel/MatchHistory/Messages");
         while (originalMessages.childCount != 0)
         {
-            originalMessages.GetChild(originalMessages.childCount-1).SetParent(matchHistory);   //poruke idu obrnutim redosljedom
+            originalMessages.GetChild(originalMessages.childCount - 1).SetParent(matchHistory);
+                //poruke idu obrnutim redosljedom
             matchHistory.GetChild(matchHistory.childCount - 1).localScale = new Vector3(1, 1, 1);
         }
     }
