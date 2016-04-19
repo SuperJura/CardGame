@@ -30,6 +30,9 @@ public class SpecialAttacksManager : MonoBehaviour
             case "SA_1":
                 DoSpreadAttack(attackingCard, player);
                 return true;
+            case "SA_2":
+                DoLowestHeal(attackingCard, player);
+                return true;
             default:
                 return false;
         }
@@ -45,7 +48,6 @@ public class SpecialAttacksManager : MonoBehaviour
 
     private void DoSpreadAttack(RectTransform attackingCard, char player)
     {
-        Transform parent = GetCardPlayField(player);
         Transform opponent = GetOpponentPlayField(player);
         int cardPosition = attackingCard.GetSiblingIndex();
 
@@ -82,6 +84,27 @@ public class SpecialAttacksManager : MonoBehaviour
         }
     }
 
+    private void DoLowestHeal(RectTransform attackingCard, char player)
+    {
+        Transform playerPlayField = GetPlayerPlayField(player);
+        Transform lowestCard = playerPlayField.GetChild(0);
+        foreach (Transform child in playerPlayField)
+        {
+            int health = int.Parse(child.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
+            if (health > 0)
+            {
+                if (int.Parse(lowestCard.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text) > health)
+                {
+                    lowestCard = child;
+                }
+            }
+        }
+        int currentHealth = int.Parse(lowestCard.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
+        lowestCard.GetComponent<Animation>().Play("SpecialAttackDamageAnimation");
+        lowestCard.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text = (currentHealth + 1).ToString();
+
+    }
+
     private Transform GetOpponentPlayField(char player)
     {
         if (player == 'a')
@@ -91,7 +114,7 @@ public class SpecialAttacksManager : MonoBehaviour
         return playerA_PlayField;
     }
 
-    private Transform GetCardPlayField(char player)
+    private Transform GetPlayerPlayField(char player)
     {
         if (player == 'a')
         {

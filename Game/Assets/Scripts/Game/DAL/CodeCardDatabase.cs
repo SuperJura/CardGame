@@ -94,5 +94,16 @@ public class CodeCardDatabase : ICardDatabase
             SpecialAttackId = "SA_1",
             CardFlavour = "Special attack: 'Spread' - Attacks enemy to the right and a enemy to the left"
         });
+        AllCards.Add(new Card
+        {
+            Name = "Lab monkey",
+            Health = 4,
+            Attack = 0,
+            StaticIdCard = "R_5",
+            DefaultCooldown = 4,
+            Quality = Enumerations.EquipmentQuality.Rare,
+            SpecialAttackId = "SA_2",
+            CardFlavour = "Special attack: 'Lowest Heal' - Heals your lowest creature in play field"
+        });
     }
 }

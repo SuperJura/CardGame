@@ -89,24 +89,24 @@ namespace GameServer
         protected override void OnClose(CloseEventArgs e)
         {
             players.Remove(ID);
-            string otherPlayerID = GetOpponentID();
+            string otherPlayerId = GetOpponentID();
             if (playersInGames.Keys.Contains(nickname))
             {
                 playersInGames.Remove(nickname);
             }
             else
             {
-                players.Remove(otherPlayerID);
+                players.Remove(otherPlayerId);
                 playersInGames.Remove(opponentNickname);
             }
 
             Logger.LogPlayingPlayers(playersInGames.Count * 2);
-            Sessions.SendTo("unexpectedEnd|", otherPlayerID);
+            Sessions.SendTo("unexpectedEnd|", otherPlayerId);
         }
 
         private string GetOpponentID()
         {
-            return players.Where(x => x.Value == opponentNickname).FirstOrDefault().Key;
+            return players.FirstOrDefault(x => x.Value == opponentNickname).Key;
         }
     }
 
