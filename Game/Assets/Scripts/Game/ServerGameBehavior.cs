@@ -29,8 +29,8 @@ public class ServerGameBehavior : MonoBehaviour
     private void Start()
     {
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
-        //ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
-        ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
+        ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
+        //ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
         ws.OnClose += Ws_OnClose;
         ws.OnMessage += Ws_OnMessage;
         ws.OnError += Ws_OnError;
@@ -67,13 +67,13 @@ public class ServerGameBehavior : MonoBehaviour
                 Debug.Log("Game Started!");
                 break;
             case "canStart":
-                Dispatcher.Current.BeginInvoke(() => { CanStartStatement(); });
+                Dispatcher.Current.BeginInvoke(CanStartStatement);
                 break;
             case "playerOnTurn":
                 Dispatcher.Current.BeginInvoke(() => { PlayerOnTurnStatement(message[1]); });
                 break;
             case "unexpectedEnd":
-                Dispatcher.Current.BeginInvoke(() => { UnexpectedEndStatement(); });
+                Dispatcher.Current.BeginInvoke(UnexpectedEndStatement);
                 break;
             case "opponentDrawed":
                 Dispatcher.Current.BeginInvoke(() => { OpponentDrawedStatement(message[1]); });

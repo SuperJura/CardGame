@@ -3,9 +3,11 @@ R_1 - Blue bird
 R_2 - Red Panda
 R_3 - CUbe
 R_4 - BlackWolf
+R_5 - Lab monkey
 
 ---SPECIAL ATTACK IDs---
 SA_1 - Spread Sttack
+SA_2 - Lowest Heal
 
 ---CLIENT TO SERVER MESSAGES---
 	--SERVER LOBBY--
@@ -31,3 +33,9 @@ SA_1 - Spread Sttack
 		unexpectedEnd| - server sends this when opponent randomly disconnects
 		opponentDrawed|staticID - server sends id of the card that opponent drawed
 		opponentPlayed|staticID - server sends id of the card that opponent played
+
+---USED STUFF---
+(publisher - name)
+The Sunny Side - Five Seamless Tileable Ground Textures
+G.E.TeamDev - Water Flow FREE
+Unity Technologies - Sky FX Pack

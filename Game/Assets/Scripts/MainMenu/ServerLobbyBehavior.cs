@@ -34,8 +34,8 @@ internal class ServerLobbyBehavior : MonoBehaviour
             return;
         }
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/LobbyBehavior"); //laptop
-        //ws = new WebSocket("ws://192.168.1.247:8080/LobbyBehavior"); //ovo racunalo, ip adresa
-        ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
+        ws = new WebSocket("ws://192.168.1.247:8080/LobbyBehavior"); //ovo racunalo, ip adresa
+        //ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
         ws.OnOpen += ws_OnOpen;
         ws.OnError += ws_OnError;
         ws.OnClose += Ws_OnClose;

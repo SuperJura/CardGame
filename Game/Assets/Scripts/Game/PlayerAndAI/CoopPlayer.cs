@@ -9,14 +9,7 @@
 
     public override void Awake()
     {
-        if (IsPlayerA())
-        {
-            playerName = PlayerNamesForGame.NicknameForCoopGameA;
-        }
-        else
-        {
-            playerName = PlayerNamesForGame.NicknameForCoopGameB;
-        }
+        playerName = IsPlayerA() ? PlayerNamesForGame.NicknameForCoopGameA : PlayerNamesForGame.NicknameForCoopGameB;
 
         base.Awake();
     }

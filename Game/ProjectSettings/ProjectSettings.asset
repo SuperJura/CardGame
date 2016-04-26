@@ -330,7 +330,11 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    4: 50
+    7: 50
+    13: 50
+    22: 50
   metroPackageName: Simple Web Sockets
   metroPackageVersion: 
   metroCertificatePath: 

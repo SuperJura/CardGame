@@ -12,16 +12,15 @@ namespace GameServer
     class GameBehavior : WebSocketBehavior
     {
 
-        public static Dictionary<string, string> playersInGames;    //nickname, nickname
+        public static List<string> playersInGames;    //nickname
         public static Dictionary<string, string> players;   //ID, nickname
-        private static object syncLockStartGame;
+        private static readonly object syncLockStartGame;
         private string nickname;
         private string opponentNickname;
-        private static int playersCount;
 
         static GameBehavior()
         {
-            playersInGames = new Dictionary<string, string>();
+            playersInGames = new List<string>();
             players = new Dictionary<string, string>();
             syncLockStartGame = new object();
         }
@@ -62,45 +61,35 @@ namespace GameServer
             opponentNickname = nicknames[1];
 
             players.Add(ID, nickname);
-            while(GetOpponentID() == "")
-            {
-                Thread.Sleep(100);
-            }
             Logger.LogEventMsg(nickname + " igra protiv:" + opponentNickname);
             //samo jedan igrac moze "zapoceti" igru, tj. upisati sebe i protivnika u listu igraca
             lock (syncLockStartGame)
             {
-                //prvi thread(player) ce uci u if, drugi nece
-                if (!playersInGames.ContainsValue(nickname))
+                playersInGames.Add(nickname);
+                if (playersInGames.Contains(opponentNickname))
                 {
-                    playersInGames.Add(nickname, opponentNickname);
+                    Sessions.SendTo("canStart|", ID);
+                    Sessions.SendTo("canStart|", GetOpponentID());
+                    Sessions.SendTo("playerOnTurn|" + nickname, GetOpponentID());
                 }
             }
-            playersCount++;
-            if (playersCount %2 == 0)
-            {
-                Sessions.SendTo("canStart|", ID);
-                Sessions.SendTo("canStart|", GetOpponentID());
-                Sessions.SendTo("playerOnTurn|" + nickname, GetOpponentID());
-            }
-            Logger.LogPlayingPlayers(playersCount);
+            Logger.LogPlayingPlayers(playersInGames.Count);
         }
 
         protected override void OnClose(CloseEventArgs e)
         {
             players.Remove(ID);
             string otherPlayerId = GetOpponentID();
-            if (playersInGames.Keys.Contains(nickname))
+            if (playersInGames.Contains(nickname))
             {
                 playersInGames.Remove(nickname);
             }
-            else
+            if (playersInGames.Contains(opponentNickname))
             {
-                players.Remove(otherPlayerId);
                 playersInGames.Remove(opponentNickname);
             }
 
-            Logger.LogPlayingPlayers(playersInGames.Count * 2);
+            Logger.LogPlayingPlayers(playersInGames.Count);
             Sessions.SendTo("unexpectedEnd|", otherPlayerId);
         }
 

@@ -19,7 +19,7 @@ public class BasePlayer : MonoBehaviour
         myHand = transform.Find("PlayerHand").GetComponent<RectTransform>();
 
         guiManager = turnsManager.GetComponent<GUIManager>();
-        deck = new List<Card>(); //kloniraj sve karte iz deka u igracu dek
+        deck = new List<Card>(); //kloniraj sve karte iz deka u dek igraca
         foreach (Card card in Deck.Cards)
         {
             deck.Add((Card) card.Clone());
@@ -34,7 +34,6 @@ public class BasePlayer : MonoBehaviour
 
     public virtual void FillHand()
     {
-        Debug.Log("FillHand");
         while (myHand.childCount < 5)
         {
             if (deck.Count <= 0)
@@ -95,7 +94,7 @@ public class BasePlayer : MonoBehaviour
                 cardRectTransform.GetComponent<Image>().color = Color.white;
                 break;
             case Enumerations.EquipmentQuality.Rare:
-                cardRectTransform.GetComponent<Image>().color = new Color(0/255f, 107/255f, 255/255f); //blue
+                cardRectTransform.GetComponent<Image>().color = new Color(0/255f, 232/ 255f, 232/ 255f); //blue
                 break;
             case Enumerations.EquipmentQuality.Legendary:
                 cardRectTransform.GetComponent<Image>().color = new Color(212/255f, 199/255f, 48/255f); //yellow
