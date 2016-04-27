@@ -6,7 +6,6 @@ public class TerrainsManager : MonoBehaviour
     {
         int terrainIndex = Random.Range(0, 2);
 
-        Debug.Log(terrainIndex);
         switch (terrainIndex)
         {
             case 0:
