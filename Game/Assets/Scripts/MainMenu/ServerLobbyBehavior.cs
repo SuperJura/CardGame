@@ -35,6 +35,7 @@ internal class ServerLobbyBehavior : MonoBehaviour
         }
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/LobbyBehavior"); //laptop
         ws = new WebSocket("ws://192.168.1.247:8080/LobbyBehavior"); //ovo racunalo, ip adresa
+        //ws = new WebSocket("ws://93.138.64.118:8080/LobbyBehavior"); //ovo racunalo, ip adresa koja nije iz NAT tablice
         //ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
         ws.OnOpen += ws_OnOpen;
         ws.OnError += ws_OnError;

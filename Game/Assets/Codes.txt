@@ -39,3 +39,6 @@ SA_2 - Lowest Heal
 The Sunny Side - Five Seamless Tileable Ground Textures
 G.E.TeamDev - Water Flow FREE
 Unity Technologies - Sky FX Pack
+AxeyWorks - Low Poly: Free Pack
+Mikelarg - Cracket stone filled with lava
+Moonflower Carnivore - Lava Flowing Shader

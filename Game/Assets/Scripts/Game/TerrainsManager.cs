@@ -4,7 +4,7 @@ public class TerrainsManager : MonoBehaviour
 {
     void Start()
     {
-        int terrainIndex = Random.Range(0, 2);
+        int terrainIndex = Random.Range(0, 4);
 
         switch (terrainIndex)
         {
@@ -14,6 +14,12 @@ public class TerrainsManager : MonoBehaviour
             case 1:
                 LoadTerrain("Desert");
                 break;
+            case 2:
+                LoadTerrain("Bridge");
+                break;
+            case 3:
+                LoadTerrain("Volcano");
+                break;
         }
     }
 
@@ -21,7 +27,7 @@ public class TerrainsManager : MonoBehaviour
     {
         GameObject go = (GameObject)Resources.Load("GameResources/Terrains/" + terrainName);
 
-        Transform terrain = Instantiate((Transform)go.transform);
+        Transform terrain = Instantiate(go.transform);
         terrain.SetParent(null);
     }
 }
