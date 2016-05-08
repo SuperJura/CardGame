@@ -90,18 +90,18 @@ public class SpecialAttacksManager : MonoBehaviour
         Transform lowestCard = playerPlayField.GetChild(0);
         foreach (Transform child in playerPlayField)
         {
-            int health = int.Parse(child.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
+            int health = int.Parse(child.Find(Card.cardHealthPath).GetComponent<Text>().text);
             if (health > 0)
             {
-                if (int.Parse(lowestCard.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text) > health)
+                if (int.Parse(lowestCard.Find(Card.cardHealthPath).GetComponent<Text>().text) > health)
                 {
                     lowestCard = child;
                 }
             }
         }
-        int currentHealth = int.Parse(lowestCard.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
+        int currentHealth = int.Parse(lowestCard.Find(Card.cardHealthPath).GetComponent<Text>().text);
         lowestCard.GetComponent<Animation>().Play("SpecialAttackDamageAnimation");
-        lowestCard.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text = (currentHealth + 1).ToString();
+        lowestCard.Find(Card.cardHealthPath).GetComponent<Text>().text = (currentHealth + 1).ToString();
 
     }
 

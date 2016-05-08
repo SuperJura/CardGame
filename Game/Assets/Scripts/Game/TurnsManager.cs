@@ -93,7 +93,7 @@ public class TurnsManager : MonoBehaviour
 
         foreach (RectTransform card in cdField)
         {
-            if (card.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text == "0")
+            if (card.Find(Card.cardCooldownPath).GetComponentInChildren<Text>().text == "0")
             {
                 listOfReadyCards.Add(card);
             }
@@ -162,7 +162,7 @@ public class TurnsManager : MonoBehaviour
         List<RectTransform> cardsToDestroy = new List<RectTransform>();
         foreach (RectTransform card in defenderPlayField)
         {
-            int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text);
+            int health = int.Parse(card.Find(Card.cardHealthPath).GetComponentInChildren<Text>().text);
             if (health <= 0)
             {
                 cardsToDestroy.Add(card);
@@ -267,7 +267,7 @@ public class TurnsManager : MonoBehaviour
 
     private void UnfocusAliveCard(RectTransform card)
     {
-        int health = int.Parse(card.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>().text);
+        int health = int.Parse(card.Find(Card.cardHealthPath).GetComponent<Text>().text);
 
         if (health > 0)
         {
@@ -312,7 +312,7 @@ public class TurnsManager : MonoBehaviour
     private void AttackTarget(RectTransform attackerCard, RectTransform defenderCard)
     {
         int attack =
-            int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
+            int.Parse(attackerCard.Find(Card.cardAttackPath).GetComponentInChildren<Text>().text);
 
         CardCombat combatDefender = defenderCard.GetComponent<CardCombat>();
         combatDefender.RecieveDamage(attack);
@@ -327,7 +327,7 @@ public class TurnsManager : MonoBehaviour
     private void AttackOpositePlayer(RectTransform attackerCard)
     {
         int attack =
-            int.Parse(attackerCard.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text);
+            int.Parse(attackerCard.Find(Card.cardAttackPath).GetComponentInChildren<Text>().text);
         switch (whoMoves)
         {
             case 'a':

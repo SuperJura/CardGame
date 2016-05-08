@@ -3,7 +3,12 @@
 [Serializable]
 public class Card : ICloneable
 {
+    public static string cardHealthPath = "CardInfo/CardHealth/CardHealthText";
+    public static string cardCooldownPath = "CardInfo/CardCooldown/CardCooldownText";
+    public static string cardAttackPath = "CardInfo/CardAttack/CardAttackText";
+
     private static int idCounter;
+    
 
     public Card()
     {

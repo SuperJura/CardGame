@@ -45,7 +45,6 @@ public class Bot : BasePlayer
                 return;
             }
             RectTransform card = GetRectTransformCard();
-            //card.GetComponent<CardInteraction>().TurnAroundTheCard();
             card.GetComponent<CardInteraction>().enabled = false;
             card.GetComponent<CardInteraction>().Playable = false;
 

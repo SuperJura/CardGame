@@ -72,11 +72,11 @@ public class BasePlayer : MonoBehaviour
     {
         cardRectTransform.Find("CardName").GetComponentInChildren<Text>().text = card.Name;
         cardRectTransform.Find("CardStaticID").GetComponentInChildren<Text>().text = card.StaticIdCard;
-        cardRectTransform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>().text =
+        cardRectTransform.Find(Card.cardCooldownPath).GetComponentInChildren<Text>().text =
             card.DefaultCooldown.ToString();
-        cardRectTransform.Find("CardInfo/CardHealth/CardHealthText").GetComponentInChildren<Text>().text =
+        cardRectTransform.Find(Card.cardHealthPath).GetComponentInChildren<Text>().text =
             card.Health.ToString();
-        cardRectTransform.Find("CardInfo/CardAttack/CardAttackText").GetComponentInChildren<Text>().text =
+        cardRectTransform.Find(Card.cardAttackPath).GetComponentInChildren<Text>().text =
             card.Attack.ToString();
         if (card.SpecialAttackId != "")
         {

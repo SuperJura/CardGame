@@ -31,9 +31,9 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         Quaternion newRotation = new Quaternion(0, 0, 180, 0);
         transform.localRotation = newRotation;
         transform.Find("CardName").localRotation = newRotation;
-        transform.Find("CardInfo/CardHealth/CardHealthText").localRotation = newRotation;
-        transform.Find("CardInfo/CardAttack/CardAttackText").localRotation = newRotation;
-        transform.Find("CardInfo/CardCooldown/CardCooldownText").localRotation = newRotation;
+        transform.Find(Card.cardHealthPath).localRotation = newRotation;
+        transform.Find(Card.cardAttackPath).localRotation = newRotation;
+        transform.Find(Card.cardCooldownPath).localRotation = newRotation;
     }
 
     public void PlayCard()

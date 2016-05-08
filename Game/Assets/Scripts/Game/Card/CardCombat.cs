@@ -10,8 +10,8 @@ public class CardCombat : MonoBehaviour
 
     private void Start()
     {
-        cardHealth = transform.Find("CardInfo/CardHealth/CardHealthText").GetComponent<Text>();
-        cardCooldown = transform.Find("CardInfo/CardCooldown/CardCooldownText").GetComponentInChildren<Text>();
+        cardHealth = transform.Find(Card.cardHealthPath).GetComponent<Text>();
+        cardCooldown = transform.Find(Card.cardCooldownPath).GetComponentInChildren<Text>();
         anim = GetComponent<Animation>();
     }
 
