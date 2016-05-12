@@ -51,6 +51,7 @@ public class SpecialAttacksManager : MonoBehaviour
         Transform opponent = GetOpponentPlayField(player);
         int cardPosition = attackingCard.GetSiblingIndex();
 
+        attackingCard.GetComponent<Animation>().Play("DoSpecialAttackAnimation");
         if (opponent.childCount == 0) //ako neprijatelj nema djece, nema ni napada
         {
             return;
@@ -69,7 +70,6 @@ public class SpecialAttacksManager : MonoBehaviour
             cardBefore = -1;
         }
 
-        attackingCard.GetComponent<Animation>().Play("DoSpecialAttackAnimation");
         if (cardBefore != -1)
         {
             Transform defCard = opponent.GetChild(cardBefore);

@@ -137,11 +137,11 @@ public class TurnsManager : MonoBehaviour
                 AttackOpositePlayer(attackerCard);
             }
 
-            string specialAttack = specialAttacks.GetSpecialAttack(attackerCard); //napravi specialni napad
+            string specialAttack = specialAttacks.GetSpecialAttack(attackerCard); //nadi specialni napad
             if (specialAttack != "") //ako karta ima specialni napad
             {
                 yield return new WaitForSeconds(1.7f);
-                specialAttacks.DoSpecialAttack(attackerCard, whoMoves);
+                specialAttacks.DoSpecialAttack(attackerCard, whoMoves); //napravi ga
             }
 
             yield return new WaitForSeconds(1);

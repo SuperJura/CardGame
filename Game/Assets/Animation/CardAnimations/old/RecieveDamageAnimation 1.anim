@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RecieveDamageAnimation
+  m_Name: RecieveDamageAnimation 1
   serializedVersion: 6
   m_Legacy: 1
   m_Compressed: 0
@@ -18,28 +18,28 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: {x: -0.0008, y: -0.0209, z: -4.1366}
-        inSlope: {x: -0.0064444444, y: 0.14955556, z: 29.637114}
-        outSlope: {x: -0.0064444444, y: 0.14955556, z: 29.637114}
+        inSlope: {x: -0.017399998, y: 0.40379998, z: 80.0202}
+        outSlope: {x: -0.017399998, y: 0.40379998, z: 80.0202}
         tangentMode: 0
-      - time: 0.45
+      - time: 0.16666667
         value: {x: -0.0037, y: 0.0464, z: 9.2001}
-        inSlope: {x: 0.007577776, y: -0.043722197, z: -8.693339}
-        outSlope: {x: 0.007577776, y: -0.043722197, z: -8.693339}
+        inSlope: {x: 0.0021000002, y: 0.083399996, z: 16.498203}
+        outSlope: {x: 0.0021000002, y: 0.083399996, z: 16.498203}
         tangentMode: 0
-      - time: 0.6166667
+      - time: 0.33333334
         value: {x: -0.0001, y: 0.0069, z: 1.3628}
-        inSlope: {x: 0.011099998, y: -0.13919997, z: -27.600296}
-        outSlope: {x: 0.011099998, y: -0.13919997, z: -27.600296}
+        inSlope: {x: 0.0111, y: -0.1392, z: -27.600298}
+        outSlope: {x: 0.0111, y: -0.1392, z: -27.600298}
         tangentMode: 0
-      - time: 0.78333336
+      - time: 0.5
         value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0.0005999999, y: -0.041399993, z: -8.176799}
-        outSlope: {x: 0.0005999999, y: -0.041399993, z: -8.176799}
+        inSlope: {x: 0.0006, y: -0.0414, z: -8.176801}
+        outSlope: {x: 0.0006, y: -0.0414, z: -8.176801}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
   m_PositionCurves: []
   m_ScaleCurves:
   - curve:
@@ -50,43 +50,38 @@ AnimationClip:
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
-      - time: 0.45
+      - time: 0.16666667
         value: {x: 1, y: 1, z: 1}
-        inSlope: {x: -0.30000004, y: -0.30000004, z: -0.30000004}
-        outSlope: {x: -0.30000004, y: -0.30000004, z: -0.30000004}
+        inSlope: {x: -0.30000007, y: -0.30000007, z: -0.30000007}
+        outSlope: {x: -0.30000007, y: -0.30000007, z: -0.30000007}
         tangentMode: 0
-      - time: 0.6166667
+      - time: 0.33333334
         value: {x: 0.9, y: 0.9, z: 0.9}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0.000000029802322, y: 0.000000029802322, z: 0.000000029802322}
+        outSlope: {x: 0.000000029802322, y: 0.000000029802322, z: 0.000000029802322}
         tangentMode: 0
-      - time: 0.78333336
+      - time: 0.5
         value: {x: 1, y: 1, z: 1}
-        inSlope: {x: 0.6000001, y: 0.6000001, z: 0.6000001}
-        outSlope: {x: 0.6000001, y: 0.6000001, z: 0.6000001}
+        inSlope: {x: 0.6000002, y: 0.6000002, z: 0.6000002}
+        outSlope: {x: 0.6000002, y: 0.6000002, z: 0.6000002}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
   m_FloatCurves:
   - curve:
       serializedVersion: 2
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 4.285714
-        outSlope: 4.285714
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
-      - time: 0.23333333
+      - time: 0.3
         value: 1
-        inSlope: 2.142857
-        outSlope: 2.142857
-        tangentMode: 10
-      - time: 0.5833333
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -100,18 +95,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 4.285714
-        outSlope: 4.285714
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
-      - time: 0.23333333
+      - time: 0.3
         value: 1
-        inSlope: 2.142857
-        outSlope: 2.142857
-        tangentMode: 10
-      - time: 0.5833333
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -125,18 +115,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 289.2857
-        outSlope: 289.2857
+        inSlope: 1751.9999
+        outSlope: 1751.9999
         tangentMode: 10
-      - time: 0.23333333
-        value: 67.5
-        inSlope: 799.0714
-        outSlope: 799.0714
-        tangentMode: 10
-      - time: 0.5833333
+      - time: 0.3
         value: 525.6
-        inSlope: 1308.8572
-        outSlope: 1308.8572
+        inSlope: 1751.9999
+        outSlope: 1751.9999
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -150,18 +135,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: -370.0617
-        outSlope: -370.0617
+        inSlope: -263.0028
+        outSlope: -263.0028
         tangentMode: 10
-      - time: 0.23333333
-        value: -86.34773
-        inSlope: -174.39244
-        outSlope: -174.39244
-        tangentMode: 10
-      - time: 0.5833333
+      - time: 0.3
         value: -78.90085
-        inSlope: 21.276814
-        outSlope: 21.276814
+        inSlope: -263.0028
+        outSlope: -263.0028
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -175,18 +155,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 578.5714
-        outSlope: 578.5714
+        inSlope: 449.99997
+        outSlope: 449.99997
         tangentMode: 10
-      - time: 0.23333333
+      - time: 0.3
         value: 135
-        inSlope: 289.2857
-        outSlope: 289.2857
-        tangentMode: 10
-      - time: 0.5833333
-        value: 135
-        inSlope: 0
-        outSlope: 0
+        inSlope: 449.99997
+        outSlope: 449.99997
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -200,18 +175,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 757.2663
-        outSlope: 757.2663
+        inSlope: 539.339
+        outSlope: 539.339
         tangentMode: 10
-      - time: 0.23333333
-        value: 176.69547
-        inSlope: 357.35632
-        outSlope: 357.35632
-        tangentMode: 10
-      - time: 0.5833333
+      - time: 0.3
         value: 161.8017
-        inSlope: -42.553627
-        outSlope: -42.553627
+        inSlope: 539.339
+        outSlope: 539.339
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -224,22 +194,27 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
+        value: 0.27450982
+        inSlope: 2.1764705
+        outSlope: 2.1764705
+        tangentMode: 10
+      - time: 0.33333334
         value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 31
-      - time: 0.78333336
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 31
+        inSlope: -1.0882355
+        outSlope: -1.0882355
+        tangentMode: 10
+      - time: 0.5
+        value: 0.2745098
+        inSlope: -4.3529415
+        outSlope: -4.3529415
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: CardInfo/CardHealthContainer/CardHealth
+    attribute: m_Color.a
+    path: CardInfo/CardHealth
     classID: 114
-    script: {fileID: 11500000, guid: fbf1d4f0cb8cea741bd43ccb2c4b76db, type: 3}
+    script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 1
@@ -254,7 +229,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.78333336
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -275,29 +250,29 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: -0.0008
-        inSlope: -0.0064444444
-        outSlope: -0.0064444444
+        inSlope: -0.017399998
+        outSlope: -0.017399998
         tangentMode: 10
-      - time: 0.45
+      - time: 0.16666667
         value: -0.0037
-        inSlope: 0.007577776
-        outSlope: 0.007577776
+        inSlope: 0.0021000002
+        outSlope: 0.0021000002
         tangentMode: 10
-      - time: 0.6166667
+      - time: 0.33333334
         value: -0.0001
-        inSlope: 0.011099998
-        outSlope: 0.011099998
+        inSlope: 0.0111
+        outSlope: 0.0111
         tangentMode: 10
-      - time: 0.78333336
+      - time: 0.5
         value: 0
-        inSlope: 0.0005999999
-        outSlope: 0.0005999999
+        inSlope: 0.0006
+        outSlope: 0.0006
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -305,29 +280,29 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: -0.0209
-        inSlope: 0.14955556
-        outSlope: 0.14955556
+        inSlope: 0.40379998
+        outSlope: 0.40379998
         tangentMode: 10
-      - time: 0.45
+      - time: 0.16666667
         value: 0.0464
-        inSlope: -0.043722197
-        outSlope: -0.043722197
+        inSlope: 0.083399996
+        outSlope: 0.083399996
         tangentMode: 10
-      - time: 0.6166667
+      - time: 0.33333334
         value: 0.0069
-        inSlope: -0.13919997
-        outSlope: -0.13919997
+        inSlope: -0.1392
+        outSlope: -0.1392
         tangentMode: 10
-      - time: 0.78333336
+      - time: 0.5
         value: 0
-        inSlope: -0.041399993
-        outSlope: -0.041399993
+        inSlope: -0.0414
+        outSlope: -0.0414
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -335,29 +310,29 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: -4.1366
-        inSlope: 29.637114
-        outSlope: 29.637114
+        inSlope: 80.0202
+        outSlope: 80.0202
         tangentMode: 10
-      - time: 0.45
+      - time: 0.16666667
         value: 9.2001
-        inSlope: -8.693339
-        outSlope: -8.693339
+        inSlope: 16.498203
+        outSlope: 16.498203
         tangentMode: 10
-      - time: 0.6166667
+      - time: 0.33333334
         value: 1.3628
-        inSlope: -27.600296
-        outSlope: -27.600296
+        inSlope: -27.600298
+        outSlope: -27.600298
         tangentMode: 10
-      - time: 0.78333336
+      - time: 0.5
         value: 0
-        inSlope: -8.176799
-        outSlope: -8.176799
+        inSlope: -8.176801
+        outSlope: -8.176801
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -368,26 +343,26 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.45
+      - time: 0.16666667
         value: 1
-        inSlope: -0.30000004
-        outSlope: -0.30000004
+        inSlope: -0.30000007
+        outSlope: -0.30000007
         tangentMode: 10
-      - time: 0.6166667
+      - time: 0.33333334
         value: 0.9
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.000000029802322
+        outSlope: 0.000000029802322
         tangentMode: 10
-      - time: 0.78333336
+      - time: 0.5
         value: 1
-        inSlope: 0.6000001
-        outSlope: 0.6000001
+        inSlope: 0.6000002
+        outSlope: 0.6000002
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -398,26 +373,26 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.45
+      - time: 0.16666667
         value: 1
-        inSlope: -0.30000004
-        outSlope: -0.30000004
+        inSlope: -0.30000007
+        outSlope: -0.30000007
         tangentMode: 10
-      - time: 0.6166667
+      - time: 0.33333334
         value: 0.9
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.000000029802322
+        outSlope: 0.000000029802322
         tangentMode: 10
-      - time: 0.78333336
+      - time: 0.5
         value: 1
-        inSlope: 0.6000001
-        outSlope: 0.6000001
+        inSlope: 0.6000002
+        outSlope: 0.6000002
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -428,26 +403,26 @@ AnimationClip:
         inSlope: 0
         outSlope: 0
         tangentMode: 10
-      - time: 0.45
+      - time: 0.16666667
         value: 1
-        inSlope: -0.30000004
-        outSlope: -0.30000004
+        inSlope: -0.30000007
+        outSlope: -0.30000007
         tangentMode: 10
-      - time: 0.6166667
+      - time: 0.33333334
         value: 0.9
-        inSlope: 0
-        outSlope: 0
+        inSlope: 0.000000029802322
+        outSlope: 0.000000029802322
         tangentMode: 10
-      - time: 0.78333336
+      - time: 0.5
         value: 1
-        inSlope: 0.6000001
-        outSlope: 0.6000001
+        inSlope: 0.6000002
+        outSlope: 0.6000002
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -455,18 +430,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 4.285714
-        outSlope: 4.285714
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
-      - time: 0.23333333
+      - time: 0.3
         value: 1
-        inSlope: 2.142857
-        outSlope: 2.142857
-        tangentMode: 10
-      - time: 0.5833333
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -480,18 +450,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 4.285714
-        outSlope: 4.285714
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
-      - time: 0.23333333
+      - time: 0.3
         value: 1
-        inSlope: 2.142857
-        outSlope: 2.142857
-        tangentMode: 10
-      - time: 0.5833333
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: 3.3333333
+        outSlope: 3.3333333
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -505,18 +470,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 289.2857
-        outSlope: 289.2857
+        inSlope: 1751.9999
+        outSlope: 1751.9999
         tangentMode: 10
-      - time: 0.23333333
-        value: 67.5
-        inSlope: 799.0714
-        outSlope: 799.0714
-        tangentMode: 10
-      - time: 0.5833333
+      - time: 0.3
         value: 525.6
-        inSlope: 1308.8572
-        outSlope: 1308.8572
+        inSlope: 1751.9999
+        outSlope: 1751.9999
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -530,18 +490,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: -370.0617
-        outSlope: -370.0617
+        inSlope: -263.0028
+        outSlope: -263.0028
         tangentMode: 10
-      - time: 0.23333333
-        value: -86.34773
-        inSlope: -174.39244
-        outSlope: -174.39244
-        tangentMode: 10
-      - time: 0.5833333
+      - time: 0.3
         value: -78.90085
-        inSlope: 21.276814
-        outSlope: 21.276814
+        inSlope: -263.0028
+        outSlope: -263.0028
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -555,18 +510,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 578.5714
-        outSlope: 578.5714
+        inSlope: 449.99997
+        outSlope: 449.99997
         tangentMode: 10
-      - time: 0.23333333
+      - time: 0.3
         value: 135
-        inSlope: 289.2857
-        outSlope: 289.2857
-        tangentMode: 10
-      - time: 0.5833333
-        value: 135
-        inSlope: 0
-        outSlope: 0
+        inSlope: 449.99997
+        outSlope: 449.99997
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -580,18 +530,13 @@ AnimationClip:
       m_Curve:
       - time: 0
         value: 0
-        inSlope: 757.2663
-        outSlope: 757.2663
+        inSlope: 539.339
+        outSlope: 539.339
         tangentMode: 10
-      - time: 0.23333333
-        value: 176.69547
-        inSlope: 357.35632
-        outSlope: 357.35632
-        tangentMode: 10
-      - time: 0.5833333
+      - time: 0.3
         value: 161.8017
-        inSlope: -42.553627
-        outSlope: -42.553627
+        inSlope: 539.339
+        outSlope: 539.339
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -604,22 +549,27 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
+        value: 0.27450982
+        inSlope: 2.1764705
+        outSlope: 2.1764705
+        tangentMode: 10
+      - time: 0.33333334
         value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 31
-      - time: 0.78333336
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 31
+        inSlope: -1.0882355
+        outSlope: -1.0882355
+        tangentMode: 10
+      - time: 0.5
+        value: 0.2745098
+        inSlope: -4.3529415
+        outSlope: -4.3529415
+        tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: CardInfo/CardHealthContainer/CardHealth
+    attribute: m_Color.a
+    path: CardInfo/CardHealth
     classID: 114
-    script: {fileID: 11500000, guid: fbf1d4f0cb8cea741bd43ccb2c4b76db, type: 3}
+    script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -628,7 +578,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -638,7 +588,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   - curve:
@@ -648,7 +598,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: CardInfo/CardHealthContainer/CardHealth
+    path: CardInfo/CardHealth
     classID: 224
     script: {fileID: 0}
   m_HasGenericRootTransform: 0

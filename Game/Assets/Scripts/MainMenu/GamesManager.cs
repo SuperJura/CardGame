@@ -11,7 +11,6 @@ public class GamesManager : MonoBehaviour
 
     public void LoadBotGame()
     {
-        Debug.Log(Deck.CheckCards());
         SceneManager.LoadScene("BotGame");
     }
 
