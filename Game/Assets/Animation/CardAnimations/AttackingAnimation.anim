@@ -155,6 +155,126 @@ AnimationClip:
     path: CardInfo/CardAttackContainer/CardAttack
     classID: 114
     script: {fileID: 11500000, guid: e4fdc0e65c6ae6f4bb5c51bf7f52a8ab, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      - time: 0.083333336
+        value: 1
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchorMin.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      - time: 0.083333336
+        value: 1
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchorMax.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 6586.8003
+        outSlope: 6586.8003
+        tangentMode: 10
+      - time: 0.083333336
+        value: 548.9
+        inSlope: 6586.8003
+        outSlope: 6586.8003
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.x
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -1021.9711
+        outSlope: -1021.9711
+        tangentMode: 10
+      - time: 0.083333336
+        value: -85.16426
+        inSlope: -1021.9711
+        outSlope: -1021.9711
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1620
+        outSlope: 1620
+        tangentMode: 10
+      - time: 0.083333336
+        value: 135
+        inSlope: 1620
+        outSlope: 1620
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SizeDelta.x
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 2091.9421
+        outSlope: 2091.9421
+        tangentMode: 10
+      - time: 0.083333336
+        value: 174.32852
+        inSlope: 2091.9421
+        outSlope: 2091.9421
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SizeDelta.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
   m_WrapMode: 1
@@ -430,6 +550,126 @@ AnimationClip:
     path: CardInfo/CardAttackContainer/CardAttack
     classID: 114
     script: {fileID: 11500000, guid: e4fdc0e65c6ae6f4bb5c51bf7f52a8ab, type: 3}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      - time: 0.083333336
+        value: 1
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchorMin.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      - time: 0.083333336
+        value: 1
+        inSlope: 12
+        outSlope: 12
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchorMax.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 6586.8003
+        outSlope: 6586.8003
+        tangentMode: 10
+      - time: 0.083333336
+        value: 548.9
+        inSlope: 6586.8003
+        outSlope: 6586.8003
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.x
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: -1021.9711
+        outSlope: -1021.9711
+        tangentMode: 10
+      - time: 0.083333336
+        value: -85.16426
+        inSlope: -1021.9711
+        outSlope: -1021.9711
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_AnchoredPosition.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 1620
+        outSlope: 1620
+        tangentMode: 10
+      - time: 0.083333336
+        value: 135
+        inSlope: 1620
+        outSlope: 1620
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SizeDelta.x
+    path: 
+    classID: 224
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 2091.9421
+        outSlope: 2091.9421
+        tangentMode: 10
+      - time: 0.083333336
+        value: 174.32852
+        inSlope: 2091.9421
+        outSlope: 2091.9421
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SizeDelta.y
+    path: 
+    classID: 224
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2

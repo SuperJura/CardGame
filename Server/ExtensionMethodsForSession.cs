@@ -11,13 +11,13 @@ namespace GameServer
     {
         public static void OnMatchListener(this WebSocketSessionManager session, string firstPlayer, string secondPlayer)
         {
-            string firstPlayerID = LobbyBehavior.players.Where(x => x.Value == firstPlayer).FirstOrDefault().Key;
-            string secondPlayerID = LobbyBehavior.players.Where(x => x.Value == secondPlayer).FirstOrDefault().Key;
+            string firstPlayerID = LobbyBehavior.players.FirstOrDefault(x => x.Value == firstPlayer).Key;
+            string secondPlayerID = LobbyBehavior.players.FirstOrDefault(x => x.Value == secondPlayer).Key;
 
             session.SendTo("playing|" + secondPlayer, firstPlayerID);
             session.SendTo("playing|" + firstPlayer, secondPlayerID);
 
-            Program.myForm.WriteToEventMsg(firstPlayer + " i " + secondPlayer + " su zapoceli igru");
+            Logger.LogEventMsg(firstPlayer + " i " + secondPlayer + " su zapoceli igru");
         }
     }
 }

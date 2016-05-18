@@ -14,13 +14,11 @@ namespace GameServer
     class LobbyBehavior : WebSocketBehavior
     {
         public static Dictionary<string, string> players;  // ID, nickname
-        Matchmaking matchmaking;
-        static Random r;
-        string nickname;
+        private readonly Matchmaking matchmaking;
+        private string nickname;
 
         static LobbyBehavior()
         {
-            r = new Random();
             players = new Dictionary<string, string>();
         }
 

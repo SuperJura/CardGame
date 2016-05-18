@@ -9,7 +9,7 @@ public class Card : ICloneable
 
     private static int idCounter;
     
-
+    
     public Card()
     {
         IdCard = ++idCounter;

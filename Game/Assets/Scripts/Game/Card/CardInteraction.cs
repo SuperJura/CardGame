@@ -35,9 +35,9 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         transform.Find("CardInfo/CardHealthContainer").localRotation = newRotation;
         transform.Find("CardInfo/CardCooldownContainer").localRotation = newRotation;
         transform.Find("CardInfo/CardAttackContainer").localRotation = newRotation;
-        transform.Find("CardInfo/CardHealthContainer/CardHealth").localRotation = newRotation;
-        transform.Find("CardInfo/CardCooldownContainer/CardCooldown").localRotation = newRotation;
-        transform.Find("CardInfo/CardAttackContainer/CardAttack").localRotation = newRotation;
+        transform.Find("CardInfo/CardHealthContainer/CardHealth/CardHealthText").localRotation = newRotation;
+        transform.Find("CardInfo/CardCooldownContainer/CardCooldown/CardCooldownText").localRotation = newRotation;
+        transform.Find("CardInfo/CardAttackContainer/CardAttack/CardAttackText").localRotation = newRotation;
     }
 
     public void PlayCard()

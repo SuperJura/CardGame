@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Adventure_Character
+  - Adventure_Obsticle
   layers:
   - Default
   - TransparentFX
@@ -13,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Adventure_Character
+  - Adventure_Obsticle
+  - Adventure_Background
   - 
   - 
   - 
@@ -43,4 +45,13 @@ TagManager:
     locked: 0
   - name: InfrontCardLayer
     uniqueID: 771989753
+    locked: 0
+  - name: Adventure_Background
+    uniqueID: 3480602105
+    locked: 0
+  - name: Adventure_Player
+    uniqueID: 2202091019
+    locked: 0
+  - name: Adventure_Obsticle
+    uniqueID: 2450654227
     locked: 0
