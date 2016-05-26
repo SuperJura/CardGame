@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CantMoveTrigger : MonoBehaviour
 {
-    public Sides side;
+    public CharacterMovement.Sides side;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,11 +15,4 @@ public class CantMoveTrigger : MonoBehaviour
         CharacterMovement.canMove[(int) side] = true;
     }
 
-    public enum Sides
-    {
-        Right,
-        Bot,
-        Left,
-        Top
-    }
 }
