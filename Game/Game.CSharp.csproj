@@ -85,8 +85,6 @@
     <Compile Include="Assets\Animation\CardAnimations\AlphaAnimationFast.cs" />
     <Compile Include="Assets\Scripts\Adventure\CantMoveTrigger.cs" />
     <Compile Include="Assets\Scripts\Adventure\CharacterMovement.cs" />
-    <Compile Include="Assets\Scripts\Adventure\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Adventure\MapManager.cs" />
     <Compile Include="Assets\Scripts\Adventure\SpriteAnimation.cs" />
     <Compile Include="Assets\Scripts\Dispatcher.cs" />
     <Compile Include="Assets\Scripts\Game\Card\Card.cs" />
