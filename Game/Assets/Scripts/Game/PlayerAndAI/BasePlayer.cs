@@ -5,14 +5,16 @@ using UnityEngine.UI;
 public class BasePlayer : MonoBehaviour
 {
     protected ICardDatabase database;
-    protected List<Card> deck;
 
     protected GUIManager guiManager;
     protected RectTransform myHand;
 
+    [HideInInspector]
+    public List<Card> deck;
+    [HideInInspector]
     public string playerName;
     public TurnsManager turnsManager;
-    public int Health { get; set; }
+    public int Health;
 
     public virtual void Awake()
     {
@@ -41,6 +43,7 @@ public class BasePlayer : MonoBehaviour
                 return;
             }
             RectTransform card = GetRectTransformCard();
+            card.GetComponent<CardInteraction>().enabled = false;
             card.GetComponent<CardInteraction>().Playable = true;
 
             card.SetParent(myHand);

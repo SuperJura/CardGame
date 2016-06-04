@@ -8,6 +8,6 @@ public class PlayerLoseHealthEventArgs : EventArgs
         CurrentHealth = currentHealth;
     }
 
-    public char PlayerPosition { get; set; }
-    public int CurrentHealth { get; set; }
+    public char PlayerPosition;
+    public int CurrentHealth;
 }

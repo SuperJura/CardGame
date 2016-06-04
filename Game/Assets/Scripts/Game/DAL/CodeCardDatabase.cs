@@ -8,7 +8,6 @@ public class CodeCardDatabase : ICardDatabase
         AllCards = new List<Card>();
         FillList();
     }
-
     public List<Card> AllCards { get; set; }
 
     public Card GetNewCard(string staticId)

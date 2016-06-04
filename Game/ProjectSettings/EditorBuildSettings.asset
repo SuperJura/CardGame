@@ -13,3 +13,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BotGame.unity
   - enabled: 1
     path: Assets/Scenes/OnlineGame.unity
+  - enabled: 1
+    path: Assets/Scenes/AdventureGame.unity
+  - enabled: 1
+    path: Assets/Scenes/AdventureCombat.unity

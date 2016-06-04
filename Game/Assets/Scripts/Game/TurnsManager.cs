@@ -12,15 +12,22 @@ public class TurnsManager : MonoBehaviour
 
     public delegate void OnPlayerLoseHealthHandler(PlayerLoseHealthEventArgs args);
 
-    protected BasePlayer aPlayer;
-
-    private RectTransform APlayerSide;
-    protected BasePlayer bPlayer;
-    private RectTransform BPlayerSide;
-    private EndGameManager endGameManager;
-    private RectTransform graveyard;
-    private int nublerOfTurns;
-    private SpecialAttacksManager specialAttacks;
+    [HideInInspector]
+    public BasePlayer aPlayer;
+    [HideInInspector]
+    public RectTransform APlayerSide;
+    [HideInInspector]
+    public BasePlayer bPlayer;
+    [HideInInspector]
+    public RectTransform BPlayerSide;
+    [HideInInspector]
+    public EndGameManager endGameManager;
+    [HideInInspector]
+    public RectTransform graveyard;
+    [HideInInspector]
+    public int nublerOfTurns;
+    [HideInInspector]
+    public SpecialAttacksManager specialAttacks;
 
     protected char whoMoves; //a = igrac A; b = igrac B
     public event OnEndTurnHandler OnEndTurn;
@@ -28,7 +35,7 @@ public class TurnsManager : MonoBehaviour
     public event OnNotificationHandler OnNotification;
 
     // Use this for initialization
-    private void Start()
+    public virtual void Start()
     {
         Transform gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
@@ -41,7 +48,7 @@ public class TurnsManager : MonoBehaviour
         InitializeGUI();
     }
 
-    private void InitializeGUI()
+    public virtual void InitializeGUI()
     {
         nublerOfTurns = 0;
         whoMoves = 'b';
@@ -50,7 +57,7 @@ public class TurnsManager : MonoBehaviour
         whoMoves = 'a';
         CallOnNotification("welcome!");
         CallOnPlayerLoseHealth();
-
+        EnablePicking();
         CallOnEndTurn();
     }
 
@@ -67,7 +74,7 @@ public class TurnsManager : MonoBehaviour
         StartCoroutine(StartCoolDownPhase());
     } //1. faza, biranje karte za igranje
 
-    private IEnumerator StartCoolDownPhase()
+    public IEnumerator StartCoolDownPhase()
     {
         RectTransform cdField = GetCdFieldOfCurrentPlayer();
 
@@ -82,9 +89,9 @@ public class TurnsManager : MonoBehaviour
         }
 
         CheckForReadyCards();
-    }
+    }   //2. faza, smanjivanje cooldowna kartama
 
-    private void CheckForReadyCards()
+    public void CheckForReadyCards()
     {
         RectTransform cdField = GetCdFieldOfCurrentPlayer();
         RectTransform playField = GetPlayFieldOfCurrentPlayer();
@@ -112,7 +119,7 @@ public class TurnsManager : MonoBehaviour
         StartCoroutine(StartAttackPhase());
     } //-medufaza- poslje 2. faze se prebacuju karte s 0 cd na PlayField
 
-    private IEnumerator StartAttackPhase()
+    public IEnumerator StartAttackPhase()
     {
         RectTransform attackerPlayField = GetPlayFieldOfCurrentPlayer();
         RectTransform defenderPlayField = GetPlayFieldOfOtherPlayer();
@@ -155,7 +162,7 @@ public class TurnsManager : MonoBehaviour
         CheckForDeadCards();
     } //3. faza
 
-    private void CheckForDeadCards()
+    public void CheckForDeadCards()
     {
         RectTransform defenderPlayField = GetPlayFieldOfOtherPlayer();
 
@@ -171,9 +178,9 @@ public class TurnsManager : MonoBehaviour
 
         DestroyDeadCards(cardsToDestroy);
         CheckIfPlayerWon();
-    } //4. faza
+    } //zavrsavanje poteza
 
-    private void CheckIfPlayerWon()
+    public virtual void CheckIfPlayerWon()
     {
         if (aPlayer.Health <= 0)
         {
@@ -187,7 +194,7 @@ public class TurnsManager : MonoBehaviour
     }
 
     //POZIVANJE DELEGATA
-    private void CallOnEndTurn()
+    public void CallOnEndTurn()
     {
         EndTurnEventArgs args = null;
         switch (whoMoves)
@@ -198,37 +205,69 @@ public class TurnsManager : MonoBehaviour
             case 'b':
                 args = new EndTurnEventArgs(++nublerOfTurns, bPlayer.playerName, whoMoves);
                 break;
-            default:
-                break;
         }
-
         OnEndTurn(args);
     }
 
-    private void CallOnPlayerLoseHealth()
+    public void CallOnPlayerLoseHealth()
     {
         OnPlayerLoseHealth(new PlayerLoseHealthEventArgs('b', bPlayer.Health));
         OnPlayerLoseHealth(new PlayerLoseHealthEventArgs('a', aPlayer.Health));
     }
 
-    private void CallOnNotification(string message)
+    public void CallOnNotification(string message)
     {
         OnNotification(whoMoves, message);
     }
 
-    private void CallOnNotification(char player, string message)
+    public void CallOnNotification(char player, string message)
     {
         OnNotification(player, message);
     }
 
     //POMOCNE METODE
-    private void EndPlayerTurn()
+    public void EndPlayerTurn()
     {
         ChangePlayer();
-        EnablePicking();
-
-        CallOnEndTurn();
         FillHand();
+        CallOnEndTurn();
+        DecreaseHealthIfFieldsAreFull();
+        if (CheckIfPlayerCanPlay())
+        {
+            EnablePicking();
+        }
+        else
+        {
+            DisablePicking();
+        }
+    }
+
+    private void DecreaseHealthIfFieldsAreFull()
+    {
+        if (GetCdFieldOfCurrentPlayer().childCount == 5 && GetPlayFieldOfCurrentPlayer().childCount == 5
+            && GetCdFieldOfOtherPlayer().childCount == 5 && GetPlayFieldOfCurrentPlayer().childCount == 5)
+        {
+            aPlayer.Health -= 1;
+            bPlayer.Health -= 1;
+            CallOnPlayerLoseHealth();
+        }
+    }
+
+    public bool CheckIfPlayerCanPlay()
+    {
+        if (GetCdFieldOfCurrentPlayer().childCount >= 5)
+        {
+            CallOnNotification("I cant put anymore cards");
+            StartCoroutine(StartCoolDownPhase());
+            return false;
+        }
+        if (GetPlayerHandOfCurrentPlayer().childCount == 0)
+        {
+            CallOnNotification("I have no more cards");
+            StartCoroutine(StartCoolDownPhase());
+            return false;
+        }
+        return true;
     }
 
     public virtual void FillHand()
@@ -244,7 +283,7 @@ public class TurnsManager : MonoBehaviour
         }
     }
 
-    private void ChangePlayer()
+    public void ChangePlayer()
     {
         switch (whoMoves)
         {
@@ -260,12 +299,12 @@ public class TurnsManager : MonoBehaviour
         }
     } //ako je whoMoves 'a', postaje 'b' i obrnuto
 
-    private void UnfocusCard(RectTransform card)
+    public void UnfocusCard(RectTransform card)
     {
         card.transform.localScale = new Vector3(1, 1, 1);
     } //Postavlja Scale karte na 1, 1, 1
 
-    private void UnfocusAliveCard(RectTransform card)
+    public void UnfocusAliveCard(RectTransform card)
     {
         int health = int.Parse(card.Find(Card.cardHealthPath).GetComponent<Text>().text);
 
@@ -275,41 +314,37 @@ public class TurnsManager : MonoBehaviour
         }
     } //Postavlja Scale karte na 1, 1, 1 samo ako je karta ziva
 
-    private void FocusCard(RectTransform card)
+    public void FocusCard(RectTransform card)
     {
         card.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
     } //Postavlja Scale karte na 1.1, 1.1, 1.1
 
-    private void LowFocusCard(RectTransform card)
+    public void LowFocusCard(RectTransform card)
     {
         card.localScale = new Vector3(0.9f, 0.9f, 0.9f);
     } //Postavlja Scale karte na 0.9, 0.9, 0.9
 
-    private void DisablePicking()
+    public void DisablePicking()
     {
         RectTransform playerHand = GetPlayerHandOfCurrentPlayer();
 
         foreach (RectTransform card in playerHand)
         {
-            //card.GetComponent<CanvasGroup>().blocksRaycasts = false;
-            //card.GetComponent<CanvasGroup>().interactable = false;
             card.GetComponent<CardInteraction>().enabled = false;
         }
     } //onaj tko je na whoMoves nemoze vise birati karte
 
-    private void EnablePicking()
+    public void EnablePicking()
     {
         RectTransform playerHand = GetPlayerHandOfCurrentPlayer();
 
         foreach (RectTransform card in playerHand)
         {
-            //card.GetComponent<CanvasGroup>().blocksRaycasts = true;
-            //card.GetComponent<CanvasGroup>().interactable = true;
             card.GetComponent<CardInteraction>().enabled = true;
         }
     } //onaj tko je na whoMoves moze birati karte
 
-    private void AttackTarget(RectTransform attackerCard, RectTransform defenderCard)
+    public void AttackTarget(RectTransform attackerCard, RectTransform defenderCard)
     {
         int attack =
             int.Parse(attackerCard.Find(Card.cardAttackPath).GetComponentInChildren<Text>().text);
@@ -324,7 +359,7 @@ public class TurnsManager : MonoBehaviour
         CallOnNotification(msg);
     }
 
-    private void AttackOpositePlayer(RectTransform attackerCard)
+    public void AttackOpositePlayer(RectTransform attackerCard)
     {
         int attack =
             int.Parse(attackerCard.Find(Card.cardAttackPath).GetComponentInChildren<Text>().text);
@@ -345,7 +380,7 @@ public class TurnsManager : MonoBehaviour
         CallOnPlayerLoseHealth();
     }
 
-    private void DestroyDeadCards(List<RectTransform> cardsToDestroy)
+    public void DestroyDeadCards(List<RectTransform> cardsToDestroy)
     {
         while (cardsToDestroy.Count != 0)
         {
@@ -367,7 +402,7 @@ public class TurnsManager : MonoBehaviour
         }
     }
 
-    private char GetOppositePlayer()
+    public char GetOppositePlayer()
     {
         switch (whoMoves)
         {
@@ -378,6 +413,19 @@ public class TurnsManager : MonoBehaviour
         }
 
         return ' ';
+    }
+
+    public BasePlayer GetCurrentPlayer()
+    {
+        switch (whoMoves)
+        {
+            case 'a':
+                return aPlayer;
+            case 'b':
+                return bPlayer;
+        }
+
+        return null;
     }
 
     //JAVNE METODE
@@ -403,7 +451,7 @@ public class TurnsManager : MonoBehaviour
     }
 
     //RECTTRANSFORM POMOCNE METODE
-    private RectTransform GetCdFieldOfCurrentPlayer()
+    public RectTransform GetCdFieldOfCurrentPlayer()
     {
         RectTransform cdField;
         switch (whoMoves)
@@ -421,7 +469,7 @@ public class TurnsManager : MonoBehaviour
         return cdField;
     }
 
-    private RectTransform GetPlayerHandOfCurrentPlayer()
+    public RectTransform GetPlayerHandOfCurrentPlayer()
     {
         RectTransform playerHand;
         switch (whoMoves)
@@ -439,7 +487,7 @@ public class TurnsManager : MonoBehaviour
         return playerHand;
     }
 
-    private RectTransform GetPlayFieldOfCurrentPlayer()
+    public RectTransform GetPlayFieldOfCurrentPlayer()
     {
         RectTransform playField;
         switch (whoMoves)
@@ -457,7 +505,7 @@ public class TurnsManager : MonoBehaviour
         return playField;
     } //play field TRENUTNOG igraca
 
-    private RectTransform GetPlayFieldOfOtherPlayer()
+    public RectTransform GetPlayFieldOfOtherPlayer()
     {
         RectTransform playField;
         switch (whoMoves)
@@ -467,6 +515,24 @@ public class TurnsManager : MonoBehaviour
                 break;
             case 'b':
                 playField = APlayerSide.Find("PlayerPlayField").GetComponent<RectTransform>();
+                break;
+            default:
+                playField = null;
+                break;
+        }
+        return playField;
+    } //play field DRUGOG igraca
+
+    public RectTransform GetCdFieldOfOtherPlayer()
+    {
+        RectTransform playField;
+        switch (whoMoves)
+        {
+            case 'a':
+                playField = BPlayerSide.Find("PlayerCDField").GetComponent<RectTransform>();
+                break;
+            case 'b':
+                playField = APlayerSide.Find("PlayerCDField").GetComponent<RectTransform>();
                 break;
             default:
                 playField = null;

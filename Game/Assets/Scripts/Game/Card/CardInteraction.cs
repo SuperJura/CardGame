@@ -5,8 +5,8 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
 {
     public delegate void OnCardPickTurnEndHandler(RectTransform card);
 
-    public RectTransform CdField { get; set; }
-    public bool Playable { get; set; } //bot cards cant be playable
+    public RectTransform CdField;
+    public bool Playable; //bot cards cant be playable
 
     public void OnPointerClick(PointerEventData eventData)
     {

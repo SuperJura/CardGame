@@ -21,20 +21,20 @@ public class Card : ICloneable
         SpecialAttackId = "";
     }
 
-    public int IdCard { get; set; }
+    public int IdCard;
 
-    public string StaticIdCard { get; set; }
-    public string Name { get; set; }
-    public string ImagePath { get; set; }
+    public string StaticIdCard;
+    public string Name;
+    public string ImagePath;
 
-    public Enumerations.EquipmentQuality Quality { get; set; }
+    public Enumerations.EquipmentQuality Quality;
 
-    public int Health { get; set; }
-    public int Attack { get; set; }
-    public int DefaultCooldown { get; set; }
-    public int CurrentCooldown { get; set; }
-    public string SpecialAttackId { get; set; }
-    public string CardFlavour { get; set; }
+    public int Health;
+    public int Attack;
+    public int DefaultCooldown;
+    public int CurrentCooldown;
+    public string SpecialAttackId;
+    public string CardFlavour;
 
     public object Clone()
     {

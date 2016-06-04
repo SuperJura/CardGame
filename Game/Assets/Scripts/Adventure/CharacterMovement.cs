@@ -11,9 +11,11 @@ public class CharacterMovement : MonoBehaviour
     public Sprite[] rigthWalking;
     public Sprite[] leftWalking;
     public int spritesPerSecond;
+    public Sides whereToSwitch;
+    public int nextMap;
 
 
-    private Sprite[] currentWalking;
+     private Sprite[] currentWalking;
     private float movex = 0f;
     private float movey = 0f;
     private Rigidbody2D rigibody;
@@ -28,6 +30,7 @@ public class CharacterMovement : MonoBehaviour
     {
         renderer = GetComponent<SpriteRenderer>();
         rigibody = GetComponent<Rigidbody2D>();
+        whereToSwitch = Sides.Noone;
         instance = this;
     }
 
@@ -42,25 +45,55 @@ public class CharacterMovement : MonoBehaviour
             currentWalking = rigthWalking;
             StartCoroutine(Move(0.64f, 0));
         }
-
-        if (movex < 0 && !isMoving && canMove[(int)Sides.Left])
+        else if (movex < 0 && !isMoving && canMove[(int)Sides.Left])
         {
             currentWalking = leftWalking;
             StartCoroutine(Move(-0.64f, 0));
         }
-
-        if (movey > 0 && !isMoving && canMove[(int)Sides.Top])
+        else if (movey > 0 && !isMoving && canMove[(int)Sides.Top])
         {
             currentWalking = topWalking;
             StartCoroutine(Move(0, 0.64f));
         }
-
-        if (movey < 0 && !isMoving && canMove[(int)Sides.Bot])
+        else if (movey < 0 && !isMoving && canMove[(int)Sides.Bot])
         {
             currentWalking = botWalking;
             StartCoroutine(Move(0, -0.64f));
         }
+    }
 
+    private void SwitchSide()
+    {
+        MapManager.ChangeMap(nextMap);
+        if (whereToSwitch != Sides.Noone && !isMoving)
+        {
+            if (whereToSwitch == Sides.Right)
+            {
+                Vector3 position = transform.position;
+                position.x = -4.46f;
+                transform.position = position;
+            }
+            if (whereToSwitch == Sides.Left)
+            {
+                Vector3 position = transform.position;
+                position.x = 4.5f;
+                transform.position = position;
+            }
+            if (whereToSwitch == Sides.Top)
+            {
+                Vector3 position = transform.position;
+                position.y = -4.8f;
+                transform.position = position;
+            }
+            if (whereToSwitch == Sides.Bot)
+            {
+                Vector3 position = transform.position;
+                position.y = 4.8f;
+                transform.position = position;
+            }
+            whereToSwitch = Sides.Noone;
+            AdventureGame.SaveGame();
+        }
     }
 
     private IEnumerator Move(float x, float y)
@@ -71,11 +104,13 @@ public class CharacterMovement : MonoBehaviour
         if (Mathf.Abs(newPosition.x) > 5)
         {
             isMoving = false;
+            if (whereToSwitch != Sides.Noone) SwitchSide();
             yield break;
         }
         if (Mathf.Abs(newPosition.y) > 5)
         {
             isMoving = false;
+            if (whereToSwitch != Sides.Noone) SwitchSide();
             yield break;
         }
 
@@ -98,6 +133,7 @@ public class CharacterMovement : MonoBehaviour
         Right,
         Bot,
         Left,
-        Top
+        Top,
+        Noone
     }
 }

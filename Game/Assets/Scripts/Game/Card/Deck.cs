@@ -9,9 +9,10 @@ public static class Deck
         DeckName = "random";
     }
 
-    public static List<Card> Cards { get; set; } //dek ima 20 karata
-    public static DeckEnums DeckType { get; set; }
-    public static string DeckName { get; set; }
+    public static List<Card> Cards; //dek ima 20 karata
+    public static List<Card> AdventureCardsOpponent;
+    public static DeckEnums DeckType;
+    public static string DeckName;
 
     public static int CheckCards()
     {

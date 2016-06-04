@@ -1,55 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class MapManager : MonoBehaviour
 {
     //player positions - 
     //top left X=-4.46 Y=4.8
     //bot right X=4.5 Y=-4.8
-    public int nextLevel;
+    public int nextMap;
     public CharacterMovement.Sides side;
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (side == CharacterMovement.Sides.Right)
-        {
-            if (!CharacterMovement.instance.isMoving)
-            {
-                Vector3 position = CharacterMovement.instance.transform.position;
-                position.x = -4.46f;
-                CharacterMovement.instance.transform.position = position;
-            }
-        }
-        if (side == CharacterMovement.Sides.Left)
-        {
-            //todo change map to right (player stays on y axis, x = 4.5)
-            if (!CharacterMovement.instance.isMoving)
-            {
-                Vector3 position = CharacterMovement.instance.transform.position;
-                position.x = 4.5f;
-                CharacterMovement.instance.transform.position = position;
-            }
-        }
-        if (side == CharacterMovement.Sides.Top)
-        {
-            //todo change map to right (player stays on x axis, y = -4.8)
-            if (!CharacterMovement.instance.isMoving)
-            {
-                Vector3 position = CharacterMovement.instance.transform.position;
-                position.y = -4.8f;
-                CharacterMovement.instance.transform.position = position;
-            }
-        }
-        if (side == CharacterMovement.Sides.Bot)
-        {
-            //todo change map to right (player stays on x axis, y = 4.8)
-            if (!CharacterMovement.instance.isMoving)
-            {
-                Vector3 position = CharacterMovement.instance.transform.position;
-                position.y = 4.8f;
-                CharacterMovement.instance.transform.position = position;
-            }
-        }
+        CharacterMovement.instance.whereToSwitch = side;
+        CharacterMovement.instance.nextMap = nextMap;
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        CharacterMovement.instance.whereToSwitch = CharacterMovement.Sides.Noone;
+        CharacterMovement.instance.nextMap = -1;
+    }
+
+    public static void ChangeMap(int mapId)
+    {
+        GameObject currentMap = GameObject.Find(AdventureGame.currentMap + "(Clone)");
+        Destroy(currentMap);
+        string newMapName = Maps.FindMap(mapId).name;
+        Instantiate(Resources.Load("AdventureResources/Maps/" + newMapName));
+        AdventureGame.currentMap = newMapName;
+        AdventureGame.SaveGame();
     }
 
     public static class Maps
@@ -58,10 +38,15 @@ public class MapManager : MonoBehaviour
 
         static Maps()
         {
-            maps = new Map[1];
+            maps = new Map[2];
             maps[0] = new Map(1, "Tutorial_1");
+            maps[1] = new Map(2, "Tutorial_2");
         }
 
+        public static Map FindMap(int id)
+        {
+            return maps.FirstOrDefault(map => map.id == id);
+        }
     }
 
     public class Map
