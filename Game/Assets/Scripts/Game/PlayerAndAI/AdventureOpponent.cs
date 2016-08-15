@@ -20,6 +20,7 @@ public class AdventureOpponent : BasePlayer
         }
         playing = false;
     }
+
     void Start () {
 	    base.Start();
 
@@ -39,6 +40,7 @@ public class AdventureOpponent : BasePlayer
             playing = true;
         }
     }
+
     public override void FillHand()
     {
         while (myHand.childCount < 5)

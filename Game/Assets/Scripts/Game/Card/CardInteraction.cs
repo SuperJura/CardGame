@@ -4,10 +4,11 @@ using UnityEngine.EventSystems;
 public class CardInteraction : MonoBehaviour, IPointerClickHandler
 {
     public delegate void OnCardPickTurnEndHandler(RectTransform card);
+
     public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
 
     public RectTransform CdField;
-    public bool Playable; //bot cards cant be playable
+    public bool Playable; //karte bota se nemogu odigrati
 
     public void OnPointerClick(PointerEventData eventData)
     {

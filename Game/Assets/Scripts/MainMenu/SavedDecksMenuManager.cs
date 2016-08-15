@@ -32,7 +32,7 @@ public class SavedDecksMenuManager : MonoBehaviour
             Deck.Cards.Add(database.GetNewCard(cardElement.Value));
         }
 
-        Deck.DeckType = DeckEnums.Saved;
+        Deck.DeckType = Enumerations.DeckEnums.Saved;
         Deck.DeckName = deckName;
         deckPanelManager.SetDeckType();
     }

@@ -1,18 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
+//klasa koja ima sve karte u igracevom deku i pomocu nje se dodaju ili micu karte u deku
 public static class Deck
 {
+    public static List<Card> Cards; //dek ima 20 karata
+    public static List<Card> AdventureCardsOpponent;
+    public static Enumerations.DeckEnums DeckType;
+    public static string DeckName;
+
     static Deck()
     {
         Cards = Repository.GetCardDatabaseInstance().GetRandomDeck();
-        DeckType = DeckEnums.Random;
-        DeckName = "random";
+        DeckType = Enumerations.DeckEnums.Random;
+        DeckName = DeckType.ToString();
     }
-
-    public static List<Card> Cards; //dek ima 20 karata
-    public static List<Card> AdventureCardsOpponent;
-    public static DeckEnums DeckType;
-    public static string DeckName;
 
     public static int CheckCards()
     {
@@ -41,14 +43,8 @@ public static class Deck
         //    return false;
         //}
 
-        int counter = 0;
-        foreach (Card card in Cards)
-        {
-            if (card.StaticIdCard == staticId)
-            {
-                counter++;
-            }
-        }
+        //int counter = Cards.Count(card => card.StaticIdCard == staticId);
+        //TODO: Igrac nemoze imati vise od ~3 iste karte u deku
 
         Card cardToPut = Repository.GetCardDatabaseInstance().GetNewCard(staticId);
         if (cardToPut != null)

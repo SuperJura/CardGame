@@ -81,6 +81,7 @@ public class Bot : BasePlayer
     public IEnumerator PlayTurn()
     {
         RectTransform playingCard = myHand.GetChild(Random.Range(0, myHand.childCount)).GetComponent<RectTransform>();
+        //delay je samo da se igrac lakse prati sto se dogada na ploci
         yield return new WaitForSeconds(Random.Range(0.75f, 2));
         ShowCardDetails(playingCard);
         playingCard.GetComponent<CardInteraction>().PlayCard();

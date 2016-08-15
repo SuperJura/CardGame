@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 public class TerrainsManager : MonoBehaviour
 {
     public static string adventureTerrain;
+
     void Start()
     {
         if (!string.IsNullOrEmpty(adventureTerrain))

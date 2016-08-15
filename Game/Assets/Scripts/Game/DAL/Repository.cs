@@ -4,10 +4,7 @@
 
     public static ICardDatabase GetCardDatabaseInstance()
     {
-        if (cardDatabase == null)
-        {
-            cardDatabase = new CodeCardDatabase();
-        }
+        if (cardDatabase == null)   cardDatabase = new CodeCardDatabase();
         return cardDatabase;
     }
 }

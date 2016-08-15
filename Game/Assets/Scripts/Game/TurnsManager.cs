@@ -7,10 +7,12 @@ using UnityEngine.UI;
 public class TurnsManager : MonoBehaviour
 {
     public delegate void OnEndTurnHandler(EndTurnEventArgs args);
-
     public delegate void OnNotificationHandler(char player, string message);
-
     public delegate void OnPlayerLoseHealthHandler(PlayerLoseHealthEventArgs args);
+
+    public event OnEndTurnHandler OnEndTurn;
+    public event OnNotificationHandler OnNotification;
+    public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
 
     [HideInInspector]
     public BasePlayer aPlayer;
@@ -30,9 +32,6 @@ public class TurnsManager : MonoBehaviour
     public SpecialAttacksManager specialAttacks;
 
     protected char whoMoves; //a = igrac A; b = igrac B
-    public event OnEndTurnHandler OnEndTurn;
-    public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
-    public event OnNotificationHandler OnNotification;
 
     // Use this for initialization
     public virtual void Start()

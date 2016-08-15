@@ -7,5 +7,4 @@ public class EnemyInfo : MonoBehaviour
     public int enemyID;
     public string combatMsg;
     public string[] cardIDs;
-
 }

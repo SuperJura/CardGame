@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class OnlineGameMenuManager : MonoBehaviour
 {
+    public static string severIPAddress;
+
     private Button btnConnectToServer;
     private Button btnStartOnlineGame;
     private Text errorText;

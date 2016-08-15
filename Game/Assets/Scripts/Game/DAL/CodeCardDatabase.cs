@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class CodeCardDatabase : ICardDatabase
 {
+    public List<Card> AllCards { get; set; }
+
     public CodeCardDatabase()
     {
         AllCards = new List<Card>();
         FillList();
     }
-    public List<Card> AllCards { get; set; }
 
     public Card GetNewCard(string staticId)
     {

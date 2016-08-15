@@ -6,4 +6,11 @@
         Rare,
         Legendary
     }
+
+    public enum DeckEnums
+    {
+        Random,
+        Custom,
+        Saved
+    }
 }

@@ -73,7 +73,7 @@ public class OnlineOpponent : BasePlayer
         }
 
         card.transform.Find("HidePanel").GetComponent<CanvasGroup>().alpha = 0;
-            //nademo "brata" HidePanel i podesimo tako da se on ne vidi
+        //nademo "brata" HidePanel i podesimo tako da se on ne vidi
         card.GetComponent<CardHover>().enabled = true;
     }
 }

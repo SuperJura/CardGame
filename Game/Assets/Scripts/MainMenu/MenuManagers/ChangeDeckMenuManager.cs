@@ -6,16 +6,14 @@ public class ChangeDeckMenuManager : MonoBehaviour
 
     public void RandomBtnClick()
     {
-        Deck.DeckType = DeckEnums.Random;
-        Deck.DeckName = "random";
+        Deck.DeckType = Enumerations.DeckEnums.Random;
         deckPanelManager.SetDeckType();
         Deck.Cards = Repository.GetCardDatabaseInstance().GetRandomDeck();
     }
 
     public void CustomBtnClick()
     {
-        Deck.DeckType = DeckEnums.Custom;
-        Deck.DeckName = "custom";
+        Deck.DeckType = Enumerations.DeckEnums.Custom;
         Deck.Cards.Clear();
         deckPanelManager.SetDeckType();
     }

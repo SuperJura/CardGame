@@ -7,14 +7,12 @@ using UnityEngine.UI;
 
 public class CurrentDeckMenuManager : MonoBehaviour
 {
-    private string applicationPath;
+    public MenuManager menuManager;
+    public DeckPanelManager deckPanelManager;
     public GameObject changeDeckMenu;
 
-    public DeckPanelManager deckPanelManager;
-
-
     private Text errorTextSaving;
-    public MenuManager menuManager;
+    private string applicationPath;
 
     private void Start()
     {
@@ -40,7 +38,7 @@ public class CurrentDeckMenuManager : MonoBehaviour
             CreateDeckConfigDat();
         }
 
-        Deck.DeckType = DeckEnums.Saved;
+        Deck.DeckType = Enumerations.DeckEnums.Saved;
         deckPanelManager.SetDeckType();
         SaveDeckToXml(deckName);
 
@@ -49,10 +47,7 @@ public class CurrentDeckMenuManager : MonoBehaviour
 
     private bool CheckDeckName(string deckName)
     {
-        if (deckName.Contains("."))
-        {
-            return true;
-        }
+        if (deckName.Contains(".")) return true;
         return false;
     }
 

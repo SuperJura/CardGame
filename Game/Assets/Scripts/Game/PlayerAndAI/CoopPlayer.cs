@@ -16,10 +16,7 @@
 
     private bool IsPlayerA()
     {
-        if (transform.name.StartsWith("A"))
-        {
-            return true;
-        }
+        if (transform.name.StartsWith("A")) return true;
         return false;
     }
 }

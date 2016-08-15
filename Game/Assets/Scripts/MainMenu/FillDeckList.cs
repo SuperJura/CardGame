@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class FillDeckList : MonoBehaviour
 {
     private string applicationPath;
-    private ICardDatabase database;
 
     private void Start()
     {
@@ -14,7 +13,6 @@ public class FillDeckList : MonoBehaviour
         {
             applicationPath = Application.persistentDataPath;
         }
-        database = Repository.GetCardDatabaseInstance();
         FillList();
     }
 

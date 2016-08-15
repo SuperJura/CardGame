@@ -5,19 +5,17 @@ using WebSocketSharp;
 public class ServerGameBehavior : MonoBehaviour
 {
     public delegate void OnCanStartHandler();
-
     public delegate void OnOpponentDrawedHandler(string staticId);
-
     public delegate void OnOpponentPlayedHandler(string staticId);
+
+    public event OnCanStartHandler OnCanStart;
+    public event OnOpponentDrawedHandler OnOpponentDrawed;
+    public event OnOpponentPlayedHandler OnOpponentPlayed;
 
     private EndGameManager endGameManager;
     private Transform notificationPanel;
     private TurnsManager turnsManager;
-
     private WebSocket ws;
-    public event OnCanStartHandler OnCanStart;
-    public event OnOpponentDrawedHandler OnOpponentDrawed;
-    public event OnOpponentPlayedHandler OnOpponentPlayed;
 
     private void Awake()
     {
@@ -29,7 +27,7 @@ public class ServerGameBehavior : MonoBehaviour
     private void Start()
     {
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
-        ws = new WebSocket("ws://192.168.1.247:8080/GameBehavior"); //ovo racunalo, ip adresa
+        ws = new WebSocket("ws://" + OnlineGameMenuManager.severIPAddress + ":8080/GameBehavior"); //ovo racunalo, ip adresa
         //ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
         ws.OnClose += Ws_OnClose;
         ws.OnMessage += Ws_OnMessage;

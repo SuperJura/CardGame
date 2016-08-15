@@ -8,8 +8,19 @@ public class Card : ICloneable
     public static string cardAttackPath = "CardInfo/CardAttackContainer/CardAttack/CardAttackText";
 
     private static int idCounter;
-    
-    
+
+    public int IdCard;
+    public string StaticIdCard;
+    public string Name;
+    public string ImagePath;
+    public Enumerations.EquipmentQuality Quality;
+    public int Health;
+    public int Attack;
+    public int DefaultCooldown;
+    public int CurrentCooldown;
+    public string SpecialAttackId;
+    public string CardFlavour;
+
     public Card()
     {
         IdCard = ++idCounter;
@@ -20,21 +31,6 @@ public class Card : ICloneable
         CurrentCooldown = DefaultCooldown;
         SpecialAttackId = "";
     }
-
-    public int IdCard;
-
-    public string StaticIdCard;
-    public string Name;
-    public string ImagePath;
-
-    public Enumerations.EquipmentQuality Quality;
-
-    public int Health;
-    public int Attack;
-    public int DefaultCooldown;
-    public int CurrentCooldown;
-    public string SpecialAttackId;
-    public string CardFlavour;
 
     public object Clone()
     {

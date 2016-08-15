@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using WebSocketSharp;
 
 public class BotGameMenuManager : MonoBehaviour
 {
@@ -7,6 +8,6 @@ public class BotGameMenuManager : MonoBehaviour
 
     public void EnterNickname()
     {
-        PlayerNamesForGame.NicknameForBotGame = nicknameText.text;
+        if (!string.IsNullOrEmpty(nicknameText.text))    PlayerNamesForGame.NicknameForBotGame = nicknameText.text;
     }
 }

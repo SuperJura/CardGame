@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class EndGameManager : MonoBehaviour
 {
-    private MenuManager menuManager;
-
     public RectTransform originalMessages;
+
+    private MenuManager menuManager;
 
     private void Start()
     {

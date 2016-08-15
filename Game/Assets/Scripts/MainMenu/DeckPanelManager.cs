@@ -17,6 +17,6 @@ public class DeckPanelManager : MonoBehaviour
 
     public void SetDeckType()
     {
-        deckTypeText.text = Deck.DeckType.ToString();
+        deckTypeText.text = Deck.DeckName;
     }
 }

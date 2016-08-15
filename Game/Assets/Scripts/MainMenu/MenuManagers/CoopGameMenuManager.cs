@@ -8,7 +8,7 @@ public class CoopGameMenuManager : MonoBehaviour
 
     public void EnterNicknames()
     {
-        PlayerNamesForGame.NicknameForCoopGameA = nicknameTextA.text;
-        PlayerNamesForGame.NicknameForCoopGameB = nicknameTextB.text;
+        if(!string.IsNullOrEmpty(nicknameTextA.text))   PlayerNamesForGame.NicknameForCoopGameA = nicknameTextA.text;
+        if(!string.IsNullOrEmpty(nicknameTextB.text))   PlayerNamesForGame.NicknameForCoopGameB = nicknameTextB.text;
     }
 }

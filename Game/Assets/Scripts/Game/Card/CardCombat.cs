@@ -5,7 +5,6 @@ public class CardCombat : MonoBehaviour
 {
     private Animation anim;
     private Text cardCooldown;
-
     private Text cardHealth;
 
     private void Start()

@@ -5,22 +5,21 @@ using WebSocketSharp;
 
 internal class ServerLobbyBehavior : MonoBehaviour
 {
-    public delegate void OnPlayerJoinedHandler(string nick);
-
     public delegate void OnReceivePlayerListHandler(string[] playerList);
-
+    public delegate void OnPlayerJoinedHandler(string nick);
+    public delegate void OnStartOnlineGameHandler(string opponent);
     public delegate void OnServerErrorHandler(int errorCode);
 
-    public delegate void OnStartOnlineGameHandler(string opponent);
-
-    private static WebSocket ws;
-    private string nickname;
-    public Text txtNick;
     public event OnReceivePlayerListHandler OnReceivePlayerList;
     public event OnPlayerJoinedHandler OnPlayerJoined;
     public event OnStartOnlineGameHandler OnStartOnlineGame;
     public event OnServerErrorHandler OnServerError;
 
+    private static WebSocket ws;
+    private string nickname;
+    public Text txtNick;
+    public Text txtServerIpAddress;
+    
     public void ConnectToServer()
     {
         if (txtNick.text == "")
@@ -33,8 +32,12 @@ internal class ServerLobbyBehavior : MonoBehaviour
             CallOnServerError("3");
             return;
         }
+        if (txtServerIpAddress.text.IsNullOrEmpty()) OnlineGameMenuManager.severIPAddress = "192.168.1.247";
+        else OnlineGameMenuManager.severIPAddress = txtServerIpAddress.text;
+        Debug.Log(OnlineGameMenuManager.severIPAddress + " : " + txtServerIpAddress.text);
+
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/LobbyBehavior"); //laptop
-        ws = new WebSocket("ws://192.168.1.247:8080/LobbyBehavior"); //ovo racunalo, ip adresa
+        ws = new WebSocket("ws://" + OnlineGameMenuManager.severIPAddress + ":8080/LobbyBehavior"); //ovo racunalo, ip adresa
         //ws = new WebSocket("ws://93.138.64.118:8080/LobbyBehavior"); //ovo racunalo, ip adresa koja nije iz NAT tablice
         //ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
         ws.OnOpen += ws_OnOpen;
