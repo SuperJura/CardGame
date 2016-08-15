@@ -7,12 +7,12 @@ public class Enemy : MonoBehaviour
     public static string combatMsg;
 
     private int enemyID;
+
     void Awake()
     {
         DontDestroyOnLoad(transform.parent.parent.gameObject);
         enemyID = transform.GetComponentInParent<EnemyInfo>().enemyID;
     }
-
 
     void OnTriggerStay2D(Collider2D other)
     {

@@ -38,9 +38,11 @@ public class MapManager : MonoBehaviour
 
         static Maps()
         {
-            maps = new Map[2];
+            maps = new Map[4];
             maps[0] = new Map(1, "Tutorial_1");
             maps[1] = new Map(2, "Tutorial_2");
+            maps[2] = new Map(3, "Tutorial_3");
+            maps[3] = new Map(4, "Tutorial_4");
         }
 
         public static Map FindMap(int id)

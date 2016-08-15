@@ -1,0 +1,20 @@
+Sizes of each frame in Sprite sheets to Slice (Grid):
+
+Blacksmith
+Width: 30px
+Height: 69px
+
+
+Girl01
+Width: 30px
+Height: 69px
+
+
+Girl02
+Width: 30px
+Height: 81px
+
+
+Girl03
+Width: 30px
+Height: 67px

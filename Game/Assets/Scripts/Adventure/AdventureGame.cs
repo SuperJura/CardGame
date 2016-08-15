@@ -9,7 +9,7 @@ public class AdventureGame : MonoBehaviour
 
     const string path = "/save.sav";
     public static string currentMap;
-    // Use this for initialization
+
     void Awake()
     {
         LoadAdventureGame();

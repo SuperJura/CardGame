@@ -84,6 +84,7 @@
     <Compile Include="Assets\Animation\CardAnimations\AlphaAnimation.cs" />
     <Compile Include="Assets\Animation\CardAnimations\AlphaAnimationFast.cs" />
     <Compile Include="Assets\EnemyCombatFlags.cs" />
+    <Compile Include="Assets\RoofDissapear.cs" />
     <Compile Include="Assets\Scripts\Adventure\AdventureGame.cs" />
     <Compile Include="Assets\Scripts\Adventure\CantMoveTrigger.cs" />
     <Compile Include="Assets\Scripts\Adventure\CharacterMovement.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Scripts\Game\TurnsManager.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManagerAdventureGame.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManagerOnlineGame.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Background.cs" />
     <Compile Include="Assets\Scripts\MainMenu\CurrentDeckMenuScripts\CustomDeckCardControls.cs" />
     <Compile Include="Assets\Scripts\MainMenu\CurrentDeckMenuScripts\FillCardList.cs" />
     <Compile Include="Assets\Scripts\MainMenu\DeckPanelManager.cs" />
@@ -143,6 +145,8 @@
     <None Include="Assets\Decks\cc.xml" />
     <None Include="Assets\Decks\custom.xml" />
     <None Include="Assets\Decks\custom555.xml" />
+    <None Include="Assets\Sprites\Adventure\Fantasy Environment and Animated Characters (Pixel Art) [free add-on]\Graphical\Characters\Characters Sizes to Slice.txt" />
+    <None Include="Assets\Sprites\Adventure\Fantasy Environment and Animated Characters (Pixel Art) [free add-on]\Readme.txt" />
     <None Include="Assets\TerrainResources\Water\WaterFlowShader.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />

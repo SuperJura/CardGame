@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public static class AdventureDeck
 {
@@ -11,7 +12,7 @@ public static class AdventureDeck
         DeckOpponent = new List<Card>();
         DeckPlayer = new List<Card>();
         CollectionPlayer = new List<Card>();
-        DebugAddCardsToDeck();   //TODO: Load from player deck
+        DebugAddCardsToDeck();   //TODO: Load from PlayerCards deck
     }
 
     public static void DebugAddCardsToDeck()
@@ -22,4 +23,11 @@ public static class AdventureDeck
         }
     }
 
+    [Serializable]
+    public class PlayerCards
+    {
+        public List<Card> Deck;
+        public List<Card> Collection;
+
+    }
 }

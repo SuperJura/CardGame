@@ -5,9 +5,9 @@ using UnityEngine.UI;
 public class BasePlayer : MonoBehaviour
 {
     protected ICardDatabase database;
-
     protected GUIManager guiManager;
     protected RectTransform myHand;
+    protected bool isPlayer;
 
     [HideInInspector]
     public List<Card> deck;
@@ -19,6 +19,7 @@ public class BasePlayer : MonoBehaviour
     public virtual void Awake()
     {
         myHand = transform.Find("PlayerHand").GetComponent<RectTransform>();
+        isPlayer = transform.name.StartsWith("A");
 
         guiManager = turnsManager.GetComponent<GUIManager>();
         deck = new List<Card>(); //kloniraj sve karte iz deka u dek igraca
@@ -104,7 +105,25 @@ public class BasePlayer : MonoBehaviour
                 break;
         }
 
+        if (!isPlayer)
+        {
+            TurnAroundTheCard(cardRectTransform);
+        }
         return cardRectTransform;
+    }
+
+    public void TurnAroundTheCard(RectTransform cardRectTransform)
+    {
+        Quaternion newRotation = new Quaternion(0, 0, 180, 0);
+        cardRectTransform.localRotation = newRotation;
+        cardRectTransform.Find("CardName").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo/CardHealthContainer").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo/CardCooldownContainer").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo/CardAttackContainer").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo/CardHealthContainer/CardHealth/CardHealthText").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo/CardCooldownContainer/CardCooldown/CardCooldownText").localRotation = newRotation;
+        cardRectTransform.Find("CardInfo/CardAttackContainer/CardAttack/CardAttackText").localRotation = newRotation;
     }
 
     protected Card GetCardFromDeck()

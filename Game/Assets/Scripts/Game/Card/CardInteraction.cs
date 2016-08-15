@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class CardInteraction : MonoBehaviour, IPointerClickHandler
 {
     public delegate void OnCardPickTurnEndHandler(RectTransform card);
+    public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
 
     public RectTransform CdField;
     public bool Playable; //bot cards cant be playable
@@ -14,30 +15,6 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         {
             PlayCard();
         }
-    }
-
-    public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
-
-    private void Start()
-    {
-        if (transform.parent.parent.name.StartsWith("B"))
-        {
-            TurnAroundTheCard();
-        }
-    }
-
-    public void TurnAroundTheCard()
-    {
-        Quaternion newRotation = new Quaternion(0, 0, 180, 0);
-        transform.localRotation = newRotation;
-        transform.Find("CardName").localRotation = newRotation;
-        transform.Find("CardInfo").localRotation = newRotation;
-        transform.Find("CardInfo/CardHealthContainer").localRotation = newRotation;
-        transform.Find("CardInfo/CardCooldownContainer").localRotation = newRotation;
-        transform.Find("CardInfo/CardAttackContainer").localRotation = newRotation;
-        transform.Find("CardInfo/CardHealthContainer/CardHealth/CardHealthText").localRotation = newRotation;
-        transform.Find("CardInfo/CardCooldownContainer/CardCooldown/CardCooldownText").localRotation = newRotation;
-        transform.Find("CardInfo/CardAttackContainer/CardAttack/CardAttackText").localRotation = newRotation;
     }
 
     public void PlayCard()

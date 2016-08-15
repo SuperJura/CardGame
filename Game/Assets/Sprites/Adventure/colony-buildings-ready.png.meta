@@ -1,0 +1,4802 @@
+fileFormatVersion: 2
+guid: 909f53a8e7b0ce340814d1138cab042c
+timeCreated: 1465198960
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: colony-buildings-ready_0
+    21300002: colony-buildings-ready_1
+    21300004: colony-buildings-ready_2
+    21300006: colony-buildings-ready_3
+    21300008: colony-buildings-ready_4
+    21300010: colony-buildings-ready_5
+    21300012: colony-buildings-ready_6
+    21300014: colony-buildings-ready_7
+    21300016: colony-buildings-ready_8
+    21300018: colony-buildings-ready_9
+    21300020: colony-buildings-ready_10
+    21300022: colony-buildings-ready_11
+    21300024: colony-buildings-ready_12
+    21300026: colony-buildings-ready_13
+    21300028: colony-buildings-ready_14
+    21300030: colony-buildings-ready_15
+    21300032: colony-buildings-ready_16
+    21300034: colony-buildings-ready_17
+    21300036: colony-buildings-ready_18
+    21300038: colony-buildings-ready_19
+    21300040: colony-buildings-ready_20
+    21300042: colony-buildings-ready_21
+    21300044: colony-buildings-ready_22
+    21300046: colony-buildings-ready_23
+    21300048: colony-buildings-ready_24
+    21300050: colony-buildings-ready_25
+    21300052: colony-buildings-ready_26
+    21300054: colony-buildings-ready_27
+    21300056: colony-buildings-ready_28
+    21300058: colony-buildings-ready_29
+    21300060: colony-buildings-ready_30
+    21300062: colony-buildings-ready_31
+    21300064: colony-buildings-ready_32
+    21300066: colony-buildings-ready_33
+    21300068: colony-buildings-ready_34
+    21300070: colony-buildings-ready_35
+    21300072: colony-buildings-ready_36
+    21300074: colony-buildings-ready_37
+    21300076: colony-buildings-ready_38
+    21300078: colony-buildings-ready_39
+    21300080: colony-buildings-ready_40
+    21300082: colony-buildings-ready_41
+    21300084: colony-buildings-ready_42
+    21300086: colony-buildings-ready_43
+    21300088: colony-buildings-ready_44
+    21300090: colony-buildings-ready_45
+    21300092: colony-buildings-ready_46
+    21300094: colony-buildings-ready_47
+    21300096: colony-buildings-ready_48
+    21300098: colony-buildings-ready_49
+    21300100: colony-buildings-ready_50
+    21300102: colony-buildings-ready_51
+    21300104: colony-buildings-ready_52
+    21300106: colony-buildings-ready_53
+    21300108: colony-buildings-ready_54
+    21300110: colony-buildings-ready_55
+    21300112: colony-buildings-ready_56
+    21300114: colony-buildings-ready_57
+    21300116: colony-buildings-ready_58
+    21300118: colony-buildings-ready_59
+    21300120: colony-buildings-ready_60
+    21300122: colony-buildings-ready_61
+    21300124: colony-buildings-ready_62
+    21300126: colony-buildings-ready_63
+    21300128: colony-buildings-ready_64
+    21300130: colony-buildings-ready_65
+    21300132: colony-buildings-ready_66
+    21300134: colony-buildings-ready_67
+    21300136: colony-buildings-ready_68
+    21300138: colony-buildings-ready_69
+    21300140: colony-buildings-ready_70
+    21300142: colony-buildings-ready_71
+    21300144: colony-buildings-ready_72
+    21300146: colony-buildings-ready_73
+    21300148: colony-buildings-ready_74
+    21300150: colony-buildings-ready_75
+    21300152: colony-buildings-ready_76
+    21300154: colony-buildings-ready_77
+    21300156: colony-buildings-ready_78
+    21300158: colony-buildings-ready_79
+    21300160: colony-buildings-ready_80
+    21300162: colony-buildings-ready_81
+    21300164: colony-buildings-ready_82
+    21300166: colony-buildings-ready_83
+    21300168: colony-buildings-ready_84
+    21300170: colony-buildings-ready_85
+    21300172: colony-buildings-ready_86
+    21300174: colony-buildings-ready_87
+    21300176: colony-buildings-ready_88
+    21300178: colony-buildings-ready_89
+    21300180: colony-buildings-ready_90
+    21300182: colony-buildings-ready_91
+    21300184: colony-buildings-ready_92
+    21300186: colony-buildings-ready_93
+    21300188: colony-buildings-ready_94
+    21300190: colony-buildings-ready_95
+    21300192: colony-buildings-ready_96
+    21300194: colony-buildings-ready_97
+    21300196: colony-buildings-ready_98
+    21300198: colony-buildings-ready_99
+    21300200: colony-buildings-ready_100
+    21300202: colony-buildings-ready_101
+    21300204: colony-buildings-ready_102
+    21300206: colony-buildings-ready_103
+    21300208: colony-buildings-ready_104
+    21300210: colony-buildings-ready_105
+    21300212: colony-buildings-ready_106
+    21300214: colony-buildings-ready_107
+    21300216: colony-buildings-ready_108
+    21300218: colony-buildings-ready_109
+    21300220: colony-buildings-ready_110
+    21300222: colony-buildings-ready_111
+    21300224: colony-buildings-ready_112
+    21300226: colony-buildings-ready_113
+    21300228: colony-buildings-ready_114
+    21300230: colony-buildings-ready_115
+    21300232: colony-buildings-ready_116
+    21300234: colony-buildings-ready_117
+    21300236: colony-buildings-ready_118
+    21300238: colony-buildings-ready_119
+    21300240: colony-buildings-ready_120
+    21300242: colony-buildings-ready_121
+    21300244: colony-buildings-ready_122
+    21300246: colony-buildings-ready_123
+    21300248: colony-buildings-ready_124
+    21300250: colony-buildings-ready_125
+    21300252: colony-buildings-ready_126
+    21300254: colony-buildings-ready_127
+    21300256: colony-buildings-ready_128
+    21300258: colony-buildings-ready_129
+    21300260: colony-buildings-ready_130
+    21300262: colony-buildings-ready_131
+    21300264: colony-buildings-ready_132
+    21300266: colony-buildings-ready_133
+    21300268: colony-buildings-ready_134
+    21300270: colony-buildings-ready_135
+    21300272: colony-buildings-ready_136
+    21300274: colony-buildings-ready_137
+    21300276: colony-buildings-ready_138
+    21300278: colony-buildings-ready_139
+    21300280: colony-buildings-ready_140
+    21300282: colony-buildings-ready_141
+    21300284: colony-buildings-ready_142
+    21300286: colony-buildings-ready_143
+    21300288: colony-buildings-ready_144
+    21300290: colony-buildings-ready_145
+    21300292: colony-buildings-ready_146
+    21300294: colony-buildings-ready_147
+    21300296: colony-buildings-ready_148
+    21300298: colony-buildings-ready_149
+    21300300: colony-buildings-ready_150
+    21300302: colony-buildings-ready_151
+    21300304: colony-buildings-ready_152
+    21300306: colony-buildings-ready_153
+    21300308: colony-buildings-ready_154
+    21300310: colony-buildings-ready_155
+    21300312: colony-buildings-ready_156
+    21300314: colony-buildings-ready_157
+    21300316: colony-buildings-ready_158
+    21300318: colony-buildings-ready_159
+    21300320: colony-buildings-ready_160
+    21300322: colony-buildings-ready_161
+    21300324: colony-buildings-ready_162
+    21300326: colony-buildings-ready_163
+    21300328: colony-buildings-ready_164
+    21300330: colony-buildings-ready_165
+    21300332: colony-buildings-ready_166
+    21300334: colony-buildings-ready_167
+    21300336: colony-buildings-ready_168
+    21300338: colony-buildings-ready_169
+    21300340: colony-buildings-ready_170
+    21300342: colony-buildings-ready_171
+    21300344: colony-buildings-ready_172
+    21300346: colony-buildings-ready_173
+    21300348: colony-buildings-ready_174
+    21300350: colony-buildings-ready_175
+    21300352: colony-buildings-ready_176
+    21300354: colony-buildings-ready_177
+    21300356: colony-buildings-ready_178
+    21300358: colony-buildings-ready_179
+    21300360: colony-buildings-ready_180
+    21300362: colony-buildings-ready_181
+    21300364: colony-buildings-ready_182
+    21300366: colony-buildings-ready_183
+    21300368: colony-buildings-ready_184
+    21300370: colony-buildings-ready_185
+    21300372: colony-buildings-ready_186
+    21300374: colony-buildings-ready_187
+    21300376: colony-buildings-ready_188
+    21300378: colony-buildings-ready_189
+    21300380: colony-buildings-ready_190
+    21300382: colony-buildings-ready_191
+    21300384: colony-buildings-ready_192
+    21300386: colony-buildings-ready_193
+    21300388: colony-buildings-ready_194
+    21300390: colony-buildings-ready_195
+    21300392: colony-buildings-ready_196
+    21300394: colony-buildings-ready_197
+    21300396: colony-buildings-ready_198
+    21300398: colony-buildings-ready_199
+    21300400: colony-buildings-ready_200
+    21300402: colony-buildings-ready_201
+    21300404: colony-buildings-ready_202
+    21300406: colony-buildings-ready_203
+    21300408: colony-buildings-ready_204
+    21300410: colony-buildings-ready_205
+    21300412: colony-buildings-ready_206
+    21300414: colony-buildings-ready_207
+    21300416: colony-buildings-ready_208
+    21300418: colony-buildings-ready_209
+    21300420: colony-buildings-ready_210
+    21300422: colony-buildings-ready_211
+    21300424: colony-buildings-ready_212
+    21300426: colony-buildings-ready_213
+    21300428: colony-buildings-ready_214
+    21300430: colony-buildings-ready_215
+    21300432: colony-buildings-ready_216
+    21300434: colony-buildings-ready_217
+    21300436: colony-buildings-ready_218
+    21300438: colony-buildings-ready_219
+    21300440: colony-buildings-ready_220
+    21300442: colony-buildings-ready_221
+    21300444: colony-buildings-ready_222
+    21300446: colony-buildings-ready_223
+    21300448: colony-buildings-ready_224
+    21300450: colony-buildings-ready_225
+    21300452: colony-buildings-ready_226
+    21300454: colony-buildings-ready_227
+    21300456: colony-buildings-ready_228
+    21300458: colony-buildings-ready_229
+    21300460: colony-buildings-ready_230
+    21300462: colony-buildings-ready_231
+    21300464: colony-buildings-ready_232
+    21300466: colony-buildings-ready_233
+    21300468: colony-buildings-ready_234
+    21300470: colony-buildings-ready_235
+    21300472: colony-buildings-ready_236
+    21300474: colony-buildings-ready_237
+    21300476: colony-buildings-ready_238
+    21300478: colony-buildings-ready_239
+    21300480: colony-buildings-ready_240
+    21300482: colony-buildings-ready_241
+    21300484: colony-buildings-ready_242
+    21300486: colony-buildings-ready_243
+    21300488: colony-buildings-ready_244
+    21300490: colony-buildings-ready_245
+    21300492: colony-buildings-ready_246
+    21300494: colony-buildings-ready_247
+    21300496: colony-buildings-ready_248
+    21300498: colony-buildings-ready_249
+    21300500: colony-buildings-ready_250
+    21300502: colony-buildings-ready_251
+    21300504: colony-buildings-ready_252
+    21300506: colony-buildings-ready_253
+    21300508: colony-buildings-ready_254
+    21300510: colony-buildings-ready_255
+    21300512: colony-buildings-ready_256
+    21300514: colony-buildings-ready_257
+    21300516: colony-buildings-ready_258
+    21300518: colony-buildings-ready_259
+    21300520: colony-buildings-ready_260
+    21300522: colony-buildings-ready_261
+    21300524: colony-buildings-ready_262
+    21300526: colony-buildings-ready_263
+    21300528: colony-buildings-ready_264
+    21300530: colony-buildings-ready_265
+    21300532: colony-buildings-ready_266
+    21300534: colony-buildings-ready_267
+    21300536: colony-buildings-ready_268
+    21300538: colony-buildings-ready_269
+    21300540: colony-buildings-ready_270
+    21300542: colony-buildings-ready_271
+    21300544: colony-buildings-ready_272
+    21300546: colony-buildings-ready_273
+    21300548: colony-buildings-ready_274
+    21300550: colony-buildings-ready_275
+    21300552: colony-buildings-ready_276
+    21300554: colony-buildings-ready_277
+    21300556: colony-buildings-ready_278
+    21300558: colony-buildings-ready_279
+    21300560: colony-buildings-ready_280
+    21300562: colony-buildings-ready_281
+    21300564: colony-buildings-ready_282
+    21300566: colony-buildings-ready_283
+    21300568: colony-buildings-ready_284
+    21300570: colony-buildings-ready_285
+    21300572: colony-buildings-ready_286
+    21300574: colony-buildings-ready_287
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: colony-buildings-ready_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 2034
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.046875, y: 19.71875}
+        - {x: -37.046875, y: 18.71875}
+        - {x: -37.046875, y: -18.28125}
+        - {x: -29.046875, y: -19.28125}
+        - {x: 33.953125, y: -19.28125}
+        - {x: 38.953125, y: -18.28125}
+        - {x: 38.953125, y: 18.71875}
+        - {x: 35.953125, y: 19.71875}
+    - name: colony-buildings-ready_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 2034
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.296875, y: 19.71875}
+        - {x: -37.296875, y: -16.28125}
+        - {x: -18.296875, y: -19.28125}
+        - {x: 29.703125, y: -19.28125}
+        - {x: 38.703125, y: -14.28125}
+        - {x: 38.703125, y: 19.71875}
+    - name: colony-buildings-ready_2
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 2031
+        width: 96
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.484375, y: 24.765625}
+        - {x: -47.484375, y: -9.234375}
+        - {x: -44.484375, y: -24.234375}
+        - {x: 48.515625, y: -24.234375}
+        - {x: 48.515625, y: 21.765625}
+        - {x: 47.515625, y: 24.765625}
+    - name: colony-buildings-ready_3
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 2067
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_4
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 2041
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2039
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_6
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 2038
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1991
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_8
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1991
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1999
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_10
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1999
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_11
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 2015
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 2011
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_13
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1974
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.28125, y: 27.15625}
+        - {x: -9.28125, y: 24.15625}
+        - {x: -18.28125, y: 16.15625}
+        - {x: -22.28125, y: 12.15625}
+        - {x: -22.28125, y: -26.84375}
+        - {x: 12.71875, y: -26.84375}
+        - {x: 21.71875, y: -24.84375}
+        - {x: 23.71875, y: -22.84375}
+        - {x: 23.71875, y: 27.15625}
+    - name: colony-buildings-ready_14
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1999
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1991
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_16
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1955
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_17
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1938
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.953125, y: 20.71875}
+        - {x: -35.046875, y: 20.71875}
+        - {x: -36.046875, y: 18.71875}
+        - {x: -36.046875, y: -14.28125}
+        - {x: -21.046875, y: -19.28125}
+        - {x: 33.953125, y: -19.28125}
+        - {x: 37.953125, y: -18.28125}
+        - {x: 37.953125, y: 17.71875}
+        - {x: 35.953125, y: 19.71875}
+    - name: colony-buildings-ready_18
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1938
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.296875, y: 20.71875}
+        - {x: -36.296875, y: 16.71875}
+        - {x: -36.296875, y: -13.28125}
+        - {x: -4.296875, y: -19.28125}
+        - {x: 28.703125, y: -19.28125}
+        - {x: 37.703125, y: -15.28125}
+        - {x: 37.703125, y: 20.71875}
+    - name: colony-buildings-ready_19
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1967
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_20
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1967
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_21
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1975
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_22
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1943
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_23
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1943
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_24
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1911
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 17.203125, y: 26.140625}
+        - {x: 17.203125, y: 25.140625}
+        - {x: 3.203125, y: 11.140625}
+        - {x: 1.203125, y: 7.140625}
+        - {x: -20.796875, y: 2.140625}
+        - {x: -21.796875, y: 1.140625}
+        - {x: -21.796875, y: -25.859375}
+        - {x: 23.203125, y: -25.859375}
+        - {x: 23.203125, y: 26.140625}
+      - - {x: -21.796875, y: 26.140625}
+        - {x: -21.796875, y: 6.140625}
+        - {x: -20.796875, y: 5.140625}
+        - {x: -15.796875, y: 5.140625}
+        - {x: -13.796875, y: 7.140625}
+        - {x: -13.796875, y: 26.140625}
+      - - {x: 1.203125, y: 26.140625}
+        - {x: 0.203125, y: 22.140625}
+        - {x: 2.203125, y: 20.140625}
+        - {x: 5.203125, y: 20.140625}
+        - {x: 8.203125, y: 23.140625}
+        - {x: 8.203125, y: 26.140625}
+    - name: colony-buildings-ready_25
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1959
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_26
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1862
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.703125, y: 51.90625}
+        - {x: -24.703125, y: 38.90625}
+        - {x: -24.703125, y: -40.09375}
+        - {x: -21.703125, y: -50.09375}
+        - {x: 26.296875, y: -50.09375}
+        - {x: 26.296875, y: 51.90625}
+      - - {x: -24.703125, y: 51.90625}
+        - {x: -24.703125, y: 40.90625}
+        - {x: -20.703125, y: 40.90625}
+        - {x: -18.703125, y: 42.90625}
+        - {x: -18.703125, y: 51.90625}
+    - name: colony-buildings-ready_27
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1896
+        width: 74
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_28
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1896
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_29
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1911
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_30
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1888
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_31
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1888
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_32
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1850
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.046875, y: 19.59375}
+        - {x: -36.046875, y: 17.59375}
+        - {x: -36.046875, y: -17.40625}
+        - {x: -21.046875, y: -19.40625}
+        - {x: 28.953125, y: -19.40625}
+        - {x: 37.953125, y: -15.40625}
+        - {x: 37.953125, y: 19.59375}
+    - name: colony-buildings-ready_33
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1845
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.703125, y: 22.171875}
+        - {x: -34.296875, y: 22.171875}
+        - {x: -38.296875, y: 18.171875}
+        - {x: -38.296875, y: -13.828125}
+        - {x: 4.703125, y: -21.828125}
+        - {x: 39.703125, y: -21.828125}
+        - {x: 39.703125, y: 20.171875}
+    - name: colony-buildings-ready_34
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1888
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_35
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1888
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_36
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1775
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.546875, y: 54.765625}
+        - {x: -20.546875, y: -54.234375}
+        - {x: 21.453125, y: -54.234375}
+        - {x: 21.453125, y: 54.765625}
+    - name: colony-buildings-ready_37
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1844
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 20.6875}
+        - {x: -17.859375, y: -20.3125}
+        - {x: 19.140625, y: -20.3125}
+        - {x: 19.140625, y: 17.6875}
+        - {x: 12.140625, y: 20.6875}
+    - name: colony-buildings-ready_38
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1711
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.484375, y: 71.765625}
+        - {x: -4.515625, y: 71.765625}
+        - {x: -25.515625, y: -36.234375}
+        - {x: -25.515625, y: -65.234375}
+        - {x: -18.515625, y: -71.234375}
+        - {x: 32.484375, y: -71.234375}
+        - {x: 32.484375, y: 26.765625}
+        - {x: 26.484375, y: 61.765625}
+      - - {x: -30.515625, y: -16.234375}
+        - {x: -28.515625, y: -18.234375}
+        - {x: -25.515625, y: -17.234375}
+        - {x: -25.515625, y: -14.234375}
+        - {x: -26.515625, y: -12.234375}
+        - {x: -30.515625, y: -12.234375}
+      - - {x: -24.515625, y: -18.234375}
+        - {x: -21.515625, y: -18.234375}
+        - {x: -19.515625, y: -17.234375}
+        - {x: -19.515625, y: -12.234375}
+        - {x: -24.515625, y: -12.234375}
+        - {x: -25.515625, y: -13.234375}
+        - {x: -25.515625, y: -16.234375}
+      - - {x: -25.515625, y: 34.765625}
+        - {x: -28.515625, y: 18.765625}
+        - {x: -28.515625, y: -3.234375}
+        - {x: -24.515625, y: -3.234375}
+        - {x: -18.515625, y: -0.234375}
+        - {x: -18.515625, y: 32.765625}
+        - {x: -21.515625, y: 34.765625}
+      - - {x: -25.515625, y: 45.765625}
+        - {x: -19.515625, y: 45.765625}
+        - {x: -19.515625, y: 50.765625}
+        - {x: -20.515625, y: 51.765625}
+        - {x: -25.515625, y: 51.765625}
+      - - {x: -26.515625, y: 71.765625}
+        - {x: -30.515625, y: 65.765625}
+        - {x: -30.515625, y: 60.765625}
+        - {x: -20.515625, y: 60.765625}
+        - {x: -18.515625, y: 63.765625}
+        - {x: -18.515625, y: 71.765625}
+    - name: colony-buildings-ready_39
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1846
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1766
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.953125, y: -33.09375}
+        - {x: 37.953125, y: 0.90625}
+        - {x: 37.953125, y: 34.90625}
+        - {x: 36.953125, y: 35.90625}
+        - {x: -35.046875, y: 35.90625}
+        - {x: -36.046875, y: 34.90625}
+        - {x: -36.046875, y: -35.09375}
+        - {x: 25.953125, y: -35.09375}
+      - - {x: 34.953125, y: -20.09375}
+        - {x: 32.953125, y: -25.09375}
+        - {x: 32.953125, y: -33.09375}
+        - {x: 34.953125, y: -35.09375}
+        - {x: 37.953125, y: -35.09375}
+        - {x: 37.953125, y: -20.09375}
+      - - {x: 33.953125, y: -14.09375}
+        - {x: 33.953125, y: -16.09375}
+        - {x: 36.953125, y: -19.09375}
+        - {x: 37.953125, y: -19.09375}
+        - {x: 37.953125, y: -12.09375}
+        - {x: 35.953125, y: -12.09375}
+      - - {x: 26.953125, y: 2.90625}
+        - {x: 25.953125, y: 0.90625}
+        - {x: 25.953125, y: -3.09375}
+        - {x: 31.953125, y: -3.09375}
+        - {x: 31.953125, y: 2.90625}
+    - name: colony-buildings-ready_41
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1808
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_42
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1780
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.140625, y: 30.6875}
+        - {x: -17.859375, y: 30.6875}
+        - {x: -17.859375, y: -30.3125}
+        - {x: 19.140625, y: -30.3125}
+        - {x: 19.140625, y: 27.6875}
+        - {x: 15.140625, y: 28.6875}
+    - name: colony-buildings-ready_43
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1781
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_44
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1767
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_45
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1767
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.796875, y: 18.390625}
+        - {x: -21.796875, y: -17.609375}
+        - {x: 23.203125, y: -17.609375}
+        - {x: 23.203125, y: 17.390625}
+        - {x: 22.203125, y: 18.390625}
+    - name: colony-buildings-ready_46
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1777
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1711
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 31.5, y: 24.765625}
+        - {x: -23.5, y: 24.765625}
+        - {x: -33.5, y: 21.765625}
+        - {x: -33.5, y: -24.234375}
+        - {x: 30.5, y: -24.234375}
+        - {x: 33.5, y: -20.234375}
+        - {x: 33.5, y: 23.765625}
+    - name: colony-buildings-ready_48
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1698
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.109375, y: -28.03125}
+        - {x: -4.109375, y: -28.03125}
+        - {x: -4.109375, y: -24.03125}
+        - {x: -5.109375, y: -21.03125}
+        - {x: -20.109375, y: -21.03125}
+        - {x: -28.109375, y: -22.03125}
+      - - {x: -14.109375, y: 28.96875}
+        - {x: -24.109375, y: 16.96875}
+        - {x: -24.109375, y: -9.03125}
+        - {x: -14.109375, y: -17.03125}
+        - {x: -0.109375, y: -28.03125}
+        - {x: 17.890625, y: -28.03125}
+        - {x: 29.890625, y: -18.03125}
+        - {x: 29.890625, y: 21.96875}
+        - {x: 26.890625, y: 28.96875}
+      - - {x: -28.109375, y: 22.96875}
+        - {x: -24.109375, y: 22.96875}
+        - {x: -23.109375, y: 23.96875}
+        - {x: -23.109375, y: 26.96875}
+        - {x: -24.109375, y: 28.96875}
+        - {x: -28.109375, y: 28.96875}
+    - name: colony-buildings-ready_49
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1711
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.515625, y: 28.765625}
+        - {x: -16.484375, y: 28.765625}
+        - {x: -16.484375, y: -28.234375}
+        - {x: 17.515625, y: -28.234375}
+        - {x: 17.515625, y: 23.765625}
+    - name: colony-buildings-ready_50
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1716
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_51
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1745
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_52
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1719
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_53
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1717
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_54
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1722
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1663
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 21.015625}
+        - {x: -24.5, y: 17.015625}
+        - {x: -24.5, y: -20.984375}
+        - {x: 24.5, y: -20.984375}
+        - {x: 24.5, y: 19.015625}
+        - {x: 23.5, y: 21.015625}
+    - name: colony-buildings-ready_56
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1668
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.296875, y: 19.9375}
+        - {x: -25.296875, y: 16.9375}
+        - {x: -25.296875, y: -15.0625}
+        - {x: -18.296875, y: -18.0625}
+        - {x: 18.703125, y: -18.0625}
+        - {x: 19.703125, y: -13.0625}
+        - {x: 19.703125, y: 13.9375}
+        - {x: 16.703125, y: 19.9375}
+      - - {x: 21.703125, y: -9.0625}
+        - {x: 20.703125, y: -10.0625}
+        - {x: 20.703125, y: -15.0625}
+        - {x: 25.703125, y: -15.0625}
+        - {x: 25.703125, y: -9.0625}
+    - name: colony-buildings-ready_57
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1618
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.296875, y: 14.21875}
+        - {x: -37.296875, y: -26.78125}
+        - {x: 38.703125, y: -26.78125}
+        - {x: 38.703125, y: 11.21875}
+        - {x: 28.703125, y: 14.21875}
+      - - {x: 15.703125, y: 28.21875}
+        - {x: 16.703125, y: 25.21875}
+        - {x: 24.703125, y: 17.21875}
+        - {x: 38.703125, y: 17.21875}
+        - {x: 38.703125, y: 28.21875}
+      - - {x: -5.296875, y: 28.21875}
+        - {x: -5.296875, y: 25.21875}
+        - {x: -3.296875, y: 23.21875}
+        - {x: -1.296875, y: 23.21875}
+        - {x: 0.703125, y: 25.21875}
+        - {x: 0.703125, y: 28.21875}
+      - - {x: -37.296875, y: 28.21875}
+        - {x: -37.296875, y: 25.21875}
+        - {x: -26.296875, y: 25.21875}
+        - {x: -24.296875, y: 27.21875}
+        - {x: -24.296875, y: 28.21875}
+      - - {x: -22.296875, y: 28.21875}
+        - {x: -21.296875, y: 25.21875}
+        - {x: -18.296875, y: 25.21875}
+        - {x: -16.296875, y: 27.21875}
+        - {x: -16.296875, y: 28.21875}
+    - name: colony-buildings-ready_58
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1615
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -56.65625, y: 44.765625}
+        - {x: -57.65625, y: 33.765625}
+        - {x: -57.65625, y: 10.765625}
+        - {x: -48.65625, y: 4.765625}
+        - {x: -46.65625, y: 2.765625}
+        - {x: -57.65625, y: -1.234375}
+        - {x: -57.65625, y: -40.234375}
+        - {x: -56.65625, y: -40.234375}
+        - {x: -52.65625, y: -37.234375}
+        - {x: -37.65625, y: -35.234375}
+        - {x: -34.65625, y: -32.234375}
+        - {x: -34.65625, y: -15.234375}
+        - {x: -33.65625, y: -41.234375}
+        - {x: -31.65625, y: -43.234375}
+        - {x: 59.34375, y: -43.234375}
+        - {x: 59.34375, y: 13.765625}
+        - {x: 22.34375, y: 44.765625}
+      - - {x: 15.34375, y: 17.765625}
+        - {x: 13.34375, y: 15.765625}
+        - {x: 13.34375, y: 13.765625}
+        - {x: 15.34375, y: 11.765625}
+        - {x: 17.34375, y: 11.765625}
+        - {x: 19.34375, y: 13.765625}
+        - {x: 19.34375, y: 15.765625}
+        - {x: 17.34375, y: 17.765625}
+      - - {x: 37.34375, y: 31.765625}
+        - {x: 36.34375, y: 15.765625}
+        - {x: 36.34375, y: 11.765625}
+        - {x: 41.34375, y: 11.765625}
+        - {x: 44.34375, y: 12.765625}
+        - {x: 44.34375, y: 31.765625}
+        - {x: 42.34375, y: 33.765625}
+        - {x: 39.34375, y: 33.765625}
+    - name: colony-buildings-ready_59
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1618
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.046875, y: 20.71875}
+        - {x: -37.046875, y: -17.28125}
+        - {x: -24.046875, y: -19.28125}
+        - {x: 31.953125, y: -19.28125}
+        - {x: 38.953125, y: -18.28125}
+        - {x: 38.953125, y: 20.71875}
+    - name: colony-buildings-ready_60
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1651
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_61
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1625
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_62
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1623
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_63
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1622
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_64
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1575
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_65
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1575
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_66
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1583
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_67
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1583
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_68
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1599
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_69
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1595
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_70
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1558
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.28125, y: 27.65625}
+        - {x: -22.28125, y: 15.65625}
+        - {x: -22.28125, y: -26.34375}
+        - {x: 22.71875, y: -26.34375}
+        - {x: 23.71875, y: -23.34375}
+        - {x: 23.71875, y: 27.65625}
+    - name: colony-buildings-ready_71
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1583
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_72
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1575
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_73
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1539
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_74
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1522
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.046875, y: 19.71875}
+        - {x: -36.046875, y: -19.28125}
+        - {x: 37.953125, y: -19.28125}
+        - {x: 37.953125, y: 19.71875}
+    - name: colony-buildings-ready_75
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1522
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.296875, y: 19.71875}
+        - {x: -36.296875, y: 16.71875}
+        - {x: -36.296875, y: -14.28125}
+        - {x: -10.296875, y: -19.28125}
+        - {x: 30.703125, y: -19.28125}
+        - {x: 37.703125, y: -16.28125}
+        - {x: 37.703125, y: 19.71875}
+    - name: colony-buildings-ready_76
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1551
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_77
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1551
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_78
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1559
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_79
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1527
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_80
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1527
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_81
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1495
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.796875, y: -25.359375}
+        - {x: 21.203125, y: -25.359375}
+        - {x: 23.203125, y: -24.359375}
+        - {x: 23.203125, y: 26.640625}
+        - {x: 10.203125, y: 26.640625}
+        - {x: -21.796875, y: 13.640625}
+      - - {x: -21.796875, y: 26.640625}
+        - {x: -21.796875, y: 6.640625}
+        - {x: -20.796875, y: 5.640625}
+        - {x: -15.796875, y: 5.640625}
+        - {x: -13.796875, y: 7.640625}
+        - {x: -13.796875, y: 26.640625}
+      - - {x: 1.203125, y: 26.640625}
+        - {x: 0.203125, y: 25.640625}
+        - {x: 0.203125, y: 22.640625}
+        - {x: 2.203125, y: 21.640625}
+        - {x: 7.203125, y: 21.640625}
+        - {x: 8.203125, y: 24.640625}
+        - {x: 8.203125, y: 26.640625}
+    - name: colony-buildings-ready_82
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1543
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_83
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1446
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.703125, y: 50.90625}
+        - {x: -24.703125, y: -48.09375}
+        - {x: -23.703125, y: -50.09375}
+        - {x: 26.296875, y: -50.09375}
+        - {x: 26.296875, y: 50.90625}
+      - - {x: -24.703125, y: 50.90625}
+        - {x: -24.703125, y: 40.90625}
+        - {x: -20.703125, y: 40.90625}
+        - {x: -18.703125, y: 42.90625}
+        - {x: -18.703125, y: 50.90625}
+    - name: colony-buildings-ready_84
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1480
+        width: 74
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_85
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1480
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_86
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1495
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_87
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1472
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_88
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1472
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_89
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1434
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.953125, y: 20.09375}
+        - {x: -35.046875, y: 20.09375}
+        - {x: -36.046875, y: 19.09375}
+        - {x: -36.046875, y: -16.90625}
+        - {x: -21.046875, y: -18.90625}
+        - {x: 26.953125, y: -18.90625}
+        - {x: 36.953125, y: -13.90625}
+        - {x: 37.953125, y: -12.90625}
+    - name: colony-buildings-ready_90
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1429
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.296875, y: 22.671875}
+        - {x: -38.296875, y: 20.671875}
+        - {x: -38.296875, y: -15.328125}
+        - {x: 8.703125, y: -21.328125}
+        - {x: 39.703125, y: -21.328125}
+        - {x: 39.703125, y: 22.671875}
+    - name: colony-buildings-ready_91
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1472
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_92
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1472
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_93
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1359
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.546875, y: 55.765625}
+        - {x: -20.546875, y: -54.234375}
+        - {x: 21.453125, y: -54.234375}
+        - {x: 21.453125, y: 55.765625}
+    - name: colony-buildings-ready_94
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1428
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 21.6875}
+        - {x: -17.859375, y: -20.3125}
+        - {x: 19.140625, y: -20.3125}
+        - {x: 19.140625, y: 20.6875}
+        - {x: 16.140625, y: 21.6875}
+    - name: colony-buildings-ready_95
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1295
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.515625, y: 72.265625}
+        - {x: -25.515625, y: 9.265625}
+        - {x: -25.515625, y: -70.734375}
+        - {x: 32.484375, y: -70.734375}
+        - {x: 32.484375, y: 62.265625}
+        - {x: 19.484375, y: 72.265625}
+      - - {x: -29.515625, y: -10.734375}
+        - {x: -30.515625, y: -11.734375}
+        - {x: -30.515625, y: -16.734375}
+        - {x: -25.515625, y: -16.734375}
+        - {x: -25.515625, y: -11.734375}
+        - {x: -27.515625, y: -10.734375}
+      - - {x: -24.515625, y: -16.734375}
+        - {x: -21.515625, y: -16.734375}
+        - {x: -19.515625, y: -15.734375}
+        - {x: -19.515625, y: -10.734375}
+        - {x: -24.515625, y: -10.734375}
+        - {x: -25.515625, y: -11.734375}
+        - {x: -25.515625, y: -14.734375}
+      - - {x: -21.515625, y: 35.265625}
+        - {x: -25.515625, y: 35.265625}
+        - {x: -28.515625, y: 20.265625}
+        - {x: -28.515625, y: -2.734375}
+        - {x: -22.515625, y: -2.734375}
+        - {x: -18.515625, y: 2.265625}
+        - {x: -18.515625, y: 33.265625}
+      - - {x: -25.515625, y: 47.265625}
+        - {x: -19.515625, y: 47.265625}
+        - {x: -19.515625, y: 52.265625}
+        - {x: -20.515625, y: 53.265625}
+        - {x: -25.515625, y: 53.265625}
+      - - {x: -25.515625, y: 72.265625}
+        - {x: -30.515625, y: 65.265625}
+        - {x: -30.515625, y: 63.265625}
+        - {x: -29.515625, y: 61.265625}
+        - {x: -21.515625, y: 61.265625}
+        - {x: -18.515625, y: 63.265625}
+        - {x: -18.515625, y: 72.265625}
+    - name: colony-buildings-ready_96
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1430
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_97
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1350
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.046875, y: 36.40625}
+        - {x: -36.046875, y: -34.59375}
+        - {x: 27.953125, y: -34.59375}
+        - {x: 29.953125, y: -33.59375}
+        - {x: 37.953125, y: -5.59375}
+        - {x: 37.953125, y: 36.40625}
+      - - {x: 34.953125, y: -18.59375}
+        - {x: 32.953125, y: -23.59375}
+        - {x: 32.953125, y: -31.59375}
+        - {x: 34.953125, y: -33.59375}
+        - {x: 37.953125, y: -33.59375}
+        - {x: 37.953125, y: -18.59375}
+      - - {x: 33.953125, y: -13.59375}
+        - {x: 33.953125, y: -15.59375}
+        - {x: 36.953125, y: -18.59375}
+        - {x: 37.953125, y: -18.59375}
+        - {x: 37.953125, y: -11.59375}
+        - {x: 35.953125, y: -11.59375}
+      - - {x: 26.953125, y: 3.40625}
+        - {x: 25.953125, y: 1.40625}
+        - {x: 25.953125, y: -2.59375}
+        - {x: 31.953125, y: -2.59375}
+        - {x: 31.953125, y: 3.40625}
+    - name: colony-buildings-ready_98
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1392
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_99
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1364
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 31.1875}
+        - {x: -17.859375, y: -29.8125}
+        - {x: 19.140625, y: -29.8125}
+        - {x: 19.140625, y: 31.1875}
+    - name: colony-buildings-ready_100
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 1365
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_101
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1351
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_102
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1351
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.796875, y: 19.390625}
+        - {x: -21.796875, y: 18.390625}
+        - {x: -21.796875, y: -17.609375}
+        - {x: 23.203125, y: -17.609375}
+        - {x: 23.203125, y: 19.390625}
+    - name: colony-buildings-ready_103
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1361
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_104
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1295
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.5, y: 25.265625}
+        - {x: -33.5, y: 23.265625}
+        - {x: -33.5, y: -23.734375}
+        - {x: 30.5, y: -23.734375}
+        - {x: 33.5, y: -20.734375}
+        - {x: 33.5, y: 25.265625}
+    - name: colony-buildings-ready_105
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1282
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.109375, y: -28.03125}
+        - {x: -4.109375, y: -28.03125}
+        - {x: -4.109375, y: -23.03125}
+        - {x: -5.109375, y: -20.03125}
+        - {x: -20.109375, y: -20.03125}
+        - {x: -28.109375, y: -21.03125}
+      - - {x: -16.109375, y: 29.96875}
+        - {x: -24.109375, y: 17.96875}
+        - {x: -24.109375, y: -8.03125}
+        - {x: 0.890625, y: -28.03125}
+        - {x: 19.890625, y: -28.03125}
+        - {x: 29.890625, y: -20.03125}
+        - {x: 29.890625, y: 27.96875}
+        - {x: 27.890625, y: 29.96875}
+      - - {x: -28.109375, y: 22.96875}
+        - {x: -24.109375, y: 22.96875}
+        - {x: -23.109375, y: 23.96875}
+        - {x: -23.109375, y: 26.96875}
+        - {x: -24.109375, y: 28.96875}
+        - {x: -28.109375, y: 28.96875}
+    - name: colony-buildings-ready_106
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 1295
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.484375, y: 29.265625}
+        - {x: -16.484375, y: -26.734375}
+        - {x: -14.484375, y: -27.734375}
+        - {x: 13.515625, y: -27.734375}
+        - {x: 17.515625, y: -26.734375}
+        - {x: 17.515625, y: 27.265625}
+        - {x: 12.515625, y: 29.265625}
+    - name: colony-buildings-ready_107
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1300
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_108
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1329
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_109
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1303
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_110
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 1301
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_111
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1306
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1247
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -24.5, y: 21.515625}
+        - {x: -24.5, y: -20.484375}
+        - {x: 24.5, y: -20.484375}
+        - {x: 24.5, y: 21.515625}
+    - name: colony-buildings-ready_113
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 1252
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.296875, y: 18.9375}
+        - {x: -25.296875, y: -18.0625}
+        - {x: 19.703125, y: -18.0625}
+        - {x: 19.703125, y: 13.9375}
+        - {x: 17.703125, y: 18.9375}
+      - - {x: 21.703125, y: -10.0625}
+        - {x: 20.703125, y: -11.0625}
+        - {x: 20.703125, y: -16.0625}
+        - {x: 25.703125, y: -16.0625}
+        - {x: 25.703125, y: -10.0625}
+    - name: colony-buildings-ready_114
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1202
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.703125, y: 12.71875}
+        - {x: -37.296875, y: 12.71875}
+        - {x: -37.296875, y: -24.28125}
+        - {x: -5.296875, y: -27.28125}
+        - {x: 24.703125, y: -27.28125}
+        - {x: 36.703125, y: -23.28125}
+        - {x: 38.703125, y: -21.28125}
+        - {x: 38.703125, y: 9.71875}
+      - - {x: 15.703125, y: 27.71875}
+        - {x: 15.703125, y: 23.71875}
+        - {x: 24.703125, y: 15.71875}
+        - {x: 38.703125, y: 15.71875}
+        - {x: 38.703125, y: 27.71875}
+      - - {x: -4.296875, y: 27.71875}
+        - {x: -5.296875, y: 26.71875}
+        - {x: -5.296875, y: 23.71875}
+        - {x: -3.296875, y: 21.71875}
+        - {x: -1.296875, y: 21.71875}
+        - {x: 0.703125, y: 23.71875}
+        - {x: 0.703125, y: 26.71875}
+        - {x: -0.296875, y: 27.71875}
+      - - {x: -37.296875, y: 27.71875}
+        - {x: -37.296875, y: 23.71875}
+        - {x: -26.296875, y: 23.71875}
+        - {x: -23.296875, y: 26.71875}
+        - {x: -23.296875, y: 27.71875}
+      - - {x: -22.296875, y: 27.71875}
+        - {x: -22.296875, y: 25.71875}
+        - {x: -20.296875, y: 23.71875}
+        - {x: -18.296875, y: 23.71875}
+        - {x: -16.296875, y: 25.71875}
+        - {x: -16.296875, y: 27.71875}
+    - name: colony-buildings-ready_115
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 1199
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48.65625, y: 43.765625}
+        - {x: -57.65625, y: 32.765625}
+        - {x: -57.65625, y: -41.234375}
+        - {x: -56.65625, y: -41.234375}
+        - {x: -52.65625, y: -38.234375}
+        - {x: -37.65625, y: -36.234375}
+        - {x: -34.65625, y: -33.234375}
+        - {x: -34.65625, y: -15.234375}
+        - {x: -33.65625, y: -42.234375}
+        - {x: -32.65625, y: -43.234375}
+        - {x: 59.34375, y: -43.234375}
+        - {x: 59.34375, y: 11.765625}
+        - {x: 24.34375, y: 43.765625}
+      - - {x: 15.34375, y: 16.765625}
+        - {x: 13.34375, y: 14.765625}
+        - {x: 13.34375, y: 12.765625}
+        - {x: 15.34375, y: 10.765625}
+        - {x: 17.34375, y: 10.765625}
+        - {x: 19.34375, y: 12.765625}
+        - {x: 19.34375, y: 14.765625}
+        - {x: 17.34375, y: 16.765625}
+      - - {x: 39.34375, y: 33.765625}
+        - {x: 37.34375, y: 31.765625}
+        - {x: 36.34375, y: 24.765625}
+        - {x: 36.34375, y: 11.765625}
+        - {x: 38.34375, y: 10.765625}
+        - {x: 43.34375, y: 10.765625}
+        - {x: 44.34375, y: 13.765625}
+        - {x: 44.34375, y: 31.765625}
+        - {x: 42.34375, y: 33.765625}
+    - name: colony-buildings-ready_116
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1202
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.046875, y: 19.71875}
+        - {x: -37.046875, y: -18.28125}
+        - {x: -29.046875, y: -19.28125}
+        - {x: 38.953125, y: -19.28125}
+        - {x: 38.953125, y: 19.71875}
+    - name: colony-buildings-ready_117
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1235
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_118
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1209
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_119
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1207
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_120
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1206
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_121
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1159
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_122
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1159
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_123
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1167
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_124
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1167
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_125
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1183
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_126
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1179
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_127
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 1142
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.28125, y: 27.15625}
+        - {x: -22.28125, y: 22.15625}
+        - {x: -22.28125, y: -26.84375}
+        - {x: 17.71875, y: -26.84375}
+        - {x: 23.71875, y: -23.84375}
+        - {x: 23.71875, y: 27.15625}
+    - name: colony-buildings-ready_128
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1167
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_129
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1159
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_130
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1123
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_131
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1106
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.953125, y: 20.71875}
+        - {x: -35.046875, y: 20.71875}
+        - {x: -36.046875, y: 18.71875}
+        - {x: -36.046875, y: -15.28125}
+        - {x: -24.046875, y: -19.28125}
+        - {x: 37.953125, y: -19.28125}
+        - {x: 37.953125, y: 17.71875}
+        - {x: 35.953125, y: 19.71875}
+    - name: colony-buildings-ready_132
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1106
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.296875, y: 20.71875}
+        - {x: -36.296875, y: 16.71875}
+        - {x: -36.296875, y: -14.28125}
+        - {x: -14.296875, y: -19.28125}
+        - {x: 28.703125, y: -19.28125}
+        - {x: 37.703125, y: -14.28125}
+        - {x: 37.703125, y: 20.71875}
+    - name: colony-buildings-ready_133
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1135
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_134
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1135
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_135
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1143
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_136
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 1111
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_137
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1111
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_138
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1079
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.796875, y: -25.859375}
+        - {x: 23.203125, y: -25.859375}
+        - {x: 23.203125, y: 26.140625}
+        - {x: 7.203125, y: 26.140625}
+        - {x: -21.796875, y: 10.140625}
+      - - {x: -21.796875, y: 26.140625}
+        - {x: -21.796875, y: 5.140625}
+        - {x: -20.796875, y: 4.140625}
+        - {x: -15.796875, y: 4.140625}
+        - {x: -13.796875, y: 6.140625}
+        - {x: -13.796875, y: 26.140625}
+      - - {x: 1.203125, y: 26.140625}
+        - {x: 0.203125, y: 22.140625}
+        - {x: 2.203125, y: 20.140625}
+        - {x: 5.203125, y: 20.140625}
+        - {x: 8.203125, y: 23.140625}
+        - {x: 8.203125, y: 26.140625}
+    - name: colony-buildings-ready_139
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1127
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_140
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 1030
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.703125, y: 51.90625}
+        - {x: -24.703125, y: 37.90625}
+        - {x: -24.703125, y: -40.09375}
+        - {x: -21.703125, y: -50.09375}
+        - {x: 26.296875, y: -50.09375}
+        - {x: 26.296875, y: 51.90625}
+      - - {x: -24.703125, y: 51.90625}
+        - {x: -24.703125, y: 40.90625}
+        - {x: -20.703125, y: 40.90625}
+        - {x: -18.703125, y: 42.90625}
+        - {x: -18.703125, y: 51.90625}
+    - name: colony-buildings-ready_141
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1064
+        width: 74
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_142
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1064
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_143
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1079
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_144
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 1056
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_145
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1056
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_146
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1018
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.953125, y: 18.59375}
+        - {x: 21.953125, y: 19.59375}
+        - {x: -36.046875, y: 19.59375}
+        - {x: -36.046875, y: -17.40625}
+        - {x: -21.046875, y: -19.40625}
+        - {x: 26.953125, y: -19.40625}
+        - {x: 36.953125, y: -14.40625}
+        - {x: 37.953125, y: -13.40625}
+        - {x: 37.953125, y: 16.59375}
+    - name: colony-buildings-ready_147
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1013
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.703125, y: 22.171875}
+        - {x: -34.296875, y: 22.171875}
+        - {x: -38.296875, y: 18.171875}
+        - {x: -38.296875, y: -13.828125}
+        - {x: 4.703125, y: -21.828125}
+        - {x: 39.703125, y: -21.828125}
+        - {x: 39.703125, y: 20.171875}
+    - name: colony-buildings-ready_148
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1056
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_149
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1056
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_150
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 943
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.546875, y: 54.765625}
+        - {x: -20.546875, y: -54.234375}
+        - {x: 21.453125, y: -54.234375}
+        - {x: 21.453125, y: 54.765625}
+    - name: colony-buildings-ready_151
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1012
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 20.6875}
+        - {x: -17.859375, y: -20.3125}
+        - {x: 19.140625, y: -20.3125}
+        - {x: 19.140625, y: 16.6875}
+        - {x: 12.140625, y: 20.6875}
+    - name: colony-buildings-ready_152
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 879
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2.515625, y: 71.765625}
+        - {x: -25.515625, y: -47.234375}
+        - {x: -25.515625, y: -67.234375}
+        - {x: -18.515625, y: -71.234375}
+        - {x: 32.484375, y: -71.234375}
+        - {x: 32.484375, y: 67.765625}
+        - {x: 23.484375, y: 71.765625}
+      - - {x: -30.515625, y: -18.234375}
+        - {x: -26.515625, y: -18.234375}
+        - {x: -25.515625, y: -17.234375}
+        - {x: -25.515625, y: -14.234375}
+        - {x: -26.515625, y: -12.234375}
+        - {x: -30.515625, y: -12.234375}
+      - - {x: -24.515625, y: -18.234375}
+        - {x: -21.515625, y: -18.234375}
+        - {x: -19.515625, y: -17.234375}
+        - {x: -19.515625, y: -12.234375}
+        - {x: -24.515625, y: -12.234375}
+        - {x: -25.515625, y: -13.234375}
+        - {x: -25.515625, y: -16.234375}
+      - - {x: -21.515625, y: 33.765625}
+        - {x: -25.515625, y: 33.765625}
+        - {x: -28.515625, y: 18.765625}
+        - {x: -28.515625, y: -1.234375}
+        - {x: -26.515625, y: -3.234375}
+        - {x: -24.515625, y: -3.234375}
+        - {x: -18.515625, y: 1.765625}
+        - {x: -18.515625, y: 31.765625}
+      - - {x: -25.515625, y: 45.765625}
+        - {x: -19.515625, y: 45.765625}
+        - {x: -19.515625, y: 50.765625}
+        - {x: -20.515625, y: 51.765625}
+        - {x: -25.515625, y: 51.765625}
+      - - {x: -26.515625, y: 71.765625}
+        - {x: -30.515625, y: 65.765625}
+        - {x: -30.515625, y: 60.765625}
+        - {x: -20.515625, y: 60.765625}
+        - {x: -18.515625, y: 63.765625}
+        - {x: -18.515625, y: 71.765625}
+    - name: colony-buildings-ready_153
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1014
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_154
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 934
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.046875, y: 35.90625}
+        - {x: -36.046875, y: -35.09375}
+        - {x: 34.953125, y: -35.09375}
+        - {x: 37.953125, y: -29.09375}
+        - {x: 37.953125, y: 35.90625}
+      - - {x: 34.953125, y: -20.09375}
+        - {x: 32.953125, y: -25.09375}
+        - {x: 32.953125, y: -33.09375}
+        - {x: 34.953125, y: -35.09375}
+        - {x: 37.953125, y: -35.09375}
+        - {x: 37.953125, y: -20.09375}
+      - - {x: 33.953125, y: -14.09375}
+        - {x: 33.953125, y: -16.09375}
+        - {x: 36.953125, y: -19.09375}
+        - {x: 37.953125, y: -19.09375}
+        - {x: 37.953125, y: -12.09375}
+        - {x: 35.953125, y: -12.09375}
+      - - {x: 26.953125, y: 2.90625}
+        - {x: 25.953125, y: 0.90625}
+        - {x: 25.953125, y: -3.09375}
+        - {x: 31.953125, y: -3.09375}
+        - {x: 31.953125, y: 2.90625}
+    - name: colony-buildings-ready_155
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 976
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_156
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 948
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 30.6875}
+        - {x: -17.859375, y: -30.3125}
+        - {x: 19.140625, y: -30.3125}
+        - {x: 19.140625, y: 28.6875}
+        - {x: 15.140625, y: 30.6875}
+    - name: colony-buildings-ready_157
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 949
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_158
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 935
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_159
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 935
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.796875, y: 18.390625}
+        - {x: -21.796875, y: -17.609375}
+        - {x: 23.203125, y: -17.609375}
+        - {x: 23.203125, y: 17.390625}
+        - {x: 22.203125, y: 18.390625}
+    - name: colony-buildings-ready_160
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 945
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_161
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 879
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -31.5, y: 24.765625}
+        - {x: -33.5, y: 21.765625}
+        - {x: -33.5, y: -24.234375}
+        - {x: 31.5, y: -24.234375}
+        - {x: 33.5, y: -15.234375}
+        - {x: 33.5, y: 24.765625}
+    - name: colony-buildings-ready_162
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 866
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.109375, y: -28.03125}
+        - {x: -4.109375, y: -28.03125}
+        - {x: -4.109375, y: -24.03125}
+        - {x: -5.109375, y: -21.03125}
+        - {x: -20.109375, y: -21.03125}
+        - {x: -28.109375, y: -22.03125}
+      - - {x: -24.109375, y: -10.03125}
+        - {x: -18.109375, y: -27.03125}
+        - {x: -14.109375, y: -28.03125}
+        - {x: 19.890625, y: -28.03125}
+        - {x: 29.890625, y: -21.03125}
+        - {x: 29.890625, y: 28.96875}
+        - {x: -17.109375, y: 28.96875}
+        - {x: -24.109375, y: 24.96875}
+      - - {x: -28.109375, y: 21.96875}
+        - {x: -24.109375, y: 21.96875}
+        - {x: -23.109375, y: 22.96875}
+        - {x: -23.109375, y: 25.96875}
+        - {x: -24.109375, y: 27.96875}
+        - {x: -28.109375, y: 27.96875}
+    - name: colony-buildings-ready_163
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 879
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.484375, y: 28.765625}
+        - {x: -16.484375, y: -28.234375}
+        - {x: 17.515625, y: -28.234375}
+        - {x: 17.515625, y: 25.765625}
+        - {x: 10.515625, y: 28.765625}
+    - name: colony-buildings-ready_164
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 884
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_165
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 913
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_166
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 887
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_167
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 885
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_168
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 890
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_169
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 831
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 21.015625}
+        - {x: -24.5, y: 17.015625}
+        - {x: -24.5, y: -20.984375}
+        - {x: 24.5, y: -20.984375}
+        - {x: 24.5, y: 19.015625}
+        - {x: 23.5, y: 21.015625}
+    - name: colony-buildings-ready_170
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 836
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.296875, y: 19.9375}
+        - {x: -25.296875, y: 16.9375}
+        - {x: -25.296875, y: -15.0625}
+        - {x: -18.296875, y: -18.0625}
+        - {x: 18.703125, y: -18.0625}
+        - {x: 19.703125, y: -13.0625}
+        - {x: 19.703125, y: 13.9375}
+        - {x: 16.703125, y: 19.9375}
+      - - {x: 21.703125, y: -9.0625}
+        - {x: 20.703125, y: -10.0625}
+        - {x: 20.703125, y: -15.0625}
+        - {x: 25.703125, y: -15.0625}
+        - {x: 25.703125, y: -9.0625}
+    - name: colony-buildings-ready_171
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 786
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.296875, y: 14.21875}
+        - {x: -37.296875, y: -26.78125}
+        - {x: 38.703125, y: -26.78125}
+        - {x: 38.703125, y: 11.21875}
+        - {x: 28.703125, y: 14.21875}
+      - - {x: 15.703125, y: 28.21875}
+        - {x: 16.703125, y: 25.21875}
+        - {x: 24.703125, y: 17.21875}
+        - {x: 38.703125, y: 17.21875}
+        - {x: 38.703125, y: 28.21875}
+      - - {x: -5.296875, y: 28.21875}
+        - {x: -5.296875, y: 25.21875}
+        - {x: -3.296875, y: 23.21875}
+        - {x: -1.296875, y: 23.21875}
+        - {x: 0.703125, y: 25.21875}
+        - {x: 0.703125, y: 28.21875}
+      - - {x: -37.296875, y: 28.21875}
+        - {x: -37.296875, y: 25.21875}
+        - {x: -26.296875, y: 25.21875}
+        - {x: -24.296875, y: 27.21875}
+        - {x: -24.296875, y: 28.21875}
+      - - {x: -22.296875, y: 28.21875}
+        - {x: -21.296875, y: 25.21875}
+        - {x: -18.296875, y: 25.21875}
+        - {x: -16.296875, y: 27.21875}
+        - {x: -16.296875, y: 28.21875}
+    - name: colony-buildings-ready_172
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 783
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -57.65625, y: 10.765625}
+        - {x: -48.65625, y: 4.765625}
+        - {x: -46.65625, y: 2.765625}
+        - {x: -57.65625, y: -1.234375}
+        - {x: -57.65625, y: -41.234375}
+        - {x: -56.65625, y: -41.234375}
+        - {x: -52.65625, y: -38.234375}
+        - {x: -37.65625, y: -36.234375}
+        - {x: -34.65625, y: -33.234375}
+        - {x: -34.65625, y: -15.234375}
+        - {x: -33.65625, y: -42.234375}
+        - {x: -32.65625, y: -43.234375}
+        - {x: 59.34375, y: -43.234375}
+        - {x: 59.34375, y: 22.765625}
+        - {x: 47.34375, y: 44.765625}
+        - {x: -56.65625, y: 44.765625}
+        - {x: -57.65625, y: 33.765625}
+      - - {x: 15.34375, y: 17.765625}
+        - {x: 13.34375, y: 15.765625}
+        - {x: 13.34375, y: 13.765625}
+        - {x: 15.34375, y: 11.765625}
+        - {x: 17.34375, y: 11.765625}
+        - {x: 19.34375, y: 13.765625}
+        - {x: 19.34375, y: 15.765625}
+        - {x: 17.34375, y: 17.765625}
+      - - {x: 37.34375, y: 31.765625}
+        - {x: 36.34375, y: 15.765625}
+        - {x: 36.34375, y: 11.765625}
+        - {x: 41.34375, y: 11.765625}
+        - {x: 44.34375, y: 12.765625}
+        - {x: 44.34375, y: 31.765625}
+        - {x: 42.34375, y: 33.765625}
+        - {x: 39.34375, y: 33.765625}
+    - name: colony-buildings-ready_173
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 786
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.046875, y: 20.71875}
+        - {x: -37.046875, y: -18.28125}
+        - {x: -34.046875, y: -19.28125}
+        - {x: 36.953125, y: -19.28125}
+        - {x: 38.953125, y: -18.28125}
+        - {x: 38.953125, y: 19.71875}
+        - {x: 36.953125, y: 20.71875}
+    - name: colony-buildings-ready_174
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 819
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_175
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 793
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_176
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 791
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_177
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 790
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_178
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 743
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_179
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 743
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_180
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 751
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_181
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 751
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_182
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 767
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_183
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 763
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_184
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 726
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.28125, y: 27.65625}
+        - {x: -22.28125, y: 20.65625}
+        - {x: -22.28125, y: -26.34375}
+        - {x: 16.71875, y: -26.34375}
+        - {x: 23.71875, y: -23.34375}
+        - {x: 23.71875, y: 27.65625}
+    - name: colony-buildings-ready_185
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 751
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_186
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 743
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_187
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 707
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_188
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 690
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.953125, y: 18.71875}
+        - {x: 21.953125, y: 19.71875}
+        - {x: -36.046875, y: 19.71875}
+        - {x: -36.046875, y: -17.28125}
+        - {x: -21.046875, y: -19.28125}
+        - {x: 26.953125, y: -19.28125}
+        - {x: 36.953125, y: -14.28125}
+        - {x: 37.953125, y: -13.28125}
+        - {x: 37.953125, y: 16.71875}
+    - name: colony-buildings-ready_189
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 690
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.296875, y: 19.71875}
+        - {x: -36.296875, y: 15.71875}
+        - {x: -36.296875, y: -14.28125}
+        - {x: -10.296875, y: -19.28125}
+        - {x: 30.703125, y: -19.28125}
+        - {x: 37.703125, y: -16.28125}
+        - {x: 37.703125, y: 19.71875}
+    - name: colony-buildings-ready_190
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 719
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_191
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 719
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_192
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 727
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_193
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 695
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_194
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 695
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_195
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 663
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.796875, y: 2.640625}
+        - {x: -21.796875, y: -25.359375}
+        - {x: 23.203125, y: -25.359375}
+        - {x: 23.203125, y: 26.640625}
+        - {x: 1.203125, y: 26.640625}
+        - {x: -8.796875, y: 20.640625}
+      - - {x: -21.796875, y: 26.640625}
+        - {x: -21.796875, y: 6.640625}
+        - {x: -20.796875, y: 5.640625}
+        - {x: -15.796875, y: 5.640625}
+        - {x: -13.796875, y: 7.640625}
+        - {x: -13.796875, y: 26.640625}
+      - - {x: 1.203125, y: 26.640625}
+        - {x: 0.203125, y: 25.640625}
+        - {x: 0.203125, y: 22.640625}
+        - {x: 2.203125, y: 21.640625}
+        - {x: 7.203125, y: 21.640625}
+        - {x: 8.203125, y: 24.640625}
+        - {x: 8.203125, y: 26.640625}
+    - name: colony-buildings-ready_196
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 711
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_197
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 614
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.703125, y: 50.90625}
+        - {x: -24.703125, y: 38.90625}
+        - {x: -24.703125, y: -42.09375}
+        - {x: -21.703125, y: -50.09375}
+        - {x: 26.296875, y: -50.09375}
+        - {x: 26.296875, y: 50.90625}
+      - - {x: -24.703125, y: 50.90625}
+        - {x: -24.703125, y: 40.90625}
+        - {x: -20.703125, y: 40.90625}
+        - {x: -18.703125, y: 42.90625}
+        - {x: -18.703125, y: 50.90625}
+    - name: colony-buildings-ready_198
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 648
+        width: 74
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_199
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 648
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_200
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 663
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_201
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 640
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_202
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 640
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_203
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 602
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 37.953125, y: 20.09375}
+        - {x: -35.046875, y: 20.09375}
+        - {x: -36.046875, y: 19.09375}
+        - {x: -36.046875, y: -16.90625}
+        - {x: -21.046875, y: -18.90625}
+        - {x: 26.953125, y: -18.90625}
+        - {x: 36.953125, y: -13.90625}
+        - {x: 37.953125, y: -12.90625}
+    - name: colony-buildings-ready_204
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 597
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 36.703125, y: 22.671875}
+        - {x: -35.296875, y: 22.671875}
+        - {x: -38.296875, y: 19.671875}
+        - {x: -38.296875, y: -13.328125}
+        - {x: 4.703125, y: -21.328125}
+        - {x: 39.703125, y: -21.328125}
+        - {x: 39.703125, y: 20.671875}
+    - name: colony-buildings-ready_205
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 640
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_206
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 640
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_207
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 527
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.546875, y: 55.765625}
+        - {x: -20.546875, y: -54.234375}
+        - {x: 21.453125, y: -54.234375}
+        - {x: 21.453125, y: 52.765625}
+        - {x: 15.453125, y: 55.765625}
+    - name: colony-buildings-ready_208
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 596
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 21.6875}
+        - {x: -17.859375, y: -20.3125}
+        - {x: 19.140625, y: -20.3125}
+        - {x: 19.140625, y: 17.6875}
+        - {x: 11.140625, y: 21.6875}
+    - name: colony-buildings-ready_209
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 463
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14.484375, y: 72.265625}
+        - {x: -5.515625, y: 72.265625}
+        - {x: -25.515625, y: -39.734375}
+        - {x: -25.515625, y: -67.734375}
+        - {x: -17.515625, y: -70.734375}
+        - {x: 32.484375, y: -70.734375}
+        - {x: 32.484375, y: 32.265625}
+        - {x: 30.484375, y: 60.265625}
+      - - {x: -30.515625, y: -12.734375}
+        - {x: -30.515625, y: -16.734375}
+        - {x: -27.515625, y: -16.734375}
+        - {x: -25.515625, y: -14.734375}
+        - {x: -26.515625, y: -11.734375}
+        - {x: -29.515625, y: -11.734375}
+      - - {x: -25.515625, y: -13.734375}
+        - {x: -24.515625, y: -16.734375}
+        - {x: -21.515625, y: -16.734375}
+        - {x: -19.515625, y: -14.734375}
+        - {x: -20.515625, y: -11.734375}
+        - {x: -23.515625, y: -11.734375}
+      - - {x: -25.515625, y: 35.265625}
+        - {x: -28.515625, y: 19.265625}
+        - {x: -28.515625, y: -2.734375}
+        - {x: -24.515625, y: -2.734375}
+        - {x: -18.515625, y: 0.265625}
+        - {x: -18.515625, y: 33.265625}
+        - {x: -21.515625, y: 35.265625}
+      - - {x: -25.515625, y: 50.265625}
+        - {x: -24.515625, y: 47.265625}
+        - {x: -21.515625, y: 47.265625}
+        - {x: -19.515625, y: 49.265625}
+        - {x: -20.515625, y: 52.265625}
+        - {x: -23.515625, y: 52.265625}
+      - - {x: -26.515625, y: 72.265625}
+        - {x: -30.515625, y: 66.265625}
+        - {x: -30.515625, y: 61.265625}
+        - {x: -20.515625, y: 61.265625}
+        - {x: -18.515625, y: 64.265625}
+        - {x: -18.515625, y: 72.265625}
+    - name: colony-buildings-ready_210
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 598
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_211
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 518
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.046875, y: 36.40625}
+        - {x: -36.046875, y: -34.59375}
+        - {x: 28.953125, y: -34.59375}
+        - {x: 37.953125, y: -13.59375}
+        - {x: 37.953125, y: 36.40625}
+      - - {x: 33.953125, y: -22.59375}
+        - {x: 32.953125, y: -31.59375}
+        - {x: 34.953125, y: -33.59375}
+        - {x: 37.953125, y: -33.59375}
+        - {x: 37.953125, y: -19.59375}
+        - {x: 36.953125, y: -19.59375}
+      - - {x: 33.953125, y: -13.59375}
+        - {x: 33.953125, y: -15.59375}
+        - {x: 36.953125, y: -18.59375}
+        - {x: 37.953125, y: -18.59375}
+        - {x: 37.953125, y: -11.59375}
+        - {x: 35.953125, y: -11.59375}
+      - - {x: 26.953125, y: 3.40625}
+        - {x: 25.953125, y: 1.40625}
+        - {x: 25.953125, y: -2.59375}
+        - {x: 31.953125, y: -2.59375}
+        - {x: 31.953125, y: 3.40625}
+    - name: colony-buildings-ready_212
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 560
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_213
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 532
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9.140625, y: 31.1875}
+        - {x: -17.859375, y: 31.1875}
+        - {x: -17.859375, y: -29.8125}
+        - {x: 19.140625, y: -29.8125}
+        - {x: 19.140625, y: 28.1875}
+        - {x: 15.140625, y: 29.1875}
+    - name: colony-buildings-ready_214
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 533
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_215
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 519
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_216
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 519
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.796875, y: 19.390625}
+        - {x: -21.796875, y: 17.390625}
+        - {x: -21.796875, y: -17.609375}
+        - {x: 23.203125, y: -17.609375}
+        - {x: 23.203125, y: 19.390625}
+    - name: colony-buildings-ready_217
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 529
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_218
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 463
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 25.265625}
+        - {x: -33.5, y: -23.734375}
+        - {x: 33.5, y: -23.734375}
+        - {x: 33.5, y: 25.265625}
+    - name: colony-buildings-ready_219
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 450
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.109375, y: -28.03125}
+        - {x: -4.109375, y: -28.03125}
+        - {x: -4.109375, y: -23.03125}
+        - {x: -5.109375, y: -20.03125}
+        - {x: -18.109375, y: -20.03125}
+        - {x: -28.109375, y: -21.03125}
+      - - {x: -24.109375, y: -9.03125}
+        - {x: -14.109375, y: -17.03125}
+        - {x: 0.890625, y: -28.03125}
+        - {x: 20.890625, y: -28.03125}
+        - {x: 29.890625, y: -22.03125}
+        - {x: 29.890625, y: 26.96875}
+        - {x: 28.890625, y: 29.96875}
+        - {x: -10.109375, y: 29.96875}
+        - {x: -24.109375, y: 21.96875}
+      - - {x: -28.109375, y: 22.96875}
+        - {x: -24.109375, y: 22.96875}
+        - {x: -23.109375, y: 23.96875}
+        - {x: -23.109375, y: 26.96875}
+        - {x: -24.109375, y: 28.96875}
+        - {x: -28.109375, y: 28.96875}
+    - name: colony-buildings-ready_220
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 463
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.484375, y: 29.265625}
+        - {x: -16.484375, y: -27.734375}
+        - {x: 17.515625, y: -27.734375}
+        - {x: 17.515625, y: 23.265625}
+        - {x: 15.515625, y: 29.265625}
+    - name: colony-buildings-ready_221
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 468
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_222
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 497
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_223
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 471
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_224
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 469
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_225
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 474
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_226
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 415
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 21.515625}
+        - {x: -24.5, y: 17.515625}
+        - {x: -24.5, y: -20.484375}
+        - {x: 24.5, y: -20.484375}
+        - {x: 24.5, y: 21.515625}
+    - name: colony-buildings-ready_227
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 420
+        width: 51
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -25.296875, y: 18.9375}
+        - {x: -25.296875, y: -18.0625}
+        - {x: 13.703125, y: -18.0625}
+        - {x: 19.703125, y: -16.0625}
+        - {x: 19.703125, y: 18.9375}
+      - - {x: 21.703125, y: -10.0625}
+        - {x: 20.703125, y: -11.0625}
+        - {x: 20.703125, y: -16.0625}
+        - {x: 25.703125, y: -16.0625}
+        - {x: 25.703125, y: -10.0625}
+    - name: colony-buildings-ready_228
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 370
+        width: 76
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 28.703125, y: 12.71875}
+        - {x: -37.296875, y: 12.71875}
+        - {x: -37.296875, y: -24.28125}
+        - {x: -5.296875, y: -27.28125}
+        - {x: 24.703125, y: -27.28125}
+        - {x: 36.703125, y: -23.28125}
+        - {x: 38.703125, y: -21.28125}
+        - {x: 38.703125, y: 9.71875}
+      - - {x: 15.703125, y: 27.71875}
+        - {x: 15.703125, y: 23.71875}
+        - {x: 24.703125, y: 15.71875}
+        - {x: 38.703125, y: 15.71875}
+        - {x: 38.703125, y: 27.71875}
+      - - {x: -4.296875, y: 27.71875}
+        - {x: -5.296875, y: 26.71875}
+        - {x: -5.296875, y: 23.71875}
+        - {x: -3.296875, y: 21.71875}
+        - {x: -1.296875, y: 21.71875}
+        - {x: 0.703125, y: 23.71875}
+        - {x: 0.703125, y: 26.71875}
+        - {x: -0.296875, y: 27.71875}
+      - - {x: -37.296875, y: 27.71875}
+        - {x: -37.296875, y: 23.71875}
+        - {x: -26.296875, y: 23.71875}
+        - {x: -23.296875, y: 26.71875}
+        - {x: -23.296875, y: 27.71875}
+      - - {x: -22.296875, y: 27.71875}
+        - {x: -22.296875, y: 25.71875}
+        - {x: -20.296875, y: 23.71875}
+        - {x: -18.296875, y: 23.71875}
+        - {x: -16.296875, y: 25.71875}
+        - {x: -16.296875, y: 27.71875}
+    - name: colony-buildings-ready_229
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 367
+        width: 117
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -53.65625, y: 43.765625}
+        - {x: -57.65625, y: 39.765625}
+        - {x: -57.65625, y: -41.234375}
+        - {x: -56.65625, y: -41.234375}
+        - {x: -52.65625, y: -38.234375}
+        - {x: -37.65625, y: -36.234375}
+        - {x: -34.65625, y: -33.234375}
+        - {x: -34.65625, y: -16.234375}
+        - {x: -33.65625, y: -42.234375}
+        - {x: -32.65625, y: -43.234375}
+        - {x: 59.34375, y: -43.234375}
+        - {x: 59.34375, y: 22.765625}
+        - {x: 28.34375, y: 43.765625}
+      - - {x: 15.34375, y: 16.765625}
+        - {x: 13.34375, y: 14.765625}
+        - {x: 13.34375, y: 12.765625}
+        - {x: 15.34375, y: 10.765625}
+        - {x: 17.34375, y: 10.765625}
+        - {x: 19.34375, y: 12.765625}
+        - {x: 19.34375, y: 14.765625}
+        - {x: 17.34375, y: 16.765625}
+      - - {x: 39.34375, y: 33.765625}
+        - {x: 37.34375, y: 31.765625}
+        - {x: 36.34375, y: 24.765625}
+        - {x: 36.34375, y: 11.765625}
+        - {x: 38.34375, y: 10.765625}
+        - {x: 43.34375, y: 10.765625}
+        - {x: 44.34375, y: 13.765625}
+        - {x: 44.34375, y: 31.765625}
+        - {x: 42.34375, y: 33.765625}
+    - name: colony-buildings-ready_230
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 370
+        width: 76
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37.046875, y: 19.71875}
+        - {x: -37.046875, y: -18.28125}
+        - {x: -29.046875, y: -19.28125}
+        - {x: 38.953125, y: -19.28125}
+        - {x: 38.953125, y: 19.71875}
+    - name: colony-buildings-ready_231
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 403
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_232
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 377
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_233
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 375
+        width: 15
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_234
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 374
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_235
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 327
+        width: 76
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_236
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 327
+        width: 76
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_237
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 335
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_238
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 335
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_239
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 351
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_240
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 347
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_241
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 310
+        width: 46
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9.28125, y: 27.15625}
+        - {x: -22.28125, y: 22.15625}
+        - {x: -22.28125, y: -26.84375}
+        - {x: 15.71875, y: -26.84375}
+        - {x: 23.71875, y: -23.84375}
+        - {x: 23.71875, y: 27.15625}
+    - name: colony-buildings-ready_242
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 335
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_243
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 327
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_244
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 291
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_245
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 274
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 21.953125, y: 20.71875}
+        - {x: -36.046875, y: 20.71875}
+        - {x: -36.046875, y: -19.28125}
+        - {x: 37.953125, y: -19.28125}
+        - {x: 37.953125, y: 17.71875}
+        - {x: 35.953125, y: 19.71875}
+    - name: colony-buildings-ready_246
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 274
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32.296875, y: 20.71875}
+        - {x: -36.296875, y: 16.71875}
+        - {x: -36.296875, y: -14.28125}
+        - {x: -10.296875, y: -19.28125}
+        - {x: 28.703125, y: -19.28125}
+        - {x: 36.703125, y: -14.28125}
+        - {x: 37.703125, y: -13.28125}
+        - {x: 37.703125, y: 20.71875}
+    - name: colony-buildings-ready_247
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 303
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_248
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 303
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_249
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 311
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_250
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 279
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_251
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 279
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_252
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 247
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.203125, y: 26.140625}
+        - {x: -21.796875, y: 3.140625}
+        - {x: -21.796875, y: -25.859375}
+        - {x: 22.203125, y: -25.859375}
+        - {x: 23.203125, y: -22.859375}
+        - {x: 23.203125, y: 26.140625}
+      - - {x: -21.796875, y: 26.140625}
+        - {x: -21.796875, y: 5.140625}
+        - {x: -20.796875, y: 4.140625}
+        - {x: -15.796875, y: 4.140625}
+        - {x: -13.796875, y: 6.140625}
+        - {x: -13.796875, y: 26.140625}
+      - - {x: 1.203125, y: 26.140625}
+        - {x: 0.203125, y: 22.140625}
+        - {x: 2.203125, y: 20.140625}
+        - {x: 5.203125, y: 20.140625}
+        - {x: 8.203125, y: 23.140625}
+        - {x: 8.203125, y: 26.140625}
+    - name: colony-buildings-ready_253
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 295
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_254
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 198
+        width: 51
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.703125, y: 51.90625}
+        - {x: -24.703125, y: 46.90625}
+        - {x: -24.703125, y: -41.09375}
+        - {x: -21.703125, y: -50.09375}
+        - {x: 25.296875, y: -50.09375}
+        - {x: 26.296875, y: -49.09375}
+        - {x: 26.296875, y: 50.90625}
+        - {x: 25.296875, y: 51.90625}
+      - - {x: -24.703125, y: 51.90625}
+        - {x: -24.703125, y: 40.90625}
+        - {x: -20.703125, y: 40.90625}
+        - {x: -18.703125, y: 42.90625}
+        - {x: -18.703125, y: 51.90625}
+    - name: colony-buildings-ready_255
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 232
+        width: 74
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_256
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 232
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_257
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 247
+        width: 42
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_258
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 224
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_259
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 224
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_260
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 186
+        width: 74
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 35.953125, y: 18.59375}
+        - {x: 21.953125, y: 19.59375}
+        - {x: -36.046875, y: 19.59375}
+        - {x: -36.046875, y: -17.40625}
+        - {x: -21.046875, y: -19.40625}
+        - {x: 26.953125, y: -19.40625}
+        - {x: 36.953125, y: -14.40625}
+        - {x: 37.953125, y: -13.40625}
+        - {x: 37.953125, y: 16.59375}
+    - name: colony-buildings-ready_261
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 181
+        width: 78
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34.703125, y: 22.171875}
+        - {x: -34.296875, y: 22.171875}
+        - {x: -38.296875, y: 18.171875}
+        - {x: -38.296875, y: -13.828125}
+        - {x: 4.703125, y: -21.828125}
+        - {x: 39.703125, y: -21.828125}
+        - {x: 39.703125, y: 20.171875}
+    - name: colony-buildings-ready_262
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 224
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_263
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 224
+        width: 26
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_264
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 111
+        width: 42
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.546875, y: 54.765625}
+        - {x: -20.546875, y: -54.234375}
+        - {x: 21.453125, y: -54.234375}
+        - {x: 21.453125, y: 54.765625}
+    - name: colony-buildings-ready_265
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 180
+        width: 36
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 20.6875}
+        - {x: -17.859375, y: -20.3125}
+        - {x: 19.140625, y: -20.3125}
+        - {x: 19.140625, y: 16.6875}
+        - {x: 12.140625, y: 20.6875}
+    - name: colony-buildings-ready_266
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 47
+        width: 63
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.484375, y: 71.765625}
+        - {x: -3.515625, y: 71.765625}
+        - {x: -25.515625, y: -41.234375}
+        - {x: -25.515625, y: -64.234375}
+        - {x: -18.515625, y: -71.234375}
+        - {x: 32.484375, y: -71.234375}
+        - {x: 32.484375, y: 26.765625}
+        - {x: 26.484375, y: 61.765625}
+      - - {x: -30.515625, y: -18.234375}
+        - {x: -26.515625, y: -18.234375}
+        - {x: -25.515625, y: -17.234375}
+        - {x: -25.515625, y: -14.234375}
+        - {x: -26.515625, y: -12.234375}
+        - {x: -30.515625, y: -12.234375}
+      - - {x: -24.515625, y: -18.234375}
+        - {x: -21.515625, y: -18.234375}
+        - {x: -19.515625, y: -17.234375}
+        - {x: -19.515625, y: -12.234375}
+        - {x: -24.515625, y: -12.234375}
+        - {x: -25.515625, y: -13.234375}
+        - {x: -25.515625, y: -16.234375}
+      - - {x: -21.515625, y: 33.765625}
+        - {x: -25.515625, y: 33.765625}
+        - {x: -28.515625, y: 18.765625}
+        - {x: -28.515625, y: -1.234375}
+        - {x: -26.515625, y: -3.234375}
+        - {x: -24.515625, y: -3.234375}
+        - {x: -18.515625, y: 1.765625}
+        - {x: -18.515625, y: 31.765625}
+      - - {x: -25.515625, y: 45.765625}
+        - {x: -19.515625, y: 45.765625}
+        - {x: -19.515625, y: 50.765625}
+        - {x: -20.515625, y: 51.765625}
+        - {x: -25.515625, y: 51.765625}
+      - - {x: -26.515625, y: 71.765625}
+        - {x: -30.515625, y: 65.765625}
+        - {x: -30.515625, y: 60.765625}
+        - {x: -20.515625, y: 60.765625}
+        - {x: -18.515625, y: 63.765625}
+        - {x: -18.515625, y: 71.765625}
+    - name: colony-buildings-ready_267
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 182
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_268
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 102
+        width: 74
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.046875, y: 35.90625}
+        - {x: -36.046875, y: -35.09375}
+        - {x: 32.953125, y: -35.09375}
+        - {x: 37.953125, y: -1.09375}
+        - {x: 37.953125, y: 35.90625}
+      - - {x: 34.953125, y: -20.09375}
+        - {x: 32.953125, y: -25.09375}
+        - {x: 32.953125, y: -33.09375}
+        - {x: 34.953125, y: -35.09375}
+        - {x: 37.953125, y: -35.09375}
+        - {x: 37.953125, y: -20.09375}
+      - - {x: 33.953125, y: -14.09375}
+        - {x: 33.953125, y: -16.09375}
+        - {x: 36.953125, y: -19.09375}
+        - {x: 37.953125, y: -19.09375}
+        - {x: 37.953125, y: -12.09375}
+        - {x: 35.953125, y: -12.09375}
+      - - {x: 27.953125, y: 1.90625}
+        - {x: 25.953125, y: 0.90625}
+        - {x: 25.953125, y: -2.09375}
+        - {x: 27.953125, y: -4.09375}
+        - {x: 29.953125, y: -4.09375}
+        - {x: 31.953125, y: -2.09375}
+        - {x: 31.953125, y: -0.09375}
+        - {x: 30.953125, y: 1.90625}
+    - name: colony-buildings-ready_269
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 144
+        width: 74
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_270
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 116
+        width: 36
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.859375, y: 30.6875}
+        - {x: -17.859375, y: -30.3125}
+        - {x: 19.140625, y: -30.3125}
+        - {x: 19.140625, y: 28.6875}
+        - {x: 15.140625, y: 30.6875}
+    - name: colony-buildings-ready_271
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 117
+        width: 7
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_272
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 103
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_273
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 103
+        width: 44
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20.796875, y: 18.390625}
+        - {x: -21.796875, y: 17.390625}
+        - {x: -21.796875, y: -17.609375}
+        - {x: 23.203125, y: -17.609375}
+        - {x: 23.203125, y: 18.390625}
+    - name: colony-buildings-ready_274
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 113
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_275
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.5, y: 24.765625}
+        - {x: -33.5, y: -24.234375}
+        - {x: 30.5, y: -24.234375}
+        - {x: 33.5, y: -8.234375}
+        - {x: 33.5, y: 22.765625}
+        - {x: 31.5, y: 24.765625}
+    - name: colony-buildings-ready_276
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 34
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.109375, y: -28.03125}
+        - {x: -4.109375, y: -28.03125}
+        - {x: -4.109375, y: -24.03125}
+        - {x: -5.109375, y: -21.03125}
+        - {x: -20.109375, y: -21.03125}
+        - {x: -28.109375, y: -22.03125}
+      - - {x: -15.109375, y: 28.96875}
+        - {x: -24.109375, y: 15.96875}
+        - {x: -24.109375, y: -9.03125}
+        - {x: -0.109375, y: -28.03125}
+        - {x: 20.890625, y: -28.03125}
+        - {x: 29.890625, y: -21.03125}
+        - {x: 29.890625, y: 26.96875}
+        - {x: 28.890625, y: 28.96875}
+      - - {x: -28.109375, y: 21.96875}
+        - {x: -24.109375, y: 21.96875}
+        - {x: -23.109375, y: 22.96875}
+        - {x: -23.109375, y: 25.96875}
+        - {x: -24.109375, y: 27.96875}
+        - {x: -28.109375, y: 27.96875}
+    - name: colony-buildings-ready_277
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 47
+        width: 34
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16.484375, y: 28.765625}
+        - {x: -16.484375, y: -28.234375}
+        - {x: 17.515625, y: -28.234375}
+        - {x: 17.515625, y: 25.765625}
+        - {x: 10.515625, y: 28.765625}
+    - name: colony-buildings-ready_278
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 52
+        width: 28
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_279
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 81
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_280
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 55
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_281
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 53
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_282
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 58
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_283
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: 20.5}
+        - {x: -24.5, y: 16.5}
+        - {x: -24.5, y: -20.5}
+        - {x: 24.5, y: -20.5}
+        - {x: 24.5, y: 15.5}
+        - {x: 19.5, y: 20.5}
+    - name: colony-buildings-ready_284
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 4
+        width: 68
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.796875, y: 19.9375}
+        - {x: -33.796875, y: -18.0625}
+        - {x: 2.203125, y: -18.0625}
+        - {x: 11.203125, y: -16.0625}
+        - {x: 11.203125, y: 19.9375}
+      - - {x: 30.203125, y: -11.0625}
+        - {x: 29.203125, y: -13.0625}
+        - {x: 29.203125, y: -17.0625}
+        - {x: 31.203125, y: -18.0625}
+        - {x: 33.203125, y: -18.0625}
+        - {x: 34.203125, y: -17.0625}
+        - {x: 34.203125, y: -12.0625}
+        - {x: 33.203125, y: -11.0625}
+      - - {x: 13.203125, y: -10.0625}
+        - {x: 12.203125, y: -11.0625}
+        - {x: 12.203125, y: -16.0625}
+        - {x: 17.203125, y: -16.0625}
+        - {x: 18.203125, y: -14.0625}
+        - {x: 18.203125, y: -11.0625}
+        - {x: 16.203125, y: -10.0625}
+      - - {x: 19.203125, y: 19.9375}
+        - {x: 19.203125, y: 13.9375}
+        - {x: 23.203125, y: 10.9375}
+        - {x: 26.203125, y: 10.9375}
+        - {x: 30.203125, y: 14.9375}
+        - {x: 30.203125, y: 19.9375}
+    - name: colony-buildings-ready_285
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.15625, y: 19.5}
+        - {x: -13.15625, y: 17.5}
+        - {x: -19.15625, y: 7.5}
+        - {x: -19.15625, y: -15.5}
+        - {x: -14.15625, y: -19.5}
+        - {x: 20.84375, y: -19.5}
+        - {x: 20.84375, y: 18.5}
+        - {x: 19.84375, y: 19.5}
+    - name: colony-buildings-ready_286
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 7
+        width: 35
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: colony-buildings-ready_287
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 7
+        width: 5
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

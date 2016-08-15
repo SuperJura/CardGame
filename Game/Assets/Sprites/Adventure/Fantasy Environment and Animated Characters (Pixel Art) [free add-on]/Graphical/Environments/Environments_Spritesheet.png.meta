@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 6af3d947474fc5e4faba11f046a39d24
+labels:
+- Environment
+- Atlas
+- Pixelart
+- Fantasy
+- Spritesheet
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Environments_Spritesheet_0
+    21300002: Environments_Spritesheet_1
+    21300004: Environments_Spritesheet_2
+    21300006: Environments_Spritesheet_4
+    21300008: Environments_Spritesheet_5
+    21300010: Environments_Spritesheet_6
+    21300012: Environments_Spritesheet_7
+    21300014: Environments_Spritesheet_8
+    21300016: Environments_Spritesheet_10
+    21300018: Environments_Spritesheet_11
+    21300020: Environments_Spritesheet_12
+    21300022: Environments_Spritesheet_13
+    21300024: Environments_Spritesheet_14
+    21300026: Environments_Spritesheet_15
+    21300028: Environments_Spritesheet_16
+    21300030: Environments_Spritesheet_17
+    21300032: Environments_Spritesheet_18
+    21300034: Environments_Spritesheet_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 40
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Environments_Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 52
+        width: 33
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 80
+        width: 22
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 118
+        width: 60
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 120
+        width: 30
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 120
+        width: 54
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 101
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 71
+        width: 60
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 87
+        width: 36
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 82
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 12
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1
+        width: 27
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 12
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Environments_Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 12
+        width: 40
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,7 +5,7 @@ public class CantMoveTrigger : MonoBehaviour
 {
     public CharacterMovement.Sides side;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         CharacterMovement.canMove[(int)side] = false;
     }
@@ -15,4 +15,8 @@ public class CantMoveTrigger : MonoBehaviour
         CharacterMovement.canMove[(int) side] = true;
     }
 
+    void OnDestroy()
+    {
+        CharacterMovement.canMove[(int) side] = true;
+    }
 }

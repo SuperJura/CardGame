@@ -24,8 +24,11 @@ public class MenuManager : MonoBehaviour
     {
         foreach (Transform menuChild in transform)
         {
-            Animation initializeAnimation = menuChild.GetComponent<Animation>();
-            initializeAnimation.Play();
+            if (menuChild.name != "Background")
+            {
+                Animation initializeAnimation = menuChild.GetComponent<Animation>();
+                initializeAnimation.Play();
+            }
         } //postavi sve menue u pocetnu poziciju
 
         yield return new WaitForSeconds(0.1f); //pricekaj da se sve animacije zavrse
