@@ -120,7 +120,7 @@ internal class ServerLobbyBehavior : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void OnApplicationExit()
     {
         CloseWebSocket();
     }

@@ -121,5 +121,6 @@ public class ServerGameBehavior : MonoBehaviour
         {
             ws.Close();
         }
+        ServerLobbyBehavior.CloseWebSocket();
     }
 }
