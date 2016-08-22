@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class Dispatcher : MonoBehaviour
 {
-    private Dispatcher m_current;
-
-    private int m_lock;
-    private bool m_run;
-    private Queue<Action> m_wait;
+    private int locked;
+    private bool running;
+    private Queue<Action> waitingActions;
 
     public static Dispatcher Current { get; private set; }
 
@@ -17,11 +15,11 @@ public class Dispatcher : MonoBehaviour
     {
         while (true)
         {
-            if (0 == Interlocked.Exchange(ref m_lock, 1))
+            if (0 == Interlocked.Exchange(ref locked, 1))
             {
-                m_wait.Enqueue(action);
-                m_run = true;
-                Interlocked.Exchange(ref m_lock, 0);
+                waitingActions.Enqueue(action);
+                running = true;
+                Interlocked.Exchange(ref locked, 0);
                 break;
             }
         }
@@ -35,24 +33,24 @@ public class Dispatcher : MonoBehaviour
         }
 
         Current = this;
-        m_wait = new Queue<Action>();
+        waitingActions = new Queue<Action>();
     }
 
     private void Update()
     {
-        if (m_run)
+        if (running)
         {
             Queue<Action> execute = null;
-            if (0 == Interlocked.Exchange(ref m_lock, 1))
+            if (0 == Interlocked.Exchange(ref locked, 1))
             {
-                execute = new Queue<Action>(m_wait.Count);
-                while (m_wait.Count != 0)
+                execute = new Queue<Action>(waitingActions.Count);
+                while (waitingActions.Count != 0)
                 {
-                    Action action = m_wait.Dequeue();
+                    Action action = waitingActions.Dequeue();
                     execute.Enqueue(action);
                 }
-                m_run = false;
-                Interlocked.Exchange(ref m_lock, 0);
+                running = false;
+                Interlocked.Exchange(ref locked, 0);
             }
 
             if (execute != null)

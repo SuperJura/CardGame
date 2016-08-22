@@ -15,7 +15,7 @@ public class ServerGameBehavior : MonoBehaviour
     private EndGameManager endGameManager;
     private Transform notificationPanel;
     private TurnsManager turnsManager;
-    private WebSocket ws;
+    private static WebSocket ws;
 
     private void Awake()
     {
@@ -40,17 +40,9 @@ public class ServerGameBehavior : MonoBehaviour
         ws.Send("startGame|" + myNickname + ";" + opponentNickname);
     }
 
-    //metoda se poziva svaki put kada IGRAC odigra kartu (postavljeno u OnlinePlayer)
-    public void Card_OnCardPickTurnEnd(RectTransform card)
+    public static void SendMessage(string message)
     {
-        string staticId = card.Find("CardStaticID").GetComponent<Text>().text;
-        ws.Send("cardPlayed|" + staticId);
-    }
-
-    //metoda se poziva svaki put kada IGRAC povuce kartu
-    public void CardDrawn(string staticId)
-    {
-        ws.Send("cardDrawed|" + staticId);
+        ws.Send(message);
     }
 
     private void Ws_OnMessage(object sender, MessageEventArgs e)

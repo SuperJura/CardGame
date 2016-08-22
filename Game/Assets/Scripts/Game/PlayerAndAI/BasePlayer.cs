@@ -88,7 +88,6 @@ public class BasePlayer : MonoBehaviour
         }
         cardRectTransform.GetComponent<CardInteraction>().CdField =
             transform.Find("PlayerCDField").GetComponent<RectTransform>();
-        cardRectTransform.GetComponent<CardInteraction>().OnCardPickTurnEnd += turnsManager.EndPickPhase;
         cardRectTransform.GetComponent<CardHover>().OnCardPointerEnter += guiManager.Card_OnHover;
 
         //kasnije dodaj sliku

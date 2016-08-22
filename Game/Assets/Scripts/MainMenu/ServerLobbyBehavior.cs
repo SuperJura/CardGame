@@ -34,14 +34,13 @@ internal class ServerLobbyBehavior : MonoBehaviour
         }
         if (txtServerIpAddress.text.IsNullOrEmpty()) OnlineGameMenuManager.severIPAddress = "192.168.1.247";
         else OnlineGameMenuManager.severIPAddress = txtServerIpAddress.text;
-        Debug.Log(OnlineGameMenuManager.severIPAddress + " : " + txtServerIpAddress.text);
 
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/LobbyBehavior"); //laptop
         ws = new WebSocket("ws://" + OnlineGameMenuManager.severIPAddress + ":8080/LobbyBehavior"); //ovo racunalo, ip adresa
         //ws = new WebSocket("ws://93.138.64.118:8080/LobbyBehavior"); //ovo racunalo, ip adresa koja nije iz NAT tablice
         //ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
-        ws.OnOpen += ws_OnOpen;
-        ws.OnError += ws_OnError;
+        ws.OnOpen += Ws_OnOpen;
+        ws.OnError += Ws_OnError;
         ws.OnClose += Ws_OnClose;
         ws.OnMessage += Ws_OnMessage;
 
@@ -93,12 +92,12 @@ internal class ServerLobbyBehavior : MonoBehaviour
         Debug.Log("Close: " + e.Reason);
     }
 
-    private void ws_OnError(object sender, ErrorEventArgs e)
+    private void Ws_OnError(object sender, ErrorEventArgs e)
     {
         Debug.Log("Error: " + e.Exception);
     }
 
-    private void ws_OnOpen(object sender, EventArgs e)
+    private void Ws_OnOpen(object sender, EventArgs e)
     {
         ws.Send("join|" + txtNick.text);
     }

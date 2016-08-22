@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof (SpecialAttacksManager))]
@@ -13,6 +14,9 @@ public class TurnsManager : MonoBehaviour
     public event OnEndTurnHandler OnEndTurn;
     public event OnNotificationHandler OnNotification;
     public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
+
+    public static Enumerations.GameModes gameMode;
+    public static TurnsManager instance;
 
     [HideInInspector]
     public BasePlayer aPlayer;
@@ -32,6 +36,16 @@ public class TurnsManager : MonoBehaviour
     public SpecialAttacksManager specialAttacks;
 
     protected char whoMoves; //a = igrac A; b = igrac B
+
+    void Awake()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        if (sceneName.StartsWith("Bot")) gameMode = Enumerations.GameModes.Bot;
+        else if (sceneName.StartsWith("Coop")) gameMode = Enumerations.GameModes.Coop;
+        else if (sceneName.StartsWith("Online")) gameMode = Enumerations.GameModes.Online;
+
+        instance = this;
+    }
 
     // Use this for initialization
     public virtual void Start()
@@ -63,15 +77,16 @@ public class TurnsManager : MonoBehaviour
     //FAZE
     public void EndPickPhase(RectTransform card)
     {
-        card.GetComponent<CardInteraction>().enabled = false;
         DisablePicking();
-
-        string cardName = card.Find("CardName").GetComponentInChildren<Text>().text;
-        string msg = "I put " + cardName;
-        CallOnNotification(msg); //prikaz notificationa
-
+        if (card != null)
+        {
+            card.GetComponent<CardInteraction>().enabled = false;
+            string cardName = card.Find("CardName").GetComponentInChildren<Text>().text;
+            string msg = "I put " + cardName;
+            CallOnNotification(msg); //prikaz notificationa
+        }
         StartCoroutine(StartCoolDownPhase());
-    } //1. faza, biranje karte za igranje
+    } //1. faza, biranje karte za igranje (u radu je obiljezeno kao faza 2)
 
     public IEnumerator StartCoolDownPhase()
     {
@@ -88,7 +103,7 @@ public class TurnsManager : MonoBehaviour
         }
 
         CheckForReadyCards();
-    }   //2. faza, smanjivanje cooldowna kartama
+    }   //2. faza, smanjivanje cooldowna kartama (u radu je obiljezeno kao faza 3)
 
     public void CheckForReadyCards()
     {
@@ -116,7 +131,7 @@ public class TurnsManager : MonoBehaviour
         }
 
         StartCoroutine(StartAttackPhase());
-    } //-medufaza- poslje 2. faze se prebacuju karte s 0 cd na PlayField
+    } //3. faza, prebacuju se karte s 0 cd na PlayField (u radu je obiljezeno kao faza 4)
 
     public IEnumerator StartAttackPhase()
     {
@@ -159,7 +174,7 @@ public class TurnsManager : MonoBehaviour
         }
 
         CheckForDeadCards();
-    } //3. faza
+    } //3. faza, napad (u radu obiljezeno kao faza 5)
 
     public void CheckForDeadCards()
     {
@@ -177,7 +192,7 @@ public class TurnsManager : MonoBehaviour
 
         DestroyDeadCards(cardsToDestroy);
         CheckIfPlayerWon();
-    } //zavrsavanje poteza
+    } //zavrsavanje poteza (u radu obiljezeno kao faza 8)
 
     public virtual void CheckIfPlayerWon()
     {
@@ -227,6 +242,7 @@ public class TurnsManager : MonoBehaviour
     //POMOCNE METODE
     public void EndPlayerTurn()
     {
+        Debug.Log("ending " + GetCurrentPlayer().name);
         ChangePlayer();
         FillHand();
         CallOnEndTurn();
@@ -252,7 +268,7 @@ public class TurnsManager : MonoBehaviour
         }
     }
 
-    public bool CheckIfPlayerCanPlay()
+    public virtual bool CheckIfPlayerCanPlay()
     {
         if (GetCdFieldOfCurrentPlayer().childCount >= 5)
         {
@@ -425,6 +441,12 @@ public class TurnsManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public bool IsCurrentPlayerA()
+    {
+        if (whoMoves == 'a') return true;
+        return false;
     }
 
     //JAVNE METODE

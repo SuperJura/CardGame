@@ -3,9 +3,6 @@ using UnityEngine.EventSystems;
 
 public class CardInteraction : MonoBehaviour, IPointerClickHandler
 {
-    public delegate void OnCardPickTurnEndHandler(RectTransform card);
-
-    public event OnCardPickTurnEndHandler OnCardPickTurnEnd;
 
     public RectTransform CdField;
     public bool Playable; //karte bota se nemogu odigrati
@@ -24,7 +21,13 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         if (CdField.childCount < 5)
         {
             transform.SetParent(CdField);
-            OnCardPickTurnEnd(myRectTransform);
+            TurnsManager.instance.EndPickPhase(myRectTransform);
+            if (TurnsManager.gameMode == Enumerations.GameModes.Online && TurnsManager.instance.IsCurrentPlayerA())
+            {
+                string staticId = myRectTransform.Find("CardStaticID").GetComponent<UnityEngine.UI.Text>().text;
+                string serverMessage = "cardPlayed|" + staticId;
+                ServerGameBehavior.SendMessage(serverMessage);
+            }
         }
     }
 }

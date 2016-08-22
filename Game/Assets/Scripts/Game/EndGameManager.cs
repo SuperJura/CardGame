@@ -33,6 +33,7 @@ public class EndGameManager : MonoBehaviour
         {
             EndGame(bPlayer, aPlayer);
         }
+        if (TurnsManager.gameMode ==Enumerations.GameModes.Online) Destroy(TurnsManager.instance);
     }
 
     private void SetMatchHistory()

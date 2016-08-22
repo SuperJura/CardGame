@@ -32,7 +32,6 @@ public class OnlineOpponent : BasePlayer
     public override void Awake()
     {
         playerName = PlayerNamesForGame.OpponentForOnlineGame;
-
         base.Awake();
     }
 

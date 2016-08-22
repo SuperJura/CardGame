@@ -13,4 +13,11 @@
         Custom,
         Saved
     }
+
+    public enum GameModes
+    {
+        Bot,
+        Coop,
+        Online
+    }
 }

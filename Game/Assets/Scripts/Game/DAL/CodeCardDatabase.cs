@@ -105,5 +105,15 @@ public class CodeCardDatabase : ICardDatabase
             SpecialAttackId = "SA_2",
             CardFlavour = "Special attack: 'Lowest Heal' - Heals your lowest creature in play field"
         });
+        AllCards.Add(new Card
+        {
+            Name = "Debug",
+            Health = 1,
+            Attack = 0,
+            StaticIdCard = "R_6",
+            DefaultCooldown = 4,
+            Quality = Enumerations.EquipmentQuality.Common,
+            CardFlavour = "Debug card"
+        });
     }
 }

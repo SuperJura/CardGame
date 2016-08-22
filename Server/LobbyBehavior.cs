@@ -30,8 +30,6 @@ namespace GameServer
         protected override void OnOpen()
         {
             Logger.LogOnOpen(ID);
-            matchmaking.OnMatch += Sessions.OnMatchListener;    //posto postoji samo jedan sessionManager, samo jedan objekt ce biti predplacen na OnMatch
-                                                                //sessionManager se inicializira pri prvom requestu, tako da nemoze biti u konstruktoru
         }
 
         protected override void OnClose(CloseEventArgs e)
@@ -78,7 +76,7 @@ namespace GameServer
         private void WantToPlayStatement()
         {
             Logger.LogEventMsg(nickname + " ceka za match");
-            matchmaking.Add(nickname);
+            matchmaking.Add(nickname, Sessions);
         }
 
         private bool AddNewPlayer(string nick)

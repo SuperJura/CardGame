@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,23 +14,6 @@ namespace GameServer
         private static Matchmaking instance;
         private static Random r;
 
-        public delegate void OnMatchHandler(string firstPlayer, string secondPlayer);
-        private OnMatchHandler onMatch;
-        public event OnMatchHandler OnMatch
-        {
-            add
-            {
-                if (onMatch == null)
-                {
-                    onMatch += value;
-                }
-            }
-            remove
-            {
-                onMatch -= value;
-            }
-        }
-
         private Matchmaking() { }
 
         public static Matchmaking GetInstance()
@@ -42,23 +26,39 @@ namespace GameServer
             return instance;
         }
 
-        public new void Add(string player)
+        public void Add(string player, WebSocketSessionManager session)
         {
-            base.Add(player);
+            Add(player);
             Logger.LogWaitingPlayers(Count);
             if (Count >= 2)
             {
                 string otherPlayer = this.Where(x => x != player).ToList()[r.Next(0, Count - 1)];
-                onMatch(player, otherPlayer);
+                Match(player, otherPlayer, session);
                 Remove(player);
                 Remove(otherPlayer);
             }
+        }
+
+        private void Match(string firstPlayer, string secondPlayer, WebSocketSessionManager session)
+        {
+            string firstPlayerID = GetPlayerID(firstPlayer);
+            string secondPlayerID = GetPlayerID(secondPlayer);
+
+            session.SendTo("playing|" + secondPlayer, firstPlayerID);
+            session.SendTo("playing|" + firstPlayer, secondPlayerID);
+
+            Logger.LogEventMsg(firstPlayer + " i " + secondPlayer + " su zapoceli igru");
         }
 
         public new void Remove(string player)
         {
             base.Remove(player);
             Logger.LogWaitingPlayers(Count);
+        }
+
+        private static string GetPlayerID(string playerName)
+        {
+            return LobbyBehavior.players.FirstOrDefault(x => x.Value == playerName).Key;
         }
     }
 }
