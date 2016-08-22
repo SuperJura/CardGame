@@ -3,18 +3,16 @@ using UnityEngine.UI;
 
 public class OnlineOpponent : BasePlayer
 {
-    private ServerGameBehavior gameBehavior;
+    public static OnlineOpponent instance;
 
-    public override void Start()
+    public override void Awake()
     {
-        gameBehavior = GameObject.Find("GameManager").GetComponent<ServerGameBehavior>();
-        gameBehavior.OnOpponentDrawed += GameBehavior_OnOpponentDrawed;
-        gameBehavior.OnOpponentPlayed += GameBehavior_OnOpponentPlayed;
-
-        base.Start();
+        playerName = PlayerNamesForGame.OpponentForOnlineGame;
+        instance = this;
+        base.Awake();
     }
 
-    private void GameBehavior_OnOpponentPlayed(string staticId)
+    public void PlayOpponentCard(string staticId)
     {
         foreach (RectTransform card in myHand)
         {
@@ -29,18 +27,7 @@ public class OnlineOpponent : BasePlayer
         }
     }
 
-    public override void Awake()
-    {
-        playerName = PlayerNamesForGame.OpponentForOnlineGame;
-        base.Awake();
-    }
-
-    private void GameBehavior_OnOpponentDrawed(string staticId)
-    {
-        DrawCard(staticId);
-    }
-
-    public void DrawCard(string staticId)
+    public void DrawOpponentCard(string staticId)
     {
         RectTransform card = GetRectTransformCard(staticId);
         card.GetComponent<CardInteraction>().enabled = false;

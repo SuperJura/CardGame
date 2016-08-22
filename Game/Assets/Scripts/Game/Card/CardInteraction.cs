@@ -3,8 +3,8 @@ using UnityEngine.EventSystems;
 
 public class CardInteraction : MonoBehaviour, IPointerClickHandler
 {
-
     public RectTransform CdField;
+
     public bool Playable; //karte bota se nemogu odigrati
 
     public void OnPointerClick(PointerEventData eventData)
@@ -22,7 +22,7 @@ public class CardInteraction : MonoBehaviour, IPointerClickHandler
         {
             transform.SetParent(CdField);
             TurnsManager.instance.EndPickPhase(myRectTransform);
-            if (TurnsManager.gameMode == Enumerations.GameModes.Online && TurnsManager.instance.IsCurrentPlayerA())
+            if (GamesManager.GetGameMode() == Enumerations.GameModes.Online && TurnsManager.instance.IsCurrentPlayerA())
             {
                 string staticId = myRectTransform.Find("CardStaticID").GetComponent<UnityEngine.UI.Text>().text;
                 string serverMessage = "cardPlayed|" + staticId;

@@ -128,12 +128,16 @@
   <ItemGroup>
     <None Include="Assets\Codes.txt" />
     <None Include="Assets\Configuration\Configuration.xml" />
+    <None Include="Assets\Decks\AAA.xml" />
+    <None Include="Assets\Decks\Customa.xml" />
     <None Include="Assets\Decks\DebugDeck.xml" />
     <None Include="Assets\Decks\LabMonkeys1.xml" />
     <None Include="Assets\Decks\bb.xml" />
     <None Include="Assets\Decks\cc.xml" />
     <None Include="Assets\Decks\custom.xml" />
     <None Include="Assets\Decks\custom555.xml" />
+    <None Include="Assets\Decks\g.xml" />
+    <None Include="Assets\Decks\rad.xml" />
     <None Include="Assets\Sprites\Adventure\Fantasy Environment and Animated Characters (Pixel Art) [free add-on]\Graphical\Characters\Characters Sizes to Slice.txt" />
     <None Include="Assets\Sprites\Adventure\Fantasy Environment and Animated Characters (Pixel Art) [free add-on]\Readme.txt" />
     <None Include="Assets\TerrainResources\Water\WaterFlowShader.shader" />

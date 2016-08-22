@@ -22,7 +22,7 @@ public class AdventureOpponent : BasePlayer
     }
 
     void Start () {
-	    base.Start();
+        base.Start();
 
         FillHand();
         turnsManager.OnEndTurn += TurnsManager_OnEndTurn;

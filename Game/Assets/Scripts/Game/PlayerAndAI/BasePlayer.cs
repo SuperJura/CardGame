@@ -32,7 +32,7 @@ public class BasePlayer : MonoBehaviour
     public virtual void Start()
     {
         database = Repository.GetCardDatabaseInstance();
-        Health = 10;
+        Health = 2;
     }
 
     public virtual void FillHand()
@@ -88,7 +88,6 @@ public class BasePlayer : MonoBehaviour
         }
         cardRectTransform.GetComponent<CardInteraction>().CdField =
             transform.Find("PlayerCDField").GetComponent<RectTransform>();
-        cardRectTransform.GetComponent<CardHover>().OnCardPointerEnter += guiManager.Card_OnHover;
 
         //kasnije dodaj sliku
         switch (card.Quality)

@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -93,10 +95,10 @@
     <Compile Include="Assets\Scripts\Game\DAL\CodeCardDatabase.cs" />
     <Compile Include="Assets\Scripts\Game\DAL\ICardDatabase.cs" />
     <Compile Include="Assets\Scripts\Game\DAL\Repository.cs" />
-    <Compile Include="Assets\Scripts\Game\EndGameManager.cs" />
     <Compile Include="Assets\Scripts\Game\EndTurnEventArgs.cs" />
     <Compile Include="Assets\Scripts\Game\Enumerations.cs" />
     <Compile Include="Assets\Scripts\Game\GUIManager.cs" />
+    <Compile Include="Assets\Scripts\Game\GameMenuManager.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\AdventureOpponent.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\AdventurePlayer.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerAndAI\BasePlayer.cs" />
@@ -113,29 +115,24 @@
     <Compile Include="Assets\Scripts\Game\TurnsManager.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManagerAdventureGame.cs" />
     <Compile Include="Assets\Scripts\Game\TurnsManagerOnlineGame.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\CurrentDeckMenuScripts\CustomDeckCardControls.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\CurrentDeckMenuScripts\FillCardList.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\DeckPanelManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\FillDeckList.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\CustomDeckCardControls.cs" />
     <Compile Include="Assets\Scripts\MainMenu\GamesManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuManagers\BotGameMenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuManagers\ChangeDeckMenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuManagers\CoopGameMenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuManagers\CurrentDeckMenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuManagers\OnlineGameMenuManager.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\SavedDecksMenuManager.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\ServerLobbyBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Codes.txt" />
     <None Include="Assets\Configuration\Configuration.xml" />
+    <None Include="Assets\Decks\AAA.xml" />
+    <None Include="Assets\Decks\Customa.xml" />
     <None Include="Assets\Decks\DebugDeck.xml" />
     <None Include="Assets\Decks\LabMonkeys1.xml" />
     <None Include="Assets\Decks\bb.xml" />
     <None Include="Assets\Decks\cc.xml" />
     <None Include="Assets\Decks\custom.xml" />
     <None Include="Assets\Decks\custom555.xml" />
+    <None Include="Assets\Decks\g.xml" />
+    <None Include="Assets\Decks\rad.xml" />
     <None Include="Assets\Sprites\Adventure\Fantasy Environment and Animated Characters (Pixel Art) [free add-on]\Graphical\Characters\Characters Sizes to Slice.txt" />
     <None Include="Assets\Sprites\Adventure\Fantasy Environment and Animated Characters (Pixel Art) [free add-on]\Readme.txt" />
     <None Include="Assets\TerrainResources\Water\WaterFlowShader.shader" />

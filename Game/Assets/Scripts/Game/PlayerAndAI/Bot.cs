@@ -9,7 +9,6 @@ public class Bot : BasePlayer
     public override void Awake()
     {
         base.Awake();
-
         playing = false;
     }
 

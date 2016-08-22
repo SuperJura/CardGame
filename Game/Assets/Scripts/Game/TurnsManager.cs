@@ -8,14 +8,9 @@ using UnityEngine.UI;
 public class TurnsManager : MonoBehaviour
 {
     public delegate void OnEndTurnHandler(EndTurnEventArgs args);
-    public delegate void OnNotificationHandler(char player, string message);
-    public delegate void OnPlayerLoseHealthHandler(PlayerLoseHealthEventArgs args);
 
     public event OnEndTurnHandler OnEndTurn;
-    public event OnNotificationHandler OnNotification;
-    public event OnPlayerLoseHealthHandler OnPlayerLoseHealth;
 
-    public static Enumerations.GameModes gameMode;
     public static TurnsManager instance;
 
     [HideInInspector]
@@ -27,8 +22,6 @@ public class TurnsManager : MonoBehaviour
     [HideInInspector]
     public RectTransform BPlayerSide;
     [HideInInspector]
-    public EndGameManager endGameManager;
-    [HideInInspector]
     public RectTransform graveyard;
     [HideInInspector]
     public int nublerOfTurns;
@@ -39,11 +32,6 @@ public class TurnsManager : MonoBehaviour
 
     void Awake()
     {
-        string sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName.StartsWith("Bot")) gameMode = Enumerations.GameModes.Bot;
-        else if (sceneName.StartsWith("Coop")) gameMode = Enumerations.GameModes.Coop;
-        else if (sceneName.StartsWith("Online")) gameMode = Enumerations.GameModes.Online;
-
         instance = this;
     }
 
@@ -51,7 +39,6 @@ public class TurnsManager : MonoBehaviour
     public virtual void Start()
     {
         Transform gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
-        endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
         specialAttacks = transform.GetComponent<SpecialAttacksManager>();
         APlayerSide = gameboardPanel.Find("A_PlayerSide").GetComponent<RectTransform>();
         BPlayerSide = gameboardPanel.Find("B_PlayerSide").GetComponent<RectTransform>();
@@ -65,11 +52,11 @@ public class TurnsManager : MonoBehaviour
     {
         nublerOfTurns = 0;
         whoMoves = 'b';
-        CallOnNotification("welcome!");
+        MakeNotification("welcome!");
         DisablePicking();
         whoMoves = 'a';
-        CallOnNotification("welcome!");
-        CallOnPlayerLoseHealth();
+        MakeNotification("welcome!");
+        UpdateHealthValues();
         EnablePicking();
         CallOnEndTurn();
     }
@@ -83,7 +70,7 @@ public class TurnsManager : MonoBehaviour
             card.GetComponent<CardInteraction>().enabled = false;
             string cardName = card.Find("CardName").GetComponentInChildren<Text>().text;
             string msg = "I put " + cardName;
-            CallOnNotification(msg); //prikaz notificationa
+            MakeNotification(msg); //prikaz notificationa
         }
         StartCoroutine(StartCoolDownPhase());
     } //1. faza, biranje karte za igranje (u radu je obiljezeno kao faza 2)
@@ -198,11 +185,11 @@ public class TurnsManager : MonoBehaviour
     {
         if (aPlayer.Health <= 0)
         {
-            endGameManager.EndGame(bPlayer, aPlayer);
+            GameMenuManager.instance.EndGame(bPlayer, aPlayer);
         }
         if (bPlayer.Health <= 0)
         {
-            endGameManager.EndGame(aPlayer, bPlayer);
+            GameMenuManager.instance.EndGame(aPlayer, bPlayer);
         }
         EndPlayerTurn();
     }
@@ -223,26 +210,25 @@ public class TurnsManager : MonoBehaviour
         OnEndTurn(args);
     }
 
-    public void CallOnPlayerLoseHealth()
+    public void UpdateHealthValues()
     {
-        OnPlayerLoseHealth(new PlayerLoseHealthEventArgs('b', bPlayer.Health));
-        OnPlayerLoseHealth(new PlayerLoseHealthEventArgs('a', aPlayer.Health));
+        GUIManager.instance.UpdateHealthValues(new PlayerLoseHealthEventArgs('b', bPlayer.Health));
+        GUIManager.instance.UpdateHealthValues(new PlayerLoseHealthEventArgs('a', aPlayer.Health));
     }
 
-    public void CallOnNotification(string message)
+    public void MakeNotification(string message)
     {
-        OnNotification(whoMoves, message);
+        GUIManager.instance.MakeNotification(whoMoves, message);
     }
 
-    public void CallOnNotification(char player, string message)
+    public void MakeNotification(char player, string message)
     {
-        OnNotification(player, message);
+        GUIManager.instance.MakeNotification(player, message);
     }
 
     //POMOCNE METODE
     public void EndPlayerTurn()
     {
-        Debug.Log("ending " + GetCurrentPlayer().name);
         ChangePlayer();
         FillHand();
         CallOnEndTurn();
@@ -264,7 +250,7 @@ public class TurnsManager : MonoBehaviour
         {
             aPlayer.Health -= 1;
             bPlayer.Health -= 1;
-            CallOnPlayerLoseHealth();
+            UpdateHealthValues();
         }
     }
 
@@ -272,13 +258,13 @@ public class TurnsManager : MonoBehaviour
     {
         if (GetCdFieldOfCurrentPlayer().childCount >= 5)
         {
-            CallOnNotification("I cant put anymore cards");
+            MakeNotification("I cant put anymore cards");
             StartCoroutine(StartCoolDownPhase());
             return false;
         }
         if (GetPlayerHandOfCurrentPlayer().childCount == 0)
         {
-            CallOnNotification("I have no more cards");
+            MakeNotification("I have no more cards");
             StartCoroutine(StartCoolDownPhase());
             return false;
         }
@@ -371,7 +357,7 @@ public class TurnsManager : MonoBehaviour
         string defenceName = defenderCard.Find("CardName").GetComponentInChildren<Text>().text;
         string msg = attackName + " attacked your " + defenceName + " for " + attack;
 
-        CallOnNotification(msg);
+        MakeNotification(msg);
     }
 
     public void AttackOpositePlayer(RectTransform attackerCard)
@@ -391,8 +377,8 @@ public class TurnsManager : MonoBehaviour
         string attackName = attackerCard.Find("CardName").GetComponentInChildren<Text>().text;
         string msg = attackName + " attacked you for " + attack;
 
-        CallOnNotification(msg);
-        CallOnPlayerLoseHealth();
+        MakeNotification(msg);
+        UpdateHealthValues();
     }
 
     public void DestroyDeadCards(List<RectTransform> cardsToDestroy)
@@ -402,7 +388,7 @@ public class TurnsManager : MonoBehaviour
             RectTransform card = cardsToDestroy[0];
             string destroyCardName = card.Find("CardName").GetComponentInChildren<Text>().text;
             string message = "My " + destroyCardName + " is destroyed!";
-            CallOnNotification(GetOppositePlayer(), message);
+            MakeNotification(GetOppositePlayer(), message);
 
             if (graveyard.childCount > 0)
             {

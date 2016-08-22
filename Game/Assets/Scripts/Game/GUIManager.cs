@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour
 {
+    public static GUIManager instance;
+
     private Text CardDescription;
     private Transform gameboardPanel;
-
     private RectTransform infoPanel;
     private RectTransform messages;
     private RectTransform notificationPanel;
@@ -14,10 +15,11 @@ public class GUIManager : MonoBehaviour
 
     private void Awake()
     {
-        gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
+        instance = this;
+
         transform.GetComponent<TurnsManager>().OnEndTurn += GUIManager_OnEndTurn;
-        transform.GetComponent<TurnsManager>().OnPlayerLoseHealth += GUIManager_OnPlayerLoseHealth;
-        transform.GetComponent<TurnsManager>().OnNotification += GUIManager_OnNotification;
+
+        gameboardPanel = GameObject.Find("Canvas/Gameboard/MainPanel").transform;
         infoPanel = gameboardPanel.Find("InfoPanel").GetComponent<RectTransform>();
         CardDescription = infoPanel.Find("CardDescription/Text").GetComponent<Text>();
         notificationPanel = gameboardPanel.Find("NotificationPanel").GetComponent<RectTransform>();
@@ -30,10 +32,9 @@ public class GUIManager : MonoBehaviour
         notificationPanel.Find("B_PlayerName/NameText").GetComponentInChildren<Text>().text = bName;
 
         playerCharName = new Dictionary<char, string>(2) {{'a', aName}, {'b', bName}};
-
     }
 
-    private void GUIManager_OnNotification(char player, string message)
+    public void MakeNotification(char player, string message)
     {
         string msgToWrite = playerCharName[player] + ": " + message + "\n\r";
 
@@ -57,7 +58,7 @@ public class GUIManager : MonoBehaviour
         notification.transform.localScale = new Vector3(1, 1, 1);
     }
 
-    private void GUIManager_OnPlayerLoseHealth(PlayerLoseHealthEventArgs args)
+    public void UpdateHealthValues(PlayerLoseHealthEventArgs args)
     {
         switch (args.PlayerPosition)
         {
@@ -80,7 +81,7 @@ public class GUIManager : MonoBehaviour
     }
 
     //poziva se kada igrac prede misem preko karte
-    public void Card_OnHover(RectTransform card)
+    public void DisplayCardHoverDetails(RectTransform card)
     {
         string staticId = card.Find("CardStaticID").GetComponent<Text>().text;
         string cardFlavour = Repository.GetCardDatabaseInstance().GetCard(staticId).CardFlavour;

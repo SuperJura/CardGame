@@ -1488,8 +1488,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1953592025}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 1404584751}
+        m_MethodName: PauseMenu_ExitToMainMenuBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1726,6 +1726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830452a6bfc8e594da0268c9017331d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
   playerName: Netko
   turnsManager: {fileID: 1953592026}
   Health: 0
@@ -1880,8 +1881,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1953592025}
-        m_MethodName: ExitApplication
+      - m_Target: {fileID: 1404584751}
+        m_MethodName: PauseMenu_ExitGameBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2774,11 +2775,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1404584751}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+        m_MethodName: Gameboard_PauseBtn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 757575295}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2831,7 +2832,6 @@ GameObject:
   - 114: {fileID: 1186747048}
   - 111: {fileID: 1186747047}
   - 225: {fileID: 1186747046}
-  - 114: {fileID: 1186747045}
   m_Layer: 5
   m_Name: EndGameMenu
   m_TagString: Untagged
@@ -2857,18 +2857,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2319, y: -4280}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1186747045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1186747043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4bef3e5dc31ef48b9aca359020c5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalMessages: {fileID: 462862207}
 --- !u!225 &1186747046
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3116,10 +3104,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404584750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9eb35665c0759b46a1d4c57f317f445, type: 3}
+  m_Script: {fileID: 11500000, guid: c7614e9434f9edd44a5a43cd728e36a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentMenu: {fileID: 1491494756}
+  Gameboard: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  EndGameMenu: {fileID: 0}
 --- !u!114 &1404584752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4080,8 +4071,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1953592025}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 1404584751}
+        m_MethodName: EndGameMenu_ExitToMainMenuBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4261,6 +4252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 900f079c4657a2242943b5533b71e0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
   playerName: Vlado
   turnsManager: {fileID: 1953592026}
   Health: 0
@@ -4360,11 +4352,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1404584751}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+        m_MethodName: PauseMenu_ReturnToGameBtn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1491494756}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4648,7 +4640,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1953592030}
   - 114: {fileID: 1953592029}
-  - 114: {fileID: 1953592025}
   - 114: {fileID: 1953592028}
   - 114: {fileID: 1953592026}
   - 114: {fileID: 1953592027}
@@ -4659,17 +4650,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1953592025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1953592024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0bb9aaf2508894db26f27bb5ea98c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1953592026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4685,7 +4665,6 @@ MonoBehaviour:
   APlayerSide: {fileID: 0}
   bPlayer: {fileID: 0}
   BPlayerSide: {fileID: 0}
-  endGameManager: {fileID: 0}
   graveyard: {fileID: 0}
   nublerOfTurns: 0
   specialAttacks: {fileID: 0}
@@ -4810,8 +4789,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1953592025}
-        m_MethodName: LoadBotGame
+      - m_Target: {fileID: 1404584751}
+        m_MethodName: EndGameMenu_RematchBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

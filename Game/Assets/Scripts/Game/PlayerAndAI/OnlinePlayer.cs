@@ -3,24 +3,12 @@ using UnityEngine.UI;
 
 public class OnlinePlayer : BasePlayer
 {
-    private ServerGameBehavior gameBehavior;
-
-    public override void Start()
-    {
-        gameBehavior = GameObject.Find("GameManager").GetComponent<ServerGameBehavior>();
-        gameBehavior.OnCanStart += GameBehavior_OnCanStart;
-        base.Start();
-    }
-
-    private void GameBehavior_OnCanStart()
-    {
-        FillHand();
-    }
+    public static OnlinePlayer instance;
 
     public override void Awake()
     {
         playerName = PlayerNamesForGame.NicknameForOnlineGame;
-
+        instance = this;
         base.Awake();
     }
 

@@ -268,8 +268,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723132298}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 724499580}
+        m_MethodName: PauseMenu_ExitToMainMenuBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -793,11 +793,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 724499580}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+        m_MethodName: Gameboard_PauseBtn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1030353891}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1142,7 +1142,6 @@ GameObject:
   - 114: {fileID: 412958471}
   - 111: {fileID: 412958470}
   - 225: {fileID: 412958469}
-  - 114: {fileID: 412958473}
   m_Layer: 5
   m_Name: EndGameMenu
   m_TagString: Untagged
@@ -1227,18 +1226,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 412958467}
---- !u!114 &412958473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 412958467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4bef3e5dc31ef48b9aca359020c5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalMessages: {fileID: 1442380413}
 --- !u!1 &414221961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1779,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 723132296}
   - 114: {fileID: 723132294}
-  - 114: {fileID: 723132298}
   - 114: {fileID: 723132295}
   - 114: {fileID: 723132293}
   - 114: {fileID: 723132297}
@@ -1818,7 +1804,6 @@ MonoBehaviour:
   APlayerSide: {fileID: 0}
   bPlayer: {fileID: 0}
   BPlayerSide: {fileID: 0}
-  endGameManager: {fileID: 0}
   graveyard: {fileID: 0}
   nublerOfTurns: 0
   specialAttacks: {fileID: 0}
@@ -1865,17 +1850,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9d343070bc6c9b48b29ca9257f4b435, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &723132298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 723132292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0bb9aaf2508894db26f27bb5ea98c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &724499575
@@ -1980,10 +1954,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 724499575}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9eb35665c0759b46a1d4c57f317f445, type: 3}
+  m_Script: {fileID: 11500000, guid: c7614e9434f9edd44a5a43cd728e36a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentMenu: {fileID: 869854152}
+  Gameboard: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  EndGameMenu: {fileID: 0}
 --- !u!1 &730176858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,8 +2198,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723132298}
-        m_MethodName: ExitApplication
+      - m_Target: {fileID: 724499580}
+        m_MethodName: PauseMenu_ExitGameBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2664,8 +2641,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723132298}
-        m_MethodName: LoadCoopGame
+      - m_Target: {fileID: 724499580}
+        m_MethodName: EndGameMenu_RematchBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3714,8 +3691,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 723132298}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 724499580}
+        m_MethodName: EndGameMenu_ExitToMainMenuBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4173,11 +4150,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 724499580}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+        m_MethodName: PauseMenu_ReturnToGameBtn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 869854152}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -5,38 +5,35 @@ using WebSocketSharp;
 
 internal class ServerLobbyBehavior : MonoBehaviour
 {
-    public delegate void OnReceivePlayerListHandler(string[] playerList);
-    public delegate void OnPlayerJoinedHandler(string nick);
-    public delegate void OnStartOnlineGameHandler(string opponent);
-    public delegate void OnServerErrorHandler(int errorCode);
-
-    public event OnReceivePlayerListHandler OnReceivePlayerList;
-    public event OnPlayerJoinedHandler OnPlayerJoined;
-    public event OnStartOnlineGameHandler OnStartOnlineGame;
-    public event OnServerErrorHandler OnServerError;
+    public static string serverIPAddress;
+    public static ServerLobbyBehavior instance;
 
     private static WebSocket ws;
     private string nickname;
-    public Text txtNick;
-    public Text txtServerIpAddress;
-    
-    public void ConnectToServer()
+
+    void Awake()
     {
-        if (txtNick.text == "")
+        instance = this;
+    }
+
+    public void ConnectToServer(string nick, string IPAddress)
+    {
+        if (nick == "")
         {
-            CallOnServerError("2");
+            DisplayError(2);
             return;
         }
-        if (txtNick.text.Contains(";"))
+        if (nick.Contains(";"))
         {
-            CallOnServerError("3");
+            DisplayError(3);
             return;
         }
-        if (txtServerIpAddress.text.IsNullOrEmpty()) OnlineGameMenuManager.severIPAddress = "192.168.1.247";
-        else OnlineGameMenuManager.severIPAddress = txtServerIpAddress.text;
+        if (IPAddress.IsNullOrEmpty()) serverIPAddress = "192.168.1.247";
+        else serverIPAddress = IPAddress;
+        nickname = nick;
 
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/LobbyBehavior"); //laptop
-        ws = new WebSocket("ws://" + OnlineGameMenuManager.severIPAddress + ":8080/LobbyBehavior"); //ovo racunalo, ip adresa
+        ws = new WebSocket("ws://" + serverIPAddress + ":8080/LobbyBehavior"); //ovo racunalo, ip adresa
         //ws = new WebSocket("ws://93.138.64.118:8080/LobbyBehavior"); //ovo racunalo, ip adresa koja nije iz NAT tablice
         //ws = new WebSocket("ws://localhost:8080/LobbyBehavior"); //ovo racunalo
         ws.OnOpen += Ws_OnOpen;
@@ -52,14 +49,6 @@ internal class ServerLobbyBehavior : MonoBehaviour
         ws.Send("wantToPlay|");
     }
 
-    public static void CloseWebSocket()
-    {
-        if (ws != null && ws.IsAlive)
-        {
-            ws.Close();
-        }
-    }
-
     private void Ws_OnMessage(object sender, MessageEventArgs e)
     {
         Debug.Log("Lobby Behavior: " + e.Data);
@@ -69,16 +58,16 @@ internal class ServerLobbyBehavior : MonoBehaviour
         {
             case "joined":
                 nickname = message[1];
-                Dispatcher.Current.BeginInvoke(() => { CallOnPlayerJoined(nickname); });
+                Dispatcher.Current.BeginInvoke(() => { DisplayPlayerJoined(nickname); });
                 break;
             case "list":
-                Dispatcher.Current.BeginInvoke(() => { CallOnReceivePlayerList(message[1]); });
+                Dispatcher.Current.BeginInvoke(() => { DisplayPlayerList(message[1]); });
                 break;
             case "playing":
-                Dispatcher.Current.BeginInvoke(() => { CallOnStartOnlineGame(message[1]); });
+                Dispatcher.Current.BeginInvoke(() => { StartOnlineGame(message[1]); });
                 break;
             case "error":
-                Dispatcher.Current.BeginInvoke(() => { CallOnServerError(message[1]); });
+                Dispatcher.Current.BeginInvoke(() => { DisplayError(int.Parse(message[1])); });
                 break;
         }
     }
@@ -87,7 +76,7 @@ internal class ServerLobbyBehavior : MonoBehaviour
     {
         if (e.Code == 1006) //ako je code 1006 znaci da se server uopce ne javlja
         {
-            Dispatcher.Current.BeginInvoke(() => { CallOnServerError("4"); });
+            Dispatcher.Current.BeginInvoke(() => { DisplayError(4); });
         }
         Debug.Log("Close: " + e.Reason);
     }
@@ -99,44 +88,40 @@ internal class ServerLobbyBehavior : MonoBehaviour
 
     private void Ws_OnOpen(object sender, EventArgs e)
     {
-        ws.Send("join|" + txtNick.text);
+        ws.Send("join|" + nickname);
     }
 
-    private void OnApplicationQuit()
-    {
-        CloseWebSocket();
-    }
-
-    private void CallOnReceivePlayerList(string playerList)
+    private void DisplayPlayerList(string playerList)
     {
         string[] nicks = playerList.Split(';');
-        if (OnReceivePlayerList != null)
+        MainMenuManager.instance.OnlineMenu_DisplayPlayerList(nicks);
+    }
+
+    private void DisplayPlayerJoined(string nick)
+    {
+        MainMenuManager.instance.OnlineMenu_DisplayPlayerJoined(nick);
+    }
+
+    private void DisplayError(int errorCode)
+    {
+        MainMenuManager.instance.OnlineMenu_DisplayError(errorCode);
+    }
+
+    public void StartOnlineGame(string opponent)
+    {
+        MainMenuManager.instance.OnlineMenu_StartOnlineGame(opponent);
+    }
+
+    public static void CloseWebSocket()
+    {
+        if (ws != null && ws.IsAlive)
         {
-            OnReceivePlayerList(nicks);
+            ws.Close();
         }
     }
 
-    private void CallOnPlayerJoined(string nick)
+    private void OnDestroy()
     {
-        if (OnPlayerJoined != null)
-        {
-            OnPlayerJoined(nick);
-        }
-    }
-
-    private void CallOnServerError(string errorCode)
-    {
-        if (OnServerError != null)
-        {
-            OnServerError(int.Parse(errorCode));
-        }
-    }
-
-    public void CallOnStartOnlineGame(string opponent)
-    {
-        if (OnStartOnlineGame != null)
-        {
-            OnStartOnlineGame(opponent);
-        }
+        CloseWebSocket();
     }
 }

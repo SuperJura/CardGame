@@ -97,7 +97,6 @@ GameObject:
   - 114: {fileID: 46485873}
   - 111: {fileID: 46485872}
   - 225: {fileID: 46485871}
-  - 114: {fileID: 46485870}
   m_Layer: 5
   m_Name: EndGameMenu
   m_TagString: Untagged
@@ -123,18 +122,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2319, y: -4195}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &46485870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46485868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4bef3e5dc31ef48b9aca359020c5cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalMessages: {fileID: 1529833193}
 --- !u!225 &46485871
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1106,19 +1093,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1783065344}
-        m_MethodName: CloseWebSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1783065340}
-        m_MethodName: ExitApplication
+      - m_Target: {fileID: 965980093}
+        m_MethodName: PauseMenu_ExitGameBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1278,8 +1254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c2fa9473b9df349a0cb39d4cd76a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
   playerName: Fill
   turnsManager: {fileID: 1783065341}
+  Health: 0
 --- !u!1 &454230944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,10 +2277,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 965980092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9eb35665c0759b46a1d4c57f317f445, type: 3}
+  m_Script: {fileID: 11500000, guid: c7614e9434f9edd44a5a43cd728e36a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentMenu: {fileID: 1452676816}
+  Gameboard: {fileID: 0}
+  PauseMenu: {fileID: 0}
+  EndGameMenu: {fileID: 0}
 --- !u!114 &965980094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3103,8 +3084,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5786adc2a81221048ad83456979e23f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deck: []
   playerName: Herkules
   turnsManager: {fileID: 1783065341}
+  Health: 0
 --- !u!1 &1673741887
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,11 +3252,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 965980093}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+        m_MethodName: Gameboard_PauseBtn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1701421466}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3776,7 +3759,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1783065343}
   - 114: {fileID: 1783065342}
-  - 114: {fileID: 1783065340}
   - 114: {fileID: 1783065344}
   - 114: {fileID: 1783065345}
   - 114: {fileID: 1783065341}
@@ -3789,17 +3771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1783065340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1783065339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c0bb9aaf2508894db26f27bb5ea98c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1783065341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3811,6 +3782,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68593d801bb49b4ca1379f977621ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aPlayer: {fileID: 0}
+  APlayerSide: {fileID: 0}
+  bPlayer: {fileID: 0}
+  BPlayerSide: {fileID: 0}
+  graveyard: {fileID: 0}
+  nublerOfTurns: 0
+  specialAttacks: {fileID: 0}
 --- !u!114 &1783065342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3973,19 +3951,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1783065344}
-        m_MethodName: CloseWebSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1783065340}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 965980093}
+        m_MethodName: PauseMenu_ExitToMainMenuBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4558,11 +4525,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 965980093}
-        m_MethodName: LoadMenu
-        m_Mode: 2
+        m_MethodName: PauseMenu_ReturnToGameBtn
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1452676816}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4752,19 +4719,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1783065344}
-        m_MethodName: CloseWebSocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1783065340}
-        m_MethodName: LoadMainMenu
+      - m_Target: {fileID: 965980093}
+        m_MethodName: EndGameMenu_ExitToMainMenuBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

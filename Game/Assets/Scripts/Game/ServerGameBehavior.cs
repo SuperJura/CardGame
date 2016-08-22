@@ -4,30 +4,18 @@ using WebSocketSharp;
 
 public class ServerGameBehavior : MonoBehaviour
 {
-    public delegate void OnCanStartHandler();
-    public delegate void OnOpponentDrawedHandler(string staticId);
-    public delegate void OnOpponentPlayedHandler(string staticId);
-
-    public event OnCanStartHandler OnCanStart;
-    public event OnOpponentDrawedHandler OnOpponentDrawed;
-    public event OnOpponentPlayedHandler OnOpponentPlayed;
-
-    private EndGameManager endGameManager;
     private Transform notificationPanel;
-    private TurnsManager turnsManager;
     private static WebSocket ws;
 
     private void Awake()
     {
         notificationPanel = GameObject.Find("Canvas/Gameboard/MainPanel/NotificationPanel").transform;
-        endGameManager = GameObject.Find("Canvas/EndGameMenu").GetComponent<EndGameManager>();
-        turnsManager = transform.GetComponent<TurnsManager>();
     }
 
     private void Start()
     {
         //WebSocket ws = new WebSocket("ws://192.168.1.249:8080/GameBehavior"); //laptop
-        ws = new WebSocket("ws://" + OnlineGameMenuManager.severIPAddress + ":8080/GameBehavior"); //ovo racunalo, ip adresa
+        ws = new WebSocket("ws://" + ServerLobbyBehavior.serverIPAddress + ":8080/GameBehavior"); //ovo racunalo, ip adresa
         //ws = new WebSocket("ws://localhost:8080/GameBehavior"); //ovo racunalo
         ws.OnClose += Ws_OnClose;
         ws.OnMessage += Ws_OnMessage;
@@ -40,7 +28,7 @@ public class ServerGameBehavior : MonoBehaviour
         ws.Send("startGame|" + myNickname + ";" + opponentNickname);
     }
 
-    public static void SendMessage(string message)
+    public new static void SendMessage(string message)
     {
         ws.Send(message);
     }
@@ -86,36 +74,27 @@ public class ServerGameBehavior : MonoBehaviour
 
     private void CanStartStatement()
     {
-        if (OnCanStart != null)
-        {
-            OnCanStart();
-        }
+        OnlinePlayer.instance.FillHand();
     }
 
     private void PlayerOnTurnStatement(string nicknamePlaying)
     {
-        turnsManager.PlayerOnTurn(nicknamePlaying);
+       TurnsManager.instance.PlayerOnTurn(nicknamePlaying);
     }
 
     private void OpponentPlayedStatement(string staticId)
     {
-        if (OnOpponentPlayed != null)
-        {
-            OnOpponentPlayed(staticId);
-        }
+        OnlineOpponent.instance.PlayOpponentCard(staticId);
     }
 
     private void OpponentDrawedStatement(string staticId)
     {
-        if (OnOpponentDrawed != null)
-        {
-            OnOpponentDrawed(staticId);
-        }
+        OnlineOpponent.instance.DrawOpponentCard(staticId);
     }
 
     private void UnexpectedEndStatement()
     {
-        endGameManager.EndGame('a', 'b');
+        GameMenuManager.instance.EndGame('a', 'b');
         CloseWebSocket();
     }
 
@@ -131,7 +110,7 @@ public class ServerGameBehavior : MonoBehaviour
         return nickname;
     }
 
-    private void OnApplicationQuit()
+    private void OnDestroy()
     {
         CloseWebSocket();
     }
@@ -142,6 +121,5 @@ public class ServerGameBehavior : MonoBehaviour
         {
             ws.Close();
         }
-        ServerLobbyBehavior.CloseWebSocket();
     }
 }

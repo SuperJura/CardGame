@@ -19,10 +19,10 @@ public class TurnsManagerAdventureGame : TurnsManager {
     {
         nublerOfTurns = 0;
         whoMoves = 'b';
-        CallOnNotification(Enemy.combatMsg);
+        MakeNotification(Enemy.combatMsg);
         DisablePicking();
         whoMoves = 'a';
-        CallOnPlayerLoseHealth();
+        UpdateHealthValues();
         EnablePicking();
         CallOnEndTurn();
     }

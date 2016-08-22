@@ -16,6 +16,7 @@
 
     public enum GameModes
     {
+        MainMenu,
         Bot,
         Coop,
         Online
