@@ -27,7 +27,8 @@ public class MapManager : MonoBehaviour
         GameObject currentMap = GameObject.Find(AdventureGame.currentMap + "(Clone)");
         Destroy(currentMap);
         string newMapName = Maps.FindMap(mapId).name;
-        Instantiate(Resources.Load("AdventureResources/Maps/" + newMapName));
+        GameObject newMap = (GameObject)Instantiate(Resources.Load("AdventureResources/Maps/" + newMapName));
+        DontDestroyOnLoad(newMap);
         AdventureGame.currentMap = newMapName;
         AdventureGame.SaveGame();
     }

@@ -16,10 +16,10 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (!CharacterMovement.instance.isMoving && EnemyCombatFlags.enemysPerLevel[AdventureGame.currentMap][enemyID])
+        if (!CharacterMovement.instance.isMoving && EnemyCombatFlags.enemysPerLevel[enemyID])
         {
             AdventureGame.SaveGame();
-            EnemyCombatFlags.enemysPerLevel[AdventureGame.currentMap][enemyID] = false;
+            EnemyCombatFlags.enemysPerLevel[enemyID] = false;
             string[] cards = GetComponentInParent<EnemyInfo>().cardIDs;
             combatMsg = GetComponentInParent<EnemyInfo>().combatMsg;
 
